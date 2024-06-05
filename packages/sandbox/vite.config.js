@@ -19,6 +19,7 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { importChunkUrl } from '@lightningjs/vite-plugin-import-chunk-url';
 import path from 'path';
+import { vitePluginSolidUiThemeSwitcher } from '@lightningjs/solid-ui';
 
 export default defineConfig({
   optimizeDeps: {
@@ -37,11 +38,17 @@ export default defineConfig({
         moduleName: '@lightningtv/solid',
         generate: 'universal'
       }
+    }),
+    vitePluginSolidUiThemeSwitcher({
+      themes: {
+        base: '@lightningjs/l3-ui-theme-base',
+        mosaic: '../../themeStyles.l3.js'
+      }
     })
   ],
   resolve: {
     alias: {
-      theme: path.resolve(__dirname, '../packages/l3-ui-theme-base/theme.js'),
+      // theme: path.resolve(__dirname, './themeSwitcher.ts'),
       utils: path.resolve(__dirname, '../shared/utils/index.ts'),
       '@lightningjs/solid-ui': path.resolve(__dirname, '../packages/solid/index.ts')
     },

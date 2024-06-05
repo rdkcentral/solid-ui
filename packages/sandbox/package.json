@@ -18,10 +18,11 @@
     "@lightningjs/renderer": "^0.9.1",
     "@lightningtv/solid": "^0.0.13",
     "@solidjs/router": "^0.12.5",
-    "solid-js": "^1.8.16"
+    "solid-js": "^1.8.16",
+    "@lightningjs/l3-ui-theme-base": "workspace:*",
+    "@lightningjs/solid-ui": "workspace:*"
   },
   "devDependencies": {
-    "@lightningjs/solid-ui": "workspace:*",
     "@lightningjs/vite-plugin-import-chunk-url": "^0.3.1",
     "vite": "^5.2.9",
     "vite-bundle-visualizer": "^1.1.0",

@@ -19,6 +19,7 @@ import { type Component, createMemo } from 'solid-js';
 import { View } from '@lightningtv/solid';
 import { withPadding } from '@lightningtv/solid/primitives';
 import type { Tone } from 'types/types.js';
+import staticStyles from './Artwork.static-styles.json';
 import styles from './Artwork.styles.js';
 import type { ArtworkProps } from './Artwork.types.js';
 withPadding;

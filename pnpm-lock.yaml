@@ -62,9 +62,15 @@ importers:
 
   packages/sandbox:
     dependencies:
+      '@lightningjs/l3-ui-theme-base':
+        specifier: workspace:*
+        version: link:../l3-ui-theme-base
       '@lightningjs/renderer':
         specifier: ^0.9.1
         version: 0.9.2
+      '@lightningjs/solid-ui':
+        specifier: workspace:*
+        version: link:../solid
       '@lightningtv/solid':
         specifier: ^0.0.13
         version: 0.0.13(@lightningjs/renderer@0.9.2)(solid-js@1.8.17)
@@ -75,9 +81,6 @@ importers:
         specifier: ^1.8.16
         version: 1.8.17
     devDependencies:
-      '@lightningjs/solid-ui':
-        specifier: workspace:*
-        version: link:../solid
       '@lightningjs/vite-plugin-import-chunk-url':
         specifier: ^0.3.1
         version: 0.3.1(vite@5.3.0)

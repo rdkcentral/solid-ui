@@ -19,6 +19,8 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { importChunkUrl } from '@lightningjs/vite-plugin-import-chunk-url';
 import path from 'path';
+// import vitePluginSolidUiThemeSwitcher from './utils/vitePluginSolidUiThemeSwitcher';
+import vitePluginSolidUiCompiler from './utils/vitePluginSolidUiCompiler';
 
 const config = {
   plugins: [
@@ -28,7 +30,16 @@ const config = {
         generate: 'universal'
       }
     }),
-    importChunkUrl()
+    importChunkUrl(),
+    // vitePluginSolidUiThemeSwitcher({
+    //   themes: {
+    //     base: '@lightningjs/l3-ui-theme-base',
+    //     mosaic: '/assets/themeStyles.l3.js'
+    //   }
+    // }),
+    vitePluginSolidUiCompiler({
+      theme: '/assets/themeStyles.l3.js'
+    })
   ],
   base: './',
   build: {

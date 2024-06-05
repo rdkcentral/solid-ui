@@ -17,7 +17,8 @@
 
 import { View } from '@lightningtv/solid';
 import { Button, Column } from '@lightningjs/solid-ui';
-import { useFocusManager } from '@lightningtv/solid/primitives';
+import { useFocusManager } from '@lightningtv/solid-primitives';
+import theme from 'theme';
 
 const App = () => {
   useFocusManager({
@@ -25,6 +26,7 @@ const App = () => {
     Text: 't',
     Buttons: 'b'
   });
+  console.log(theme.name);
 
   return (
     <View ref={window.APP} width={1280} height={720} color={0xff071423}>

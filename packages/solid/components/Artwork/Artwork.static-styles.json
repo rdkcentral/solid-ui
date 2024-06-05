@@ -1,0 +1,20 @@
+{
+  "themeKeys": {
+    "fallbackSrc": "fallbackSrc",
+    "fillColor": "fillColor",
+    "scale": "imageScale",
+    "pivotX": "imageScalePivotX",
+    "pivotY": "imageScalePivotY",
+    "borderRadius": "radius"
+  },
+  "base": {
+    "fallbackSrc": null,
+    "fillColor": "theme.color.overlay",
+    "gradientColor": "theme.color.material",
+    "pivotX": 0.5,
+    "pivotY": 0.5,
+    "scale": null,
+    "borderRadius": "theme.radius.md"
+  },
+  "themeStyles": "themeStyles"
+}
