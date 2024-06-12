@@ -18,7 +18,7 @@
  */
 
 // Here we just re-export everything from the shared location.
-export { default } from '../../../shared/AppCoreExtensions.js';
+export { default } from '../../shared/AppCoreExtensions.js';
 
 // Workaround: Originally `preview.tsx` was importing the shared `AppCoreExtensions.ts`
 // file directly via the importChunkUrl plugin, but that is currently causing an

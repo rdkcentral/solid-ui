@@ -19,7 +19,7 @@
 
 import { CoreExtension, SdfTrFontFace } from '@lightningjs/renderer/core';
 
-const basePath = './';
+const basePath = './public';
 
 export default class AppCoreExtension extends CoreExtension {
   async run(stage) {

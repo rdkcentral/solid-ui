@@ -15,5 +15,4 @@
 
 packages:
   # all packages in direct subdirs of packages/
-  - "src/packages/*"
-  - "src/sandbox"
+  - "packages/*"

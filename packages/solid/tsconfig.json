@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "exclude": ["./dist", "./node_modules", "./storybook-static"],
   "no-emit": false,
   "compilerOptions": {
