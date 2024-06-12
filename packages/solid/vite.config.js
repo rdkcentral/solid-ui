@@ -47,7 +47,7 @@ const config = {
   resolve: {
     alias: {
       theme: path.resolve(__dirname, '../l3-ui-theme-base/theme.js'),
-      utils: path.resolve(__dirname, '../../shared/utils/index.ts')
+      utils: path.resolve(__dirname, '../shared/utils/index.ts')
     },
     dedupe: ['solid-js', '@lightningtv/solid']
   },
@@ -77,7 +77,7 @@ const config = {
     testTransformMode: { web: ['/.[jt]sx?$/'] },
     globals: true
   },
-  publicDir: '../../shared/public'
+  publicDir: '../shared/public'
 };
 
 export default defineConfig(config);
