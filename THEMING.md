@@ -1,3 +1,20 @@
+<!--
+  Copyright 2024 Comcast Cable Communications Management, LLC
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+-->
+
 # Theming in solid-ui
 
 ## What is theming?
@@ -35,17 +52,10 @@ or if you have your own local theme:
 
 ## Component Setup
 
-Each themeable element in the Component will need the properties below. The `style` assignment provides the base component styles, the `tone` gets mapped to states via the `toneStateMapperHook` (more on that below), and the object merge beneath that ensures that any instance-level styles provided override the tone.
+Each themeable element in the Component has a similar style property setup. Making use of [SolidJS styling features](https://lightning-js.github.io/solid/#/styling), we can provide a set of styles that are merged together. This allows us to provide a base set of styles that are then overridden in specific instances.
 
 ```jsx
-<View
-  style={styles.Container}
-  tone={props.tone || styles.tone}
-  {...{
-    ...styles.Container[props.tone || styles.tone],
-    ...props?.style?.Container
-  }}
-/>
+<View style={[props.styles, styles.Container[props.tone || styles.tone], props?.style?.Container]} />
 ```
 
 ### Theme File
@@ -107,4 +117,3 @@ Tones, Modes, and ToneModes are defined either in the component style file or th
 - modes - styles that are applied during the component lifecycle, can be thought of as states (focus, disabled, etc)
 - toneModes - variations on mode styles that are applied when a component with a specific tone receives that mode
   - ie. when a Button with tone "brand" receives the mode "focus", the styles defined in `brand-focus` would be applied
-
