@@ -17,23 +17,21 @@
 
 # Solid UI
 
-This library contains a suite of UI components, written for the [SolidJS Lightning](https://github.com/lightning-js/renderer) Framework
+This library contains a suite of [themeable](THEMING.md) UI components written for the [SolidJS Lightning](https://github.com/lightning-tv/solid) Framework. check them out in our [storybook docs](https://lightning-js.github.io/ui-components/).
 
 [![npm version](https://img.shields.io/npm/v/@lightningtv%2Fsolid-ui.svg?style=flat)](https://www.npmjs.com/package/@lightningtv/solid-ui)
 
-Get started with the [readme](https://github.com/lightning-js/ui-components/blob/main/src/packages/solid/README.md), or check out the latest components in our [storybook docs](https://lightning-js.github.io/ui-components/).
+## Getting Started
 
-## Quick Start
+If you haven't already, follow the steps found [here](https://github.com/lightning-js/solid) to bootstrap your SolidJS Lightning app. Then:
 
-If you haven't already, follow the steps found [here](https://github.com/lightning-js/solid) to bootstrap your SolidJS Lightning app.
-
-1. install this package and the base theme with your package manager of choice
+**installation**
 
 ```sh
 pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or pnpm/yarn
 ```
 
-2. add the theme package as an alias in your vite config
+**configuration**
 
 ```js
 // vite.config.js
@@ -44,7 +42,7 @@ pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or pnpm/yarn
   },
 ```
 
-3. and finally, use a component
+**usage**
 
 ```jsx
 // App.jsx
@@ -54,23 +52,25 @@ import { Button } from '@lightningtv/solid-ui';
 </App>;
 ```
 
+## Reporting a Bug
+
 ## Development
 
 If you don't have pnpm
 
 ```sh
-> npm install -g pnpm
+npm install -g pnpm
 ```
 
 Run the solid storybook dev environment:
 
 ```sh
-> pnpm i
-> pnpm start
+pnpm i
+pnpm dev
 ```
 
 Run the solid sandbox environment:
 
 ```sh
-> pnpm solid:sandbox
+pnpm sandbox
 ```
