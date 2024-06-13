@@ -25,13 +25,13 @@ This library contains a suite of [themeable](THEMING.md) UI components written f
 
 If you haven't already, follow the steps found [here](https://github.com/lightning-js/solid) to bootstrap your SolidJS Lightning app. Then:
 
-**installation**
+1. install this package and the base theme with your package manager of choice
 
 ```sh
 pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or pnpm/yarn
 ```
 
-**configuration**
+2. add the theme package as an alias in your vite config(see the [theming docs](THEMING.md) for more information on this)
 
 ```js
 // vite.config.js
@@ -42,7 +42,7 @@ pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or pnpm/yarn
   },
 ```
 
-**usage**
+3. and finally, use a component
 
 ```jsx
 // App.jsx
