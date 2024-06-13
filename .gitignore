@@ -3,3 +3,4 @@ node_modules/
 dist/
 storybook-static
 *.code-workspace
+settings.json
