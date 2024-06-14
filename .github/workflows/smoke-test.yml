@@ -25,7 +25,7 @@ jobs:
         run: find packages/ -type d -exec chmod 777 {} +
 
       - name: Test solid library build
-        run: pnpm build:solid:lib
+        run: pnpm build:lib
 
       - name: Test solid docs build
-        run: pnpm build:solid:docs
+        run: pnpm build:docs
