@@ -46,7 +46,7 @@ jobs:
       # `find` command lists all dirs in src and runs the permission update on them
       - name: set file permissions
         run: |
-          find src/ -type d -exec chmod 777 {} +
+          find packages/ -type d -exec chmod 777 {} +
           chmod -R 777 .git/
 
       - name: Publish artifacts
