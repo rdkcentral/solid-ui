@@ -25,23 +25,9 @@ const { Input: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.
 
 const container: InputConfig = {
   themeKeys: {
-    justifyContent: 'justify'
-  },
-  base: {
-    display: 'flex',
-    justifyContent: 'flexStart',
-    flexDirection: 'column',
-    width: 100,
-    height: 100,
-    actualTitle: ''
-  },
-  themeStyles
-};
-
-const input: InputConfig = {
-  themeKeys: {
     borderRadius: 'radius',
-    color: 'backgroundColor'
+    color: 'backgroundColor',
+    justifyContent: 'justify'
   },
   base: {
     // TODO clew uses strokeColor, but we currently don't account for nested properties (border.color)
@@ -54,7 +40,8 @@ const input: InputConfig = {
     color: theme.color.interactiveNeutral,
     contentColor: theme.color.fillInverse,
     borderRadius: theme.radius.sm,
-    marginX: theme.spacer.xxxl
+    marginX: theme.spacer.xxxl,
+    actualTitle: ''
   },
   themeStyles
 };
@@ -72,14 +59,12 @@ const text: InputConfig = {
 };
 
 const Container = makeComponentStyles<InputStyles['Container']>(container);
-const InputContainer = makeComponentStyles<InputStyles['InputContainer']>(input);
 const Text = makeComponentStyles<InputStyles['Text']>(text);
 
 const styles: InputStyles = {
   tone: defaultTone || 'neutral',
   Container,
-  Text,
-  InputContainer
+  Text
 };
 
 export default styles;

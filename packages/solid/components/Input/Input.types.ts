@@ -67,7 +67,6 @@ export interface InputStyleProperties {
 export interface InputStyles {
   tone: Tone;
   Container: NodeStyleSet;
-  InputContainer: NodeStyleSet;
   Text: TextStyleSet;
 }
 
