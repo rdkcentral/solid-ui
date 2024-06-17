@@ -41,9 +41,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      theme: path.resolve(__dirname, '../packages/l3-ui-theme-base/theme.js'),
+      theme: path.resolve(__dirname, '../l3-ui-theme-base/theme.js'),
       utils: path.resolve(__dirname, '../shared/utils/index.ts'),
-      '@lightningjs/solid-ui': path.resolve(__dirname, '../packages/solid/index.ts')
+      '@lightningjs/solid-ui': path.resolve(__dirname, '../solid/index.ts')
     },
     dedupe: ['solid-js', '@lightningtv/solid', '@lightningjs/renderer']
   },
