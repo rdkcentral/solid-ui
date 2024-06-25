@@ -20,7 +20,7 @@ import App from './pages/App';
 import coreExtensionModuleUrl from '../shared/AppCoreExtensions.js?importChunkUrl';
 import coreWorkerUrl from '../shared/threadx-core-worker.js?importChunkUrl';
 
-Config.fontSettings.fontFamily = 'Ubuntu';
+Config.fontSettings.fontFamily = 'Roboto';
 Config.fontSettings.color = 0xffffffff;
 
 const driver = 'main';

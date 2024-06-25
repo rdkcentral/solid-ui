@@ -1,8 +1,5 @@
-/*
- * If not stated otherwise in this file or this component's LICENSE file the
- * following copyright and licenses apply:
- *
- * Copyright 2023 Comcast
+/**
+ * Copyright 2023 Comcast Cable Communications Management, LLC
  *
  * Licensed under the Apache License, Version 2.0 (the License);
  * you may not use this file except in compliance with the License.
@@ -15,9 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * 
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CoreExtension, SdfTrFontFace } from '@lightningjs/renderer/core';
+import { CoreExtension, WebTrFontFace } from '@lightningjs/renderer/core';
 
 const basePath = './';
 
@@ -37,36 +36,33 @@ export default class AppCoreExtension extends CoreExtension {
     //   }),
     // );
     stage.fontManager.addFontFace(
-      new SdfTrFontFace('msdf', {
+      new WebTrFontFace({
         fontFamily: 'Arial',
         descriptors: {
           weight: 700
         },
-        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Bold.msdf.json',
-        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Bold.msdf.png',
+        fontUrl: basePath + 'fonts/roboto/Roboto-Bold.ttf',
         stage
       })
     );
     stage.fontManager.addFontFace(
-      new SdfTrFontFace('msdf', {
+      new WebTrFontFace({
         fontFamily: 'Arial',
         descriptors: {
           weight: 400
         },
-        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.json',
-        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.png',
+        fontUrl: basePath + 'fonts/roboto/Roboto-Regular.ttf',
         stage
       })
     );
 
     stage.fontManager.addFontFace(
-      new SdfTrFontFace('msdf', {
+      new WebTrFontFace({
         fontFamily: 'Arial',
         descriptors: {
           weight: 500
         },
-        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.json',
-        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.png',
+        fontUrl: basePath + 'fonts/roboto/Roboto-Regular.ttf',
         stage
       })
     );

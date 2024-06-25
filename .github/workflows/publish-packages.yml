@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish_packages:
-    runs-on: ubuntu-latest
+    runs-on: roboto-latest
 
     steps:
       # need to have access to latest git for lerna
