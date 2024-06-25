@@ -17,8 +17,9 @@
 
 import type { TextStyles, NodeStyles } from '@lightningtv/solid';
 
-// license: https://github.com/sindresorhus/ts-extras/blob/main/license
 // modified from https://github.com/sindresorhus/ts-extras/blob/main/source/object-keys.ts
+// which is Copyright (c) Sindre Sorhus sindresorhus@gmail.com https://sindresorhus.com)
+// Licensed under the MIT License
 export type ObjectKeys<T extends object> = `${Exclude<keyof T, symbol>}`;
 
 // modified from https://github.com/sindresorhus/ts-extras/blob/main/source/object-entries.ts
