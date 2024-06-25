@@ -24,7 +24,6 @@ const Button: Component<ButtonProps> = props => {
   return (
     <ButtonContainer {...props} forwardStates>
       <Text
-        textAlign={props.textAlign}
         color={props.textColor}
         style={[
           styles.Text.tones[props.tone ?? styles.tone], //

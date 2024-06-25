@@ -24,7 +24,6 @@ const { Key: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.co
 const container: KeyConfig = {
   themeKeys: {
     keySpacing: 'keySpacing',
-    textAlign: 'textAlign',
     borderRadius: 'borderRadius',
     color: 'backgroundColor',
     justifyContent: 'justify',

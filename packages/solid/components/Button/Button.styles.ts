@@ -32,7 +32,6 @@ const themeStyles = {
 
 const container: ButtonConfig = {
   themeKeys: {
-    textAlign: 'textAlign',
     borderRadius: 'radius',
     color: 'backgroundColor',
     justifyContent: 'justify',
