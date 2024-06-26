@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: build all packages
-    runs-on: roboto-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Setup git
