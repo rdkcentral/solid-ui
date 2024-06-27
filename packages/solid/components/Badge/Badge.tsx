@@ -16,7 +16,7 @@
  */
 import { createMemo, type Component } from 'solid-js';
 import { Text } from '@lightningtv/solid';
-import { withPadding } from '@lightningtv/solid/primitives';
+import { withPadding } from '../../utils/index.js';
 import styles from './Badge.styles.js';
 import type { BadgeProps } from './Badge.types.js';
 withPadding; // Preserve the import.
