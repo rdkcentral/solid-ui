@@ -9,17 +9,17 @@
   "types": "dist/types.d.ts",
   "scripts": {
     "start": "pnpm dev",
-    "dev": "pnpm --filter @lightningjs/solid-ui dev",
+    "dev": "pnpm --filter @lightningtv/solid-ui dev",
     "lerna:version": "lerna version --no-private --conventional-commits --yes",
     "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "publish-packages": "pnpm --filter './src/packages/**' publish",
     "reset": "rm -rf node_modules && rm -rf src/packages/solid/node_modules && rm -rf src/sandbox/node_modules && pnpm store prune",
-    "build:lib": "pnpm --filter @lightningjs/solid-ui build-lib",
-    "build:docs": "pnpm --filter @lightningjs/solid-ui build-storybook",
+    "build:lib": "pnpm --filter @lightningtv/solid-ui build-lib",
+    "build:docs": "pnpm --filter @lightningtv/solid-ui build-storybook",
     "sandbox": "pnpm --filter solid-js-sandbox start",
-    "test": "pnpm --filter @lightningjs/solid-ui test",
-    "test:update-snapshots": "pnpm --filter @lightningjs/solid-ui test:update-snapshots",
+    "test": "pnpm --filter @lightningtv/solid-ui test",
+    "test:update-snapshots": "pnpm --filter @lightningtv/solid-ui test:update-snapshots",
     "version-publish": "pnpm run lerna:version && pnpm run publish-packages"
   },
   "dependencies": {
