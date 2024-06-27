@@ -121,7 +121,7 @@ const Input: Component<InputProps> = props => {
           styles.Text.base
         ]}
       >
-        {formatTitleText() === '' ? ' ' : formatTitleText()}
+        {formatTitleText() || ' '}
       </Text>
     </View>
   );
