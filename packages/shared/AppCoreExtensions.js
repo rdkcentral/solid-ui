@@ -41,8 +41,8 @@ export default class AppCoreExtension extends CoreExtension {
         descriptors: {
           weight: 700
         },
-        atlasDataUrl: basePath + 'fonts/roboto/roboto-Bold.msdf.json',
-        atlasUrl: basePath + 'fonts/roboto/roboto-Bold.msdf.png',
+        atlasDataUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.json',
+        atlasUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.png',
         stage
       })
     );
@@ -52,8 +52,8 @@ export default class AppCoreExtension extends CoreExtension {
         descriptors: {
           weight: 400
         },
-        atlasDataUrl: basePath + 'fonts/roboto/roboto-Regular.msdf.json',
-        atlasUrl: basePath + 'fonts/roboto/roboto-Regular.msdf.png',
+        atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
+        atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
         stage
       })
     );
@@ -64,8 +64,8 @@ export default class AppCoreExtension extends CoreExtension {
         descriptors: {
           weight: 500
         },
-        atlasDataUrl: basePath + 'fonts/roboto/roboto-Regular.msdf.json',
-        atlasUrl: basePath + 'fonts/roboto/roboto-Regular.msdf.png',
+        atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
+        atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
         stage
       })
     );
