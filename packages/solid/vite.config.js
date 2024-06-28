@@ -18,6 +18,7 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { importChunkUrl } from '@lightningjs/vite-plugin-import-chunk-url';
+import hexColorTransform from '@lightningtv/vite-hex-transform';
 import path from 'path';
 
 const config = {
@@ -28,6 +29,7 @@ const config = {
         generate: 'universal'
       }
     }),
+    hexColorTransform(),
     importChunkUrl()
   ],
   base: './',
