@@ -29,7 +29,10 @@ const config = {
         generate: 'universal'
       }
     }),
-    hexColorTransform(),
+    hexColorTransform({
+      include: '**/*.js',
+      exclude: '**/*.stories.js'
+    }),
     importChunkUrl()
   ],
   base: './',
