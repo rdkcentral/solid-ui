@@ -109,8 +109,8 @@ const Input: Component<InputProps> = props => {
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
-        styles.InputContainer.tones[props.tone ?? styles.tone],
-        styles.InputContainer.base
+        styles.Container.tones[props.tone ?? styles.tone],
+        styles.Container.base
       ]}
     >
       <Text
@@ -121,7 +121,7 @@ const Input: Component<InputProps> = props => {
           styles.Text.base
         ]}
       >
-        {formatTitleText()}
+        {formatTitleText() || ' '}
       </Text>
     </View>
   );
