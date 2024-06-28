@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Comcast Cable Communications Management, LLC
+ * Copyright 2023 Comcast
  *
  * Licensed under the Apache License, Version 2.0 (the License);
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CoreExtension, WebTrFontFace } from '@lightningjs/renderer/core';
+import { CoreExtension, SdfTrFontFace } from '@lightningjs/renderer/core';
 
 const basePath = './';
 
@@ -36,33 +36,36 @@ export default class AppCoreExtension extends CoreExtension {
     //   }),
     // );
     stage.fontManager.addFontFace(
-      new WebTrFontFace({
+      new SdfTrFontFace('msdf', {
         fontFamily: 'Arial',
         descriptors: {
           weight: 700
         },
-        fontUrl: basePath + 'fonts/roboto/Roboto-Bold.ttf',
+        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Bold.msdf.json',
+        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Bold.msdf.png',
         stage
       })
     );
     stage.fontManager.addFontFace(
-      new WebTrFontFace({
+      new SdfTrFontFace('msdf', {
         fontFamily: 'Arial',
         descriptors: {
           weight: 400
         },
-        fontUrl: basePath + 'fonts/roboto/Roboto-Regular.ttf',
+        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.json',
+        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.png',
         stage
       })
     );
 
     stage.fontManager.addFontFace(
-      new WebTrFontFace({
+      new SdfTrFontFace('msdf', {
         fontFamily: 'Arial',
         descriptors: {
           weight: 500
         },
-        fontUrl: basePath + 'fonts/roboto/Roboto-Regular.ttf',
+        atlasDataUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.json',
+        atlasUrl: basePath + 'fonts/ubuntu/Ubuntu-Regular.msdf.png',
         stage
       })
     );
