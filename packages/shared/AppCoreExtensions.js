@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -22,19 +22,6 @@ const basePath = './';
 
 export default class AppCoreExtension extends CoreExtension {
   async run(stage) {
-    // stage.fontManager.addFontFace(
-    //   new WebTrFontFace({
-    //     fontFamily: "NotoSans",
-    //     descriptors: {},
-    //     fontUrl: basePath + "fonts/NotoSans-Regular.ttf",
-    //     metrics: {
-    //       ascender: 1069,
-    //       descender: -293,
-    //       lineGap: 0,
-    //       unitsPerEm: 1000
-    //     }
-    //   }),
-    // );
     stage.fontManager.addFontFace(
       new SdfTrFontFace('msdf', {
         fontFamily: 'Arial',
