@@ -83,7 +83,9 @@ const text: KeyConfig = {
   },
   base: {
     color: theme.color.textNeutral,
-    ...theme.typography.headline2
+    ...theme.typography.headline2,
+    textAlign: 'center',
+    contain: 'none'
   },
   modes: {
     focus: {

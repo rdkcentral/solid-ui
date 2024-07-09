@@ -56,6 +56,8 @@ const Key: Component<KeyProps> = props => {
       width={multiplier() * baseWidth() + keySpacing() * (multiplier() - 1)}
     >
       <Text
+        contain={props.contain ?? 'width'}
+        textAlign={props.textAlign}
         style={[
           styles.Text.tones[tone()], //
           styles.Text.base

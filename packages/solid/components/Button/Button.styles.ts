@@ -102,9 +102,7 @@ const content: ButtonConfig = {
 
 const text: ButtonConfig = {
   themeKeys: {
-    color: 'textColor',
-    textAlign: 'textAlign',
-    contain: 'contain'
+    color: 'textColor'
   },
   base: {
     color: theme.color.textNeutral,
