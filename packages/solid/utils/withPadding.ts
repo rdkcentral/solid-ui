@@ -53,7 +53,7 @@ export function withPadding(el: ElementNode, padding: () => withPaddingInput) {
     top = right = bottom = left = pad;
   }
 
-  el.onBeforeLayout = (node, size) => {
+  el.onBeforeLayout = (_, size) => {
     if (size) {
       el.width =
         el.children.reduce((acc, c) => {
@@ -69,7 +69,7 @@ export function withPadding(el: ElementNode, padding: () => withPaddingInput) {
       }
 
       let maxHeight = 0;
-      el.children.forEach((c) => {
+      el.children.forEach(c => {
         c.y = top;
         c.marginTop = top;
         maxHeight = Math.max(maxHeight, c.height || 0);
