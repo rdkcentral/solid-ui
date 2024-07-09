@@ -52,7 +52,7 @@ const Input: Component<InputProps> = props => {
       case 'space':
         newTitle =
           currentPosition > 0
-            ? inputText.slice(0, currentPosition - 1) + ' ' + inputText.slice(currentPosition)
+            ? inputText.slice(0, currentPosition) + ' ' + inputText.slice(currentPosition)
             : ' ' + inputText;
         currentPosition++;
         break;
