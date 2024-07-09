@@ -29,7 +29,7 @@ const container: IconConfig = {
   base: {
     width: 100,
     height: 100,
-    color: theme.color.fillInverse
+    color: theme.color.fillNeutral
   },
   tones: {
     inverse: {
