@@ -84,6 +84,14 @@ export const Basic: Story = {
   }
 };
 Basic.argTypes = {
+  textAlign: {
+    control: { type: 'radio' },
+    options: ['left', 'center', 'right'],
+    description: 'Sets the alignment for the text',
+    table: {
+      defaultValue: { summary: 'center' }
+    }
+  },
   justifyContent: { table: { disable: true } }
 };
 

@@ -25,7 +25,6 @@ const Button: Component<ButtonProps> = props => {
     <ButtonContainer
       {...props}
       color={props.backgroundColor}
-      contentColor={props.contentColor}
       itemSpacing={props.contentSpacing}
       alignItems="center"
       forwardStates
@@ -50,7 +49,6 @@ const ButtonContainer: Component<ButtonContainerProps> = props => {
     <View
       {...props}
       color={props.backgroundColor}
-      contentColor={props.contentColor}
       justifyContent={props.justify}
       itemSpacing={props.contentSpacing}
       // @ts-expect-error TODO type needs to be fixed in framework
