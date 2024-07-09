@@ -66,8 +66,8 @@ export const PNG: Story = {
   args: {
     width: 100,
     height: 100,
-    src: lightning
-    //fixed: true,
+    src: lightning,
+    tone: 'neutral'
   }
 };
 
