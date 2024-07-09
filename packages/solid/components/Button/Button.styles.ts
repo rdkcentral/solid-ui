@@ -44,6 +44,7 @@ const container: ButtonConfig = {
     color: theme.color.interactiveNeutral,
     justifyContent: 'center',
     alignItems: 'center',
+    flexBoundary: 'fixed',
     borderRadius: theme.radius.sm,
     contentColor: theme.color.fillNeutral
   },
@@ -101,11 +102,15 @@ const content: ButtonConfig = {
 
 const text: ButtonConfig = {
   themeKeys: {
-    color: 'textColor'
+    color: 'textColor',
+    textAlign: 'textAlign',
+    contain: 'contain'
   },
   base: {
     color: theme.color.textNeutral,
-    ...theme.typography.button1
+    ...theme.typography.button1,
+    textAlign: 'center',
+    contain: 'none'
   },
   modes: {
     focus: {

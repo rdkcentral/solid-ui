@@ -22,9 +22,18 @@ import type { ButtonContainerProps, ButtonProps } from './Button.types.js';
 
 const Button: Component<ButtonProps> = props => {
   return (
-    <ButtonContainer {...props} forwardStates>
+    <ButtonContainer
+      {...props}
+      color={props.backgroundColor}
+      contentColor={props.contentColor}
+      itemSpacing={props.contentSpacing}
+      alignItems="center"
+      forwardStates
+    >
       <Text
         color={props.textColor}
+        contain={props.contain ?? 'width'}
+        textAlign={props.textAlign}
         style={[
           styles.Text.tones[props.tone ?? styles.tone], //
           styles.Text.base

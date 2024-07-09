@@ -83,6 +83,9 @@ export const Basic: Story = {
     height: 100
   }
 };
+Basic.argTypes = {
+  justifyContent: { table: { disable: true } }
+};
 
 export const Container: Story = {
   render: args => {
