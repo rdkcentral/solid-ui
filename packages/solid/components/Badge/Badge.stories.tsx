@@ -68,7 +68,7 @@ export const BadgeIcon = {
           width={25}
           height={25}
         />
-        <Text style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>Badge Text</Text>
+        <Text style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>{args.title}</Text>
       </BadgeContainer>
     );
   },

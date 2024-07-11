@@ -22,7 +22,7 @@ import type { BadgeProps } from './Badge.types.js';
 withPadding; // Preserve the import.
 
 const getTone = (props: BadgeProps) => props.tone ?? styles.tone;
-const getTitle = (title: string | string[]) => title ?? '';
+const getTitle = (title: BadgeProps['title']) => title ?? '';
 const getPadding = (props: BadgeProps, tone: string) =>
   props.padding ?? styles.Container?.tones[tone]?.padding ?? styles.Container.base.padding;
 
