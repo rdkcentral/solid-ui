@@ -53,7 +53,10 @@ export interface ButtonStyleProperties {
    * where the text is aligned within the button
    */
   textAlign?: TextStyles['textAlign'];
-
+  /**
+   * where the aligned text is contained within the button
+   */
+  contain?: TextStyles['contain'];
   /**
    * color of text in button
    *

@@ -47,7 +47,6 @@ const container: KeyboardConfig = {
 const key: KeyConfig = {
   themeKeys: {
     gap: 'keySpacing',
-    textAlign: 'textAlign',
     borderRadius: 'borderRadius',
     color: 'backgroundColor',
     justifyContent: 'justify',

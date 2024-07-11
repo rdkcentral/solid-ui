@@ -41,6 +41,14 @@ const meta: Meta<typeof Key> = {
       table: {
         defaultValue: { summary: 'neutral' }
       }
+    },
+    textAlign: {
+      control: { type: 'radio' },
+      options: ['left', 'center', 'right'],
+      description: 'Sets the alignment for the text',
+      table: {
+        defaultValue: { summary: 'center' }
+      }
     }
   }
 };

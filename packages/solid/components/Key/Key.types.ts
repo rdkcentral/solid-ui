@@ -80,14 +80,17 @@ export interface KeyStyleProperties {
    */
   contentColor?: NodeStyles['color'];
   /**
-   * where the content is aligned within the button
+   * where the content is aligned within the key
    */
   justify?: NodeStyles['justifyContent'];
   /**
-   * where the text is aligned within the button
+   * where the text is aligned within the key
    */
   textAlign?: TextStyles['textAlign'];
-
+  /**
+   * where the aligned text is contained within the key
+   */
+  contain?: TextStyles['contain'];
   /**
    * color of the text within the key
    *

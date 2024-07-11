@@ -24,7 +24,6 @@ const { Key: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.co
 const container: KeyConfig = {
   themeKeys: {
     keySpacing: 'keySpacing',
-    textAlign: 'textAlign',
     borderRadius: 'borderRadius',
     color: 'backgroundColor',
     justifyContent: 'justify',
@@ -84,7 +83,9 @@ const text: KeyConfig = {
   },
   base: {
     color: theme.color.textNeutral,
-    ...theme.typography.headline2
+    ...theme.typography.headline2,
+    textAlign: 'center',
+    contain: 'none'
   },
   modes: {
     focus: {
