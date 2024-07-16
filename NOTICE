@@ -8,10 +8,9 @@ within the component is also subject to the terms and conditions
 of these licenses. The LICENSE file contains the text of all the
 licenses which apply within this component,except as indicated in the following paragraphs.
 
-The packages/shared/public/fonts/notoSans directory within this component contains fonts which are licensed under the Open Font License. The notoSans
-directory contains its own license file, called LICENSE, which describes the licensing of the
-files in the notoSans directory.
-
+The packages/shared/public/fonts/roboto directory within this component
+contains fonts which are licensed under the Apache License, Version 2.0.
+Copyright 2017 Google inc. All rights reserved
 
 https://github.com/sindresorhus/ts-extras is
 Copyright (c) Sindre Sorhus sindresorhus@gmail.com (https://sindresorhus.com)
