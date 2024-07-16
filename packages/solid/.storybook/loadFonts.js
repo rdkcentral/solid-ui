@@ -18,13 +18,4 @@
 
 
 // Here we just re-export everything from the shared location.
-export { default } from '../../shared/AppCoreExtensions.js';
-
-// Workaround: Originally `preview.tsx` was importing the shared `AppCoreExtensions.ts`
-// file directly via the importChunkUrl plugin, but that is currently causing an
-// issue with the storybook-static build where the preview does not load.
-// The error preventing the preview from loading is due to the app trying to load
-// Storybook's `sb-preview/runtime.js` file from the wrong relative location.
-// But we're not sure how the plugin is causing that issue.
-// This is a workaround until we have time to figure out what is causing the
-// root issue.
+export { default } from '../../shared/loadFonts.js';

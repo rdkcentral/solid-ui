@@ -15,19 +15,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { render, Config } from '@lightningtv/solid';
+import { createRenderer, Config } from '@lightningtv/solid';
 import App from './pages/App';
-import coreExtensionModuleUrl from '../shared/AppCoreExtensions.js?importChunkUrl';
-import coreWorkerUrl from '../shared/threadx-core-worker.js?importChunkUrl';
+import loadFonts from '../shared/loadFonts';
 
 Config.fontSettings.fontFamily = 'Roboto';
 Config.fontSettings.color = 0xffffffff;
 
 const driver = 'main';
 Config.renderOptions = {
-  coreExtensionModule: coreExtensionModuleUrl,
-  threadXCoreWorkerUrl: driver === 'threadx' ? coreWorkerUrl : undefined
   // deviceLogicalPixelRatio: 1
 };
 
+const { renderer, render } = createRenderer();
+loadFonts(renderer.stage);
 render(() => <App />);

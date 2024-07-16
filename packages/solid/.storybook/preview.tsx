@@ -15,14 +15,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 /* @refresh reload */
-import { render, Config } from '@lightningtv/solid';
-// @ts-expect-error we don't have declarations for this module
-import coreExtensionModuleUrl from './AppCoreExtensions.js?importChunkUrl'; // TODO import aliasing
+import { createRenderer, Config } from '@lightningtv/solid';
+import loadFonts from './loadFonts.js';
 import { themes } from '@storybook/theming';
 import { useFocusManager } from '@lightningtv/solid/primitives';
 
 Config.rendererOptions = {
-  coreExtensionModule: coreExtensionModuleUrl,
   appWidth: 1280,
   appHeight: 720,
   deviceLogicalPixelRatio: 2/3,
@@ -55,13 +53,14 @@ const preview = {
       const solidRoot = document.createElement('div');
       // teardown previous render (cleans up keyhandling)
       dispose && dispose();
-      
-      render(() => {
+      const { renderer, render } = createRenderer(undefined, solidRoot);
+      loadFonts(renderer.stage);
+
+      dispose = render(() => {
         useFocusManager();
         return <Story />;
-      }, solidRoot).then(d => {
-        dispose = d.dispose;
       });
+
       return solidRoot;
     }
   ]
