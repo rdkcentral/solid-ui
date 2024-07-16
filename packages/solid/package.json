@@ -48,11 +48,10 @@
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/solid": "^0.0.15",
+    "@lightningtv/solid": "^1.0.0",
     "solid-js": "*"
   },
   "devDependencies": {
-    "@lightningjs/vite-plugin-import-chunk-url": "^0.3.1",
     "@lightningtv/l3-ui-theme-base": "workspace:*",
     "@lightningtv/vite-hex-transform": "^1.1.0",
     "@storybook/addon-essentials": "^7.6.19",
