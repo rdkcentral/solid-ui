@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, NodeStyles, SolidNode } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, SolidNode } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 import type { Component } from 'solid-js';
@@ -60,14 +60,6 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
 export type ScrollableComponent = Component<UIComponentProps | { scrollIndex?: number; selected?: number }>;
 
 export interface ColumnStyleProperties {
-  /**
-   * The space between items in the column
-   */
-  itemSpacing?: NodeStyles['gap'];
-  /**
-   * The animation transition applied to items in the column on scroll
-   */
-  itemTransition?: NodeStyles['transition'];
   /**
    * the index of which we want scrolling to start
    */
