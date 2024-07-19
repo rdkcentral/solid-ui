@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.0...@lightningtv/solid-ui@0.19.1) (2024-07-19)
+
+### Bug Fixes
+
+- Update FPS counter for Renderer 1.0 ([#26](https://github.com/rdkcentral/solid-ui/issues/26)) ([09c7cd0](https://github.com/rdkcentral/solid-ui/commit/09c7cd0f576f2e7b7d3d2b775ee6a0bb1ad8de1c))
+
 # 0.19.0 (2024-07-19)
 
 ### Bug Fixes
