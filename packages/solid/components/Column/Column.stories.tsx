@@ -71,7 +71,7 @@ export const AlwaysScroll = {
   render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
     return (
       <View height={720} width={400}>
-        <Column autofocus {...args} />;
+        <Column autofocus {...args} />
       </View>
     );
   },
@@ -83,11 +83,28 @@ export const AlwaysScroll = {
   }
 };
 
+export const AutoScrollIndex = {
+  render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
+    return (
+      <View height={720} width={400}>
+        <Column autofocus {...args} />
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    scroll: 'auto',
+    wrap: false,
+    scrollIndex: 3,
+    y: 0
+  }
+};
+
 export const NoneScroll = {
   render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
     return (
       <View height={720} width={400}>
-        <Column autofocus {...args} />;
+        <Column autofocus {...args} />
       </View>
     );
   },

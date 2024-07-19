@@ -57,14 +57,6 @@ export interface RowProps extends UIComponentProps, RowStyleProperties {
 
 export interface RowStyleProperties {
   /**
-   * The space between items in the row
-   */
-  itemSpacing?: NodeStyles['gap'];
-  /**
-   * The animation transition applied to items in the row on scroll
-   */
-  itemTransition?: NodeStyles['transition'];
-  /**
    * the index of which we want scrolling to start
    */
   scrollIndex?: number;

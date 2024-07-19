@@ -24,6 +24,7 @@ Config.rendererOptions = {
   appWidth: 1280,
   appHeight: 720,
   deviceLogicalPixelRatio: 2/3,
+  enableInspector: true
 };
 
 let dispose;

@@ -31,9 +31,6 @@ const Row: Component<RowProps> = (props: RowProps) => {
     <View
       {...props}
       selected={props.selected || 0}
-      gap={props.itemSpacing}
-      transition={props.itemTransition}
-      scrollIndex={props.scrollIndex}
       onLeft={chainFunctions(props.onLeft, onLeft)}
       onRight={chainFunctions(props.onRight, onRight)}
       forwardFocus={onGridFocus}

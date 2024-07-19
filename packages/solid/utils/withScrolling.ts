@@ -28,93 +28,63 @@ export function withScrolling(adjustment: number = 0) {
     componentRef: ScrollableElement,
     selectedElement: SolidNode,
     selected: number = 0,
-    lastSelected: number | undefined
+    lastSelected?: number
   ) => {
-    if (componentRef.children.length === 0) {
-      return;
-    }
+    if (!componentRef.children.length) return;
 
-    const dimension = componentRef.flexDirection === 'row' ? 'width' : 'height';
-    const axis = componentRef.flexDirection === 'row' ? 'x' : 'y';
-
+    const isRow = componentRef.flexDirection === 'row';
+    const dimension = isRow ? 'width' : 'height';
+    const axis = isRow ? 'x' : 'y';
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
     const [lastItem, containerSize] = updateLastIndex(componentRef);
 
-    // values based on row or column
     let rootPosition = componentRef[axis] ?? 0;
-    // optional chain prevents app from breaking when scrollable element has no initially selected element
     const selectedPosition = selectedElement?.[axis] ?? 0;
     const selectedSize = selectedElement?.[dimension] ?? 0;
 
-    // TODO, find better name
-    const direct = lastSelected === undefined ? 'none' : selected > lastSelected ? 'positive' : 'negative';
+    const movement =
+      lastSelected === undefined ? 'none' : selected > lastSelected ? 'incremental' : 'decremental';
+    let nextPosition = rootPosition;
 
-    let next = rootPosition;
+    const isNotShown = (pos: number, size: number) => Math.abs(rootPosition) + containerSize < pos + size;
 
-    // if we want to auto scroll ( scroll until the last component is sho on the screen)
     if (scroll === 'auto') {
-      // if we have a scrollIndex and it is valid
       if (componentRef.scrollIndex != undefined && componentRef.scrollIndex >= 0) {
-        // if we are at an index on or after the scrollIndex
         if (componentRef.selected >= componentRef.scrollIndex) {
-          if (direct === 'positive') {
-            next = rootPosition - selectedSize - gap;
-          } else {
-            next = rootPosition + selectedSize + gap;
-          }
+          nextPosition =
+            movement === 'incremental'
+              ? rootPosition - selectedSize - gap
+              : rootPosition + selectedSize + gap;
+        } else if (movement === 'decremental' && componentRef.selected === componentRef.scrollIndex - 1) {
+          nextPosition = rootPosition + selectedSize + gap;
         }
-        // no valid scroll index, complete auto scroll
-        // this will be the case when we have no scroll (or an invalid one) and the lastItem is not shown (or selected is not shown)
-        // if the (absolute value of current position  + the size of the visual portion of the row) is less than (the last Item position + the last Item size), then the last item is not shown
-        // if scrolling backwards and the position of the selected item is less that the absolute value of the current position, the selected item is not shown
-      } else if (
-        Math.abs(rootPosition) + containerSize < lastItem.position + lastItem.size ||
-        selectedPosition < Math.abs(rootPosition)
-      ) {
-        next = -selectedPosition + adjustment;
+      } else if (isNotShown(lastItem.position, lastItem.size) || selectedPosition < Math.abs(rootPosition)) {
+        nextPosition = -selectedPosition + adjustment;
       }
-
-      // if we want to scroll based to the -x value of the selected
-      // this will be the case for always, and edge when we are scrolling negatively and the current positioning does not have the selected item shown
-      // if direction is negative and absolute value of current position is higher than the position we want to be at, the selected Item is not shown
     } else if (
       scroll === 'always' ||
-      (scroll === 'edge' && direct === 'negative' && Math.abs(rootPosition) > selectedPosition)
+      (scroll === 'edge' && movement === 'decremental' && Math.abs(rootPosition) > selectedPosition)
     ) {
-      next = -selectedPosition + adjustment;
-
-      // if we want to scroll based on the size of the selected item
-      // this will be the case for edge when we are scrolling positively and the current positioning does not have the selected item shown
-      // if direction is positive and (absolute value of current position + the size of the visual portion of the row) is less than (the position we want to be at + the size of the selected Item), the selected Item is not shown
+      nextPosition = -selectedPosition + adjustment;
     } else if (
       scroll === 'edge' &&
-      direct === 'positive' &&
-      Math.abs(rootPosition) + containerSize < selectedPosition + selectedSize
+      movement === 'incremental' &&
+      isNotShown(selectedPosition, selectedSize)
     ) {
-      next = rootPosition - selectedSize - gap;
-    }
-
-    // if initial load, edge scroll type, and we have a selected index we want to go to on start
-    else if (scroll === 'edge' && direct === 'none') {
+      nextPosition = rootPosition - selectedSize - gap;
+    } else if (scroll === 'edge' && movement === 'none') {
       let currentChildIndex = 0;
-      let currentChild, currentChildSize;
-      while (
-        currentChildIndex < componentRef.children.length &&
-        Math.abs(rootPosition) + containerSize < selectedPosition + selectedSize
-      ) {
-        currentChild = componentRef.children[currentChildIndex++];
-        currentChildSize = currentChild[dimension] ?? 0;
+      while (currentChildIndex < componentRef.children.length && isNotShown(selectedPosition, selectedSize)) {
+        const currentChild = componentRef.children[currentChildIndex++];
+        const currentChildSize = currentChild[dimension] ?? 0;
         rootPosition -= currentChildSize + gap;
       }
-      next = rootPosition;
+      nextPosition = rootPosition;
     }
 
-    // updating value if scrolling is needed
-    if (axis === 'x' && componentRef.x !== next) {
-      componentRef.x = next;
-    } else if (axis === 'y' && componentRef.y !== next) {
-      componentRef.y = next;
+    if (componentRef[axis] !== nextPosition) {
+      componentRef[axis] = nextPosition;
     }
   };
 }
