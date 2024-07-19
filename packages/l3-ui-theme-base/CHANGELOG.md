@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2024-07-19)
+
+### Features
+
+- restructure project ([#1](https://github.com/rdkcentral/solid-ui/issues/1)) ([2c54bba](https://github.com/rdkcentral/solid-ui/commit/2c54bba1f23f6eb13fb870d7a1e968e4420b400c))
+- update package names ([63601f8](https://github.com/rdkcentral/solid-ui/commit/63601f8d6455661dd1a82ca1700d30cab0afa1fc))
+
 ## [0.3.3](https://github.com/lightning-js/ui-components/compare/@lightningjs/l3-ui-theme-base@0.3.2...@lightningjs/l3-ui-theme-base@0.3.3) (2024-04-25)
 
 ### Bug Fixes
