@@ -6,6 +6,8 @@ on:
   push:
     branches: 'main'
 
+  workflow_dispatch:
+
 jobs:
   publish_packages:
     runs-on: ubuntu-latest
@@ -23,7 +25,7 @@ jobs:
           git config --global user.name "GitHub Action Runner"
           git config --global user.email "svc-xd-suite@cable.comcast.com"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git remote set-url origin https://${{secrets.GH_PAT}}@github.com/lightning-js/ui-components
+          git remote set-url origin https://${{secrets.GH_PAT}}@github.com/rdkcentral/solid-ui
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
