@@ -60,6 +60,10 @@ export interface RowStyleProperties {
    * the index of which we want scrolling to start
    */
   scrollIndex?: number;
+
+  itemSpacing?: NodeStyles['gap'];
+
+  itemTransition?: NodeStyles['transition'];
 }
 
 export interface RowStyles {
