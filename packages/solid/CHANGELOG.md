@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.3...@lightningtv/solid-ui@0.20.0) (2024-07-24)
+
+### Features
+
+- **withScrolling:** Optimize and cleanup Row and Column ([#29](https://github.com/rdkcentral/solid-ui/issues/29)) ([0441033](https://github.com/rdkcentral/solid-ui/commit/044103394a0e183447de665ba6b9f5357599fc97))
+
 ## [0.19.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.2...@lightningtv/solid-ui@0.19.3) (2024-07-24)
 
 ### Bug Fixes
