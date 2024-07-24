@@ -16,12 +16,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, NodeStyles, SolidNode } from '@lightningtv/solid';
+import type { ElementNode, IntrinsicNodeCommonProps, NodeStyles } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
-import type { Component } from 'solid-js';
 import type { KeyHandler } from '@lightningtv/solid/primitives';
-import type { ScrollableElement } from 'utils/withScrolling.js';
 
 export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   /** function run on component mount */
@@ -35,9 +33,9 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
 
   /** function to be called when the selected of the component changes */
   onSelectedChanged?: (
-    this: ScrollableElement,
-    elm: ScrollableElement,
-    active: SolidNode,
+    this: ElementNode,
+    elm: ElementNode,
+    active: ElementNode,
     selectedIndex: number,
     lastSelectedIndex: number
   ) => void;
@@ -56,8 +54,6 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   /** The initial index */
   selected?: number;
 }
-
-export type ScrollableComponent = Component<UIComponentProps | { scrollIndex?: number; selected?: number }>;
 
 export interface ColumnStyleProperties {
   /**
