@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.2...@lightningtv/solid-ui@0.19.3) (2024-07-24)
+
+### Bug Fixes
+
+- clean up types on utils so they can be reused ([#28](https://github.com/rdkcentral/solid-ui/issues/28)) ([0ffcbdb](https://github.com/rdkcentral/solid-ui/commit/0ffcbdb52496e8a3a1b55b41fdc2bbe51032bfef))
+
 ## [0.19.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.1...@lightningtv/solid-ui@0.19.2) (2024-07-24)
 
 ### Bug Fixes
