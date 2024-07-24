@@ -23,7 +23,10 @@ export interface ScrollableElement extends ElementNode {
   selected?: number;
 }
 
-export function withScrolling(adjustment: number = 0) {
+export function withScrolling(isRow: boolean, adjustment: number = 0) {
+  const dimension = isRow ? 'width' : 'height';
+  const axis = isRow ? 'x' : 'y';
+
   return (
     componentRef: ScrollableElement,
     selectedElement: ElementNode | ElementText,
@@ -32,12 +35,9 @@ export function withScrolling(adjustment: number = 0) {
   ) => {
     if (!componentRef.children.length) return;
 
-    const isRow = componentRef.flexDirection === 'row';
-    const dimension = isRow ? 'width' : 'height';
-    const axis = isRow ? 'x' : 'y';
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
-    const [lastItem, containerSize] = updateLastIndex(componentRef);
+    const [lastItem, containerSize] = updateLastIndex(isRow, componentRef);
 
     let rootPosition = componentRef[axis] ?? 0;
     const selectedPosition = selectedElement?.[axis] ?? 0;
@@ -89,18 +89,19 @@ export function withScrolling(adjustment: number = 0) {
   };
 }
 
-function updateLastIndex(items: ElementNode): [{ position: number; size: number }, number] {
+function updateLastIndex(isRow: boolean, items: ElementNode): [{ position: number; size: number }, number] {
   let lastItem, containerSize;
-  if (items.flexDirection === 'row') {
+  const lastChild = items.children[items.children.length - 1];
+  if (isRow) {
     lastItem = {
-      position: items.children[items.children.length - 1].x ?? 0,
-      size: items.children[items.children.length - 1].width ?? 0
+      position: lastChild.x ?? 0,
+      size: lastChild.width ?? 0
     };
     containerSize = items.width ?? 0;
   } else {
     lastItem = {
-      position: items.children[items.children.length - 1].y ?? 0,
-      size: items.children[items.children.length - 1].height ?? 0
+      position: lastChild.y ?? 0,
+      size: lastChild.height ?? 0
     };
     containerSize = items.height ?? 0;
   }

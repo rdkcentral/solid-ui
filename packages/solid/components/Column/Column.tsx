@@ -15,42 +15,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { type Component } from 'solid-js';
+import { createMemo, type Component } from 'solid-js';
 import { View } from '@lightningtv/solid';
 import type { KeyHandler } from '@lightningtv/solid/primitives';
 import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
-import { withScrolling, type ScrollableElement } from '../../utils/withScrolling.js';
+import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
 import styles from './Column.styles.js';
-import type { ColumnProps, ScrollableComponent } from './Column.types.js';
-
-const ScrollableView: ScrollableComponent = props => <View {...props} />;
+import type { ColumnProps } from './Column.types.js';
 
 const Column: Component<ColumnProps> = (props: ColumnProps) => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
+  const scroll = createMemo(() => withScrolling(false, props.y));
 
   return (
-    <ScrollableView
+    <View
       {...props}
       onUp={chainFunctions<KeyHandler | undefined>(props.onUp, onUp)}
       onDown={chainFunctions<KeyHandler | undefined>(props.onDown, onDown)}
       selected={props.selected || 0}
       forwardFocus={onGridFocus}
-      onCreate={chainFunctions<ColumnProps['onCreate']>(
-        (elm: ScrollableElement) =>
-          withScrolling(props.y as number).call(
-            elm,
-            elm,
-            elm.children[props.selected ?? 0],
-            props.selected ?? 0,
-            undefined
-          ),
-        props.onLayout
-      )}
+      onBeforeLayout={chainFunctions(props.onBeforeLayout, (elm, selected) => scroll()(elm, selected))}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
-        props.scroll !== 'none' ? withScrolling(props.y as number) : undefined
+        props.scroll !== 'none' ? scroll() : undefined
       )}
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
