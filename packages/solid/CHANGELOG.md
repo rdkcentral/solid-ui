@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.1...@lightningtv/solid-ui@0.19.2) (2024-07-24)
+
+### Bug Fixes
+
+- update row and column default animations to point to target correct property ([#27](https://github.com/rdkcentral/solid-ui/issues/27)) ([6eede12](https://github.com/rdkcentral/solid-ui/commit/6eede126e2c2308501f6c342427ea7823eb2ffec))
+
 ## [0.19.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.0...@lightningtv/solid-ui@0.19.1) (2024-07-19)
 
 ### Bug Fixes
