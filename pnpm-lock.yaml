@@ -63,8 +63,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@lightningtv/solid':
-        specifier: ^1.1.1
-        version: 1.1.1(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
+        specifier: ^1.1.2
+        version: 1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solidjs/router':
         specifier: ^0.14.1
         version: 0.14.1(solid-js@1.8.18)
@@ -94,8 +94,8 @@ importers:
   packages/solid:
     dependencies:
       '@lightningtv/solid':
-        specifier: ^1.1.1
-        version: 1.1.1(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
+        specifier: ^1.1.2
+        version: 1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.18)
@@ -1257,15 +1257,11 @@ packages:
 
   '@lightningtv/core@1.0.6':
     resolution: {integrity: sha512-LY9IQPIw1tN43QyTnYOW0ynWN3JKTVXJdQ25SkdygYYfLaO4KM1/RXzwVmZQpXngOrjEJnDAtcQRfb7RdzySkw==}
-  '@lightningtv/core@1.0.6':
-    resolution: {integrity: sha512-LY9IQPIw1tN43QyTnYOW0ynWN3JKTVXJdQ25SkdygYYfLaO4KM1/RXzwVmZQpXngOrjEJnDAtcQRfb7RdzySkw==}
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
 
-  '@lightningtv/solid@1.1.1':
-    resolution: {integrity: sha512-V9cCsX0UnO6hK+h7SPCR/VJBiGTFrRwvACmaja9EzrantWoZpsUHshxWQS1umAN1GokHgNzq2qT28ngC+33gxw==}
-  '@lightningtv/solid@1.1.1':
-    resolution: {integrity: sha512-V9cCsX0UnO6hK+h7SPCR/VJBiGTFrRwvACmaja9EzrantWoZpsUHshxWQS1umAN1GokHgNzq2qT28ngC+33gxw==}
+  '@lightningtv/solid@1.1.2':
+    resolution: {integrity: sha512-ISFhmj4E+kXNtj2BV5lm6uO+oy4g/CipLIN3x5EUwsosNO2AtsRcZ9EpCI11kMD9usnJQXMPjXK5yqkJAPGQkQ==}
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
       solid-js: '*'
@@ -7692,7 +7688,7 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 1.0.1
 
-  '@lightningtv/solid@1.1.1(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
+  '@lightningtv/solid@1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
     dependencies:
       '@lightningjs/renderer': 1.0.1
       '@lightningtv/core': 1.0.6(@lightningjs/renderer@1.0.1)

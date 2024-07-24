@@ -26,7 +26,10 @@ export interface SpriteDef {
   height: number;
 }
 
-export function createSpriteMap(src: string, subTextures: SpriteDef[]) {
+export function createSpriteMap(
+  src: string,
+  subTextures: SpriteDef[]
+): Record<string, InstanceType<TextureMap['SubTexture']>> {
   const spriteMapTexture = renderer.createTexture('ImageTexture', {
     src
   });
