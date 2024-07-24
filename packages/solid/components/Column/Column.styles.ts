@@ -33,8 +33,10 @@ const container: ColumnConfig = {
     flexDirection: 'column',
     gap: theme.layout.gutterY,
     transition: {
-      ...theme.animation.standardEntrance,
-      duration: theme.animation.duration.fast
+      y: {
+        ...theme.animation.standardEntrance,
+        duration: theme.animation.duration.fast
+      }
     }
   },
   themeStyles

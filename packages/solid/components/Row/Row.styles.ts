@@ -33,8 +33,10 @@ const container: RowConfig = {
     flexDirection: 'row',
     gap: theme.layout.gutterX,
     transition: {
-      ...theme.animation.standardEntrance,
-      duration: theme.animation.duration.fast
+      x: {
+        ...theme.animation.standardEntrance,
+        duration: theme.animation.duration.fast
+      }
     }
   },
   themeStyles
