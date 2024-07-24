@@ -15,17 +15,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { type Component } from 'solid-js';
-import { View, ElementNode } from '@lightningtv/solid';
+import { createMemo, type Component } from 'solid-js';
+import { View } from '@lightningtv/solid';
 import { chainFunctions } from '../../utils/chainFunctions.js';
 import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
-import { withScrolling, type ScrollableElement } from '../../utils/withScrolling.js';
+import { withScrolling } from '../../utils/withScrolling.js';
 import styles from './Row.styles.js';
 import type { RowProps } from './Row.types.js';
 
 const Row: Component<RowProps> = (props: RowProps) => {
   const onLeft = handleNavigation('left');
   const onRight = handleNavigation('right');
+  const scroll = createMemo(() => withScrolling(true, props.x));
 
   return (
     <View
@@ -34,20 +35,10 @@ const Row: Component<RowProps> = (props: RowProps) => {
       onLeft={chainFunctions(props.onLeft, onLeft)}
       onRight={chainFunctions(props.onRight, onRight)}
       forwardFocus={onGridFocus}
-      onLayout={chainFunctions<RowProps['onLayout']>(
-        (elm: ScrollableElement) =>
-          withScrolling(props.x as number).call(
-            elm,
-            elm,
-            elm.children[elm.selected] as ElementNode,
-            elm.selected,
-            undefined
-          ),
-        props.onLayout
-      )}
+      onBeforeLayout={chainFunctions((elm, selected) => scroll()(elm, selected), props.onLayout)}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
-        props.scroll !== 'none' ? withScrolling(props.x as number) : undefined
+        props.scroll !== 'none' ? scroll() : undefined
       )}
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
