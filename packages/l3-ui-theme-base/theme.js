@@ -41,51 +41,15 @@ export default {
       xslow: 900
     },
     delay: { none: 0, xfast: 10, fast: 25, normal: 50, slow: 75, xslow: 90 },
-    expressive: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    expressiveEntrance: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    expressiveExit: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    standard: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    standardEntrance: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    standardExit: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    utility: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    utilityEntrance: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    },
-    utilityExit: {
-      timingFunction: 'cubic-bezier(0, 0, 1, 1)',
-      delay: 0,
-      duration: 0.25
-    }
+    expressive: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    expressiveEntrance: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    expressiveExit: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    standard: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    standardEntrance: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    standardExit: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    utility: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    utilityEntrance: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' },
+    utilityExit: { delay: 0, duration: 0.25, easing: 'cubic-bezier(0, 0, 1, 1)' }
   },
   asset: {
     arrowLeft:
@@ -128,6 +92,10 @@ export default {
     textBrandSecondary: '0x93a9fdb3',
     textBrandTertiary: '0x93a9fd1a',
     textBrandDisabled: '0x93a9fd80',
+    textOnBrand: '0x181819ff',
+    textOnBrandSecondary: '0x181819b3',
+    textOnBrandTertiary: '0x1818191a',
+    textOnBrandDisabled: '0x18181980',
     textPositive: '0x2ecc71ff',
     textNegative: '0xe74c3cff',
     textInfo: '0x93a9fdff',
@@ -161,6 +129,10 @@ export default {
     strokeBrandSecondary: '0x93a9fdb3',
     strokeBrandTertiary: '0x93a9fd1a',
     strokeBrandDisabled: '0x93a9fd80',
+    strokeOnBrand: '0x181819ff',
+    strokeOnBrandSecondary: '0x181819b3',
+    strokeOnBrandTertiary: '0x1818191a',
+    strokeOnBrandDisabled: '0x18181980',
     strokePositive: '0x2ecc71ff',
     strokeNegative: '0xe74c3cff',
     strokeInfo: '0x93a9fdff',
@@ -174,18 +146,22 @@ export default {
     interactiveBrand: '0xbecffe1a',
     interactiveBrandFocus: '0xbecffeff',
     interactiveBrandFocusSoft: '0xbecffe1a',
+    shadowDefault: '0x000000b3',
+    shadowFocused: '0x0000001a',
+    shadowElevated: '0x000000b3',
+    shadowText: '0x000000b3',
     shadowNeutral: '0x000000b3',
     shadowNeutralFocus: '0x000000b3',
-    shadowNeutralFocusSoft: '0x000000b3',
-    shadowNeutralText: '0x000000ff',
+    shadowNeutralElevated: '0x000000b3',
+    shadowNeutralText: '0x0000000',
     shadowInverse: '0x000000b3',
     shadowInverseFocus: '0x000000b3',
-    shadowInverseFocusSoft: '0x000000b3',
-    shadowInverseText: '0x000000ff',
+    shadowInverseElevated: '0x000000b3',
+    shadowInverseText: '0x0000000',
     shadowBrand: '0x000000b3',
     shadowBrandFocus: '0x000000b3',
-    shadowBrandFocusSoft: '0x000000b3',
-    shadowBrandText: '0x000000ff'
+    shadowBrandElevated: '0x000000b3',
+    shadowBrandText: '0x0000000'
   },
   font: [],
   layout: {
@@ -200,6 +176,12 @@ export default {
     screenH: 1080
   },
   radius: { none: 0, xs: 2, sm: 4, md: 8, lg: 16, xl: 24 },
+  shadow: {
+    default: { x: 4, y: 4, blur: 4, spread: 4, color: '0x000000b3' },
+    focused: { x: 6, y: 6, blur: 12, spread: 8, color: '0x0000001a' },
+    elevated: { x: 4, y: 4, blur: 32, spread: 16, color: '0x000000b3' },
+    text: { x: 1, y: 1, blur: 1, spread: 1, color: '0x000000b3' }
+  },
   spacer: {
     none: 0,
     xxs: 2,

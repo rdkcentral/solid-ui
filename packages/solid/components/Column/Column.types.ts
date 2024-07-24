@@ -12,11 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, SolidNode } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, NodeStyles, SolidNode } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 import type { Component } from 'solid-js';
@@ -64,6 +64,10 @@ export interface ColumnStyleProperties {
    * the index of which we want scrolling to start
    */
   scrollIndex?: number;
+
+  itemSpacing?: NodeStyles['gap'];
+
+  itemTransition?: NodeStyles['transition'];
 }
 
 export interface ColumnStyles {
