@@ -1,6 +1,6 @@
 {
   "name": "@lightningtv/l3-ui-theme-base",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A basic theme for the @lightningjs/solid-ui component library.",
   "main": "theme.js",
   "types": "theme.d.ts",
