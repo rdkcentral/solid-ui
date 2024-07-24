@@ -11,8 +11,8 @@
       "types": "./index.ts"
     },
     "./utils": {
-      "import": "./src/utils/index.ts",
-      "types": "./src/utils/index.ts"
+      "import": "./utils/index.ts",
+      "types": "./utils/index.ts"
     }
   },
   "files": [
@@ -48,7 +48,7 @@
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/solid": "^1.0.0",
+    "@lightningtv/solid": "^1.1.1",
     "solid-js": "*"
   },
   "devDependencies": {

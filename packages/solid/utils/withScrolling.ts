@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { ElementNode, SolidNode } from '@lightningtv/solid';
+import type { ElementNode, ElementText } from '@lightningtv/solid';
 
 // adds properties expected by withScrolling
 export interface ScrollableElement extends ElementNode {
@@ -26,7 +26,7 @@ export interface ScrollableElement extends ElementNode {
 export function withScrolling(adjustment: number = 0) {
   return (
     componentRef: ScrollableElement,
-    selectedElement: SolidNode,
+    selectedElement: ElementNode | ElementText,
     selected: number = 0,
     lastSelected?: number
   ) => {
