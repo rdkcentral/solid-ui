@@ -36,7 +36,7 @@ const Column: Component<ColumnProps> = (props: ColumnProps) => {
       onDown={chainFunctions<KeyHandler | undefined>(props.onDown, onDown)}
       selected={props.selected || 0}
       forwardFocus={onGridFocus}
-      onBeforeLayout={chainFunctions((elm, selected) => scroll()(elm, selected), props.onLayout)}
+      onBeforeLayout={chainFunctions(props.onBeforeLayout, (elm, selected) => scroll()(elm, selected))}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
         props.scroll !== 'none' ? scroll() : undefined
