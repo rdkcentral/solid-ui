@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@lightningjs/renderer": "^1.0.0",
-    "@lightningtv/solid": "^1.1.0",
+    "@lightningjs/renderer": "^1.0.1",
+    "@lightningtv/solid": "^1.1.1",
     "@solidjs/router": "^0.14.1",
     "solid-js": "^1.8.18"
   },
