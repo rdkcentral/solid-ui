@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       '@lightningjs/renderer':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.16.1
@@ -59,11 +59,11 @@ importers:
   packages/sandbox:
     dependencies:
       '@lightningjs/renderer':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@lightningtv/solid':
-        specifier: ^1.0.0
-        version: 1.0.0(@lightningjs/renderer@1.0.0)(solid-js@1.8.18)
+        specifier: ^1.1.2
+        version: 1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solidjs/router':
         specifier: ^0.14.1
         version: 0.14.1(solid-js@1.8.18)
@@ -93,8 +93,8 @@ importers:
   packages/solid:
     dependencies:
       '@lightningtv/solid':
-        specifier: ^1.1.1
-        version: 1.1.1(@lightningjs/renderer@1.0.0)(solid-js@1.8.18)
+        specifier: ^1.1.2
+        version: 1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.18)
@@ -1822,12 +1822,6 @@ packages:
       }
     engines: { node: '>=6.0.0' }
 
-  '@jridgewell/sourcemap-codec@1.4.15':
-    resolution:
-      {
-        integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==
-      }
-
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution:
       {
@@ -1853,10 +1847,10 @@ packages:
       }
     engines: { node: '>=18.0.0' }
 
-  '@lightningjs/renderer@1.0.0':
+  '@lightningjs/renderer@1.0.1':
     resolution:
       {
-        integrity: sha512-LO62uUY0djtEvWfZMpvV6zgrQYY6ZbXY9HVWAaaqGlu6aSESqlo7Ud+vWLDv4jQUlWcsYCtOfoyoWVc4JaG/Bg==
+        integrity: sha512-vtA8tBn7xaLVShCwj1ygCsdT1YCIARGcb/i1zIyDX/6Ttj/J+nF5G8xNmUsRApt7fn05LBXoqCeqvc4MZjZmow==
       }
     engines: { node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2' }
 
@@ -1874,14 +1868,6 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@lightningtv/core@1.0.0':
-    resolution:
-      {
-        integrity: sha512-BPLj8aFcuHcx/sIq9UeKGBtQRxmYXpx4hvCG5HU3MQujsOqoLDcpJLfNt+iKFqBM3twlrSXgc1PaP/J7DzyefA==
-      }
-    peerDependencies:
-      '@lightningjs/renderer': ^1.0.0
-
   '@lightningtv/core@1.0.6':
     resolution:
       {
@@ -1890,19 +1876,10 @@ packages:
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
 
-  '@lightningtv/solid@1.0.0':
+  '@lightningtv/solid@1.1.2':
     resolution:
       {
-        integrity: sha512-bzlXcZmsqGZp59wwrVktj09HeNnH2681kh7mXtvlRxRs0kn4AsBkAp3IN2tbtkL+zgCHv2J/ChbSNl2XOqwYUg==
-      }
-    peerDependencies:
-      '@lightningjs/renderer': ^1.0.0
-      solid-js: '*'
-
-  '@lightningtv/solid@1.1.1':
-    resolution:
-      {
-        integrity: sha512-V9cCsX0UnO6hK+h7SPCR/VJBiGTFrRwvACmaja9EzrantWoZpsUHshxWQS1umAN1GokHgNzq2qT28ngC+33gxw==
+        integrity: sha512-ISFhmj4E+kXNtj2BV5lm6uO+oy4g/CipLIN3x5EUwsosNO2AtsRcZ9EpCI11kMD9usnJQXMPjXK5yqkJAPGQkQ==
       }
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
@@ -11884,21 +11861,19 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/set-array@1.2.1': {}
 
-  '@jridgewell/sourcemap-codec@1.4.15': {}
-
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
 
   '@juggle/resize-observer@3.4.0': {}
 
@@ -11984,7 +11959,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@lightningjs/renderer@1.0.0':
+  '@lightningjs/renderer@1.0.1':
     dependencies:
       '@lightningjs/threadx': 0.3.5
       '@protobufjs/eventemitter': 1.1.0
@@ -11996,28 +11971,14 @@ snapshots:
     dependencies:
       vite: 5.3.4(@types/node@20.14.10)
 
-  '@lightningtv/core@1.0.0(@lightningjs/renderer@1.0.0)':
+  '@lightningtv/core@1.0.6(@lightningjs/renderer@1.0.1)':
     dependencies:
-      '@lightningjs/renderer': 1.0.0
+      '@lightningjs/renderer': 1.0.1
 
-  '@lightningtv/core@1.0.6(@lightningjs/renderer@1.0.0)':
+  '@lightningtv/solid@1.1.2(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
     dependencies:
-      '@lightningjs/renderer': 1.0.0
-
-  '@lightningtv/solid@1.0.0(@lightningjs/renderer@1.0.0)(solid-js@1.8.18)':
-    dependencies:
-      '@lightningjs/renderer': 1.0.0
-      '@lightningtv/core': 1.0.0(@lightningjs/renderer@1.0.0)
-      '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
-      '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.18)
-      '@solid-primitives/mouse': 2.0.19(solid-js@1.8.18)
-      '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.18)
-      solid-js: 1.8.18
-
-  '@lightningtv/solid@1.1.1(@lightningjs/renderer@1.0.0)(solid-js@1.8.18)':
-    dependencies:
-      '@lightningjs/renderer': 1.0.0
-      '@lightningtv/core': 1.0.6(@lightningjs/renderer@1.0.0)
+      '@lightningjs/renderer': 1.0.1
+      '@lightningtv/core': 1.0.6(@lightningjs/renderer@1.0.1)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
       '@solid-primitives/keyboard': 1.2.8(solid-js@1.8.18)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.18)

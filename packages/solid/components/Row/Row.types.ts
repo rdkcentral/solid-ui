@@ -60,9 +60,13 @@ export interface RowStyleProperties {
    * the index of which we want scrolling to start
    */
   scrollIndex?: number;
-
+  /**
+   * space between each keys
+   */
   itemSpacing?: NodeStyles['gap'];
-
+  /**
+   * animation transition
+   */
   itemTransition?: NodeStyles['transition'];
 }
 

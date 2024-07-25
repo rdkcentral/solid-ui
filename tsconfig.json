@@ -2,7 +2,7 @@
   "exclude": ["node_modules/**/*"],
   "no-emit": true,
   "compilerOptions": {
-    "lib": ["ESNext", "DOM", "ES5"],
+    "lib": ["ESNext", "DOM", "ES6"],
     "strict": true,
     "target": "ESNext",
     "module": "NodeNext",

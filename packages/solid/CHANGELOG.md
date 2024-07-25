@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.20.0...@lightningtv/solid-ui@0.21.0) (2024-07-25)
+
+### Features
+
+- fix type errors, update build:lib to use tsc ([#23](https://github.com/rdkcentral/solid-ui/issues/23)) ([627ab28](https://github.com/rdkcentral/solid-ui/commit/627ab28d755f4594a2c13adf38bc328ec138d836))
+
 # [0.20.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.19.3...@lightningtv/solid-ui@0.20.0) (2024-07-24)
 
 ### Features
