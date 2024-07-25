@@ -32,7 +32,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "pnpm run storybook",
-    "build-lib": "vite build",
+    "build-lib": "tsc -b",
     "build-storybook": "storybook build",
     "prepack": "npm run build-lib",
     "storybook": "storybook dev -p 6006",
@@ -48,7 +48,7 @@
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/solid": "^1.1.1",
+    "@lightningtv/solid": "^1.1.2",
     "solid-js": "*"
   },
   "devDependencies": {

@@ -23,7 +23,7 @@
     "version-publish": "pnpm run lerna:version && pnpm run publish-packages"
   },
   "dependencies": {
-    "@lightningjs/renderer": "^1.0.0"
+    "@lightningjs/renderer": "^1.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.16.1",
