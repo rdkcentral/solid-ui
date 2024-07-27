@@ -33,6 +33,7 @@
     "start": "npm run dev",
     "dev": "pnpm run storybook",
     "build-lib": "tsc -b",
+    "build": "tsc -b",
     "build-storybook": "storybook build",
     "prepack": "npm run build-lib",
     "storybook": "storybook dev -p 6006",
@@ -48,7 +49,8 @@
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/solid": "^1.1.2",
+    "@lightningtv/core": "^1.3.3",
+    "@lightningtv/solid": "^1.4.3",
     "solid-js": "*"
   },
   "devDependencies": {

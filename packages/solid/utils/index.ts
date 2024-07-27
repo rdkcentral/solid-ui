@@ -27,4 +27,5 @@ export { getWidthByColumnSpan } from './getWidthByColumnSpan.js';
 export { getItemRatioDimensions } from './getItemRatioDimensions.js';
 export { getDimensions } from './getDimensions.js';
 export { withPadding } from './withPadding.js';
-export { createSpriteMap } from './createSpriteMap.js';
+// Needs updating and removal of Solid dependency
+//export { createSpriteMap } from './createSpriteMap.js';
