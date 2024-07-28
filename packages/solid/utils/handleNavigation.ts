@@ -21,12 +21,7 @@ import { assertTruthy } from './index.js';
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;
 
-  let child;
-  if (this.selected === undefined) {
-    child = this.selectedNode;
-  } else {
-    child = this.children[this.selected];
-  }
+  let child = this.selected ? this.children[this.selected] : this.selectedNode;
 
   while (child?.skipFocus) {
     this.selected++;

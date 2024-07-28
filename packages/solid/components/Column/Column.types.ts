@@ -17,10 +17,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles, KeyHandler } from '@lightningtv/core';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
-import type { KeyHandler } from '@lightningtv/solid/primitives';
 
 export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   /** function run on component mount */

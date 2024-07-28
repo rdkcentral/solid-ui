@@ -14,10 +14,9 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { ElementNode, IntrinsicNodeCommonProps, NodeStyles } from '@lightningtv/solid';
+import type { ElementNode, IntrinsicNodeCommonProps, NodeStyles, KeyHandler } from '@lightningtv/core';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
-import type { KeyHandler } from '@lightningtv/solid/primitives';
 
 export interface RowProps extends UIComponentProps, RowStyleProperties {
   /** function run on component mount */
@@ -41,9 +40,6 @@ export interface RowProps extends UIComponentProps, RowStyleProperties {
 
   /** function to be called on right click */
   onLeft?: KeyHandler;
-
-  /** function to be called when component gets focus */
-  onFocus?: KeyHandler;
 
   /** function to be called when the selected of the component changes */
   onSelectedChanged?: (

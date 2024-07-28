@@ -153,7 +153,7 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
                       display={'flex'}
                       gap={gap()}
                       height={keyHeight()}
-                      wrap={props.rowWrap}
+                      wrap={props.rowWrap as boolean}
                     >
                       <For each={row}>
                         {(key: string | KeyProps, rowIdx) => (
