@@ -26,7 +26,17 @@ import type { ColumnProps } from './Column.types.js';
 const Column: Component<ColumnProps> = (props: ColumnProps) => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
-  const scroll = createMemo(() => withScrolling(false, props.y || props.style?.y));
+  const scroll = createMemo(() => {
+    let y;
+    if (props.style) {
+      if (Array.isArray(props.style)) {
+        y = props.style[0].y || 0;
+      } else {
+        y = props.style.y || 0;
+      }
+    }
+    return withScrolling(false, props.y || y);
+  });
 
   return (
     <View
