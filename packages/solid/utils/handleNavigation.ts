@@ -67,8 +67,8 @@ export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): K
     }
 
     if (this.selected === undefined) {
-      const lastSelectedChild = this.selectedNode;
-      if (lastSelectedChild?.states.has('focus')) {
+      this.selected = lastSelected;
+      if (this.children[this.selected]?.states!.has('focus')) {
         // This child is already focused, so bubble up to next handler
         return false;
       }

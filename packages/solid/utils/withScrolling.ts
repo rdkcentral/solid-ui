@@ -78,6 +78,7 @@ export function withScrolling(isRow: boolean, adjustment: number = 0) {
       const isNotShownMemo = isNotShown(selectedPosition, selectedSize);
       while (currentChildIndex < componentRef.children.length && isNotShownMemo) {
         const currentChild = componentRef.children[currentChildIndex++];
+        if (currentChild.skipFocus) continue;
         const currentChildSize = currentChild[dimension] ?? 0;
         rootPosition -= currentChildSize + gap;
       }

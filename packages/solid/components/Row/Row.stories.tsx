@@ -55,13 +55,13 @@ export default meta;
 // create an array of buttons to use in Row
 const createItems = (length: number) => {
   return Array.from({ length }).map((_, i) => (
-    <Button width={300} height={100}>
+    <Button width={200} height={100}>
       Button {(i + 1).toString()}
     </Button>
   ));
 };
 
-const buttons = () => createItems(8);
+const buttons = (num = 8) => createItems(num);
 
 export const Basic = {
   render: args => {
@@ -84,18 +84,16 @@ export const Basic = {
 export const edgeScroll = {
   render: args => {
     return (
-      <View width={2000} height={720}>
-        <Row autofocus {...args}>
-          {buttons}
-        </Row>
-      </View>
+      <Row width={1200} autofocus {...args}>
+        {buttons}
+      </Row>
     );
   },
   args: {
     children: buttons,
     scroll: 'edge',
     wrap: false,
-    x: 100
+    x: 0
   }
 };
 
@@ -122,14 +120,14 @@ export const NoneScroll = {
     return (
       <View width={2000} height={720}>
         <Row autofocus {...args}>
-          {buttons}
+          {buttons(6)}
         </Row>
       </View>
     );
   },
   args: {
     children: buttons,
-    scroll: 'edge',
+    scroll: 'none',
     wrap: false,
     x: 0
   }
