@@ -26,7 +26,7 @@ import type { ColumnProps } from './Column.types.js';
 const Column: Component<ColumnProps> = (props: ColumnProps) => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
-  const scroll = createMemo(() => withScrolling(false, props.y));
+  const scroll = createMemo(() => withScrolling(false, props.y || props.style?.y));
 
   return (
     <View

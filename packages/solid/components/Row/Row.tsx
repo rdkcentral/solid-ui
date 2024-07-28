@@ -26,7 +26,7 @@ import type { RowProps } from './Row.types.js';
 const Row: Component<RowProps> = (props: RowProps) => {
   const onLeft = handleNavigation('left');
   const onRight = handleNavigation('right');
-  const scroll = createMemo(() => withScrolling(true, props.x));
+  const scroll = createMemo(() => withScrolling(true, props.x || props.style?.x));
 
   return (
     <View
