@@ -16,8 +16,7 @@
  */
 
 import { createMemo, type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
-import type { KeyHandler } from '@lightningtv/solid/primitives';
+import { View, type KeyHandler } from '@lightningtv/solid';
 import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
