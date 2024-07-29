@@ -94,11 +94,11 @@ importers:
   packages/solid:
     dependencies:
       '@lightningtv/core':
-        specifier: ^1.3.4
-        version: 1.3.4(@lightningjs/renderer@1.0.1)
+        specifier: ^1.3.7
+        version: 1.3.7(@lightningjs/renderer@1.0.1)
       '@lightningtv/solid':
-        specifier: ^1.4.4
-        version: 1.4.4(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
+        specifier: ^1.4.7
+        version: 1.4.7(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.18)
@@ -1306,8 +1306,8 @@ packages:
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
 
-  '@lightningtv/core@1.3.4':
-    resolution: {integrity: sha512-hG1SE7TnTnrhRrslL41FF/QXuHnxkHBd7LTJLE0438LLFfJ1wU6SLo/GyIG7AwNoPlruanic0cMcoAsVpmMJcA==}
+  '@lightningtv/core@1.3.7':
+    resolution: {integrity: sha512-5WsdWeQo1MauidSjn5BDcAUnvQo0kXjXw22nHKlkLB1oC3fQZ2ZlOYdtEgtmwgFunM/gRBSapUHvxo8gegAOiA==}
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
 
@@ -1317,8 +1317,8 @@ packages:
       '@lightningjs/renderer': ^1.0.0
       solid-js: '*'
 
-  '@lightningtv/solid@1.4.4':
-    resolution: {integrity: sha512-nnj+v/NYoIr4b4sWECjTZR/2Ka8FwNaT7McZjDWTJT1Mgpg2GEWTWfR8JLow19cQLv7vq3BLk2+OCFzOAA8plg==}
+  '@lightningtv/solid@1.4.7':
+    resolution: {integrity: sha512-57knUotcXeVTxBULvN4Q/S2WlmEhiMTKbxKiYCPVkF3frgjEiRvgje0GPWlVi0oig+Pvq1vKZ43j4a9UTJAt6Q==}
     peerDependencies:
       '@lightningjs/renderer': ^1.0.0
       solid-js: '*'
@@ -2309,11 +2309,11 @@ packages:
       vite-plugin-glimmerx:
         optional: true
 
-  '@storybook/builder-vite@8.3.0-alpha.2':
-    resolution: {integrity: sha512-Sf2QbW4MVANTCRE9heIuatrcBXoXLgtr7103JTzJnQhQBPHyroSUtc+WZ9/QhepGYdBYx4pAI4v0w9HX4frJBQ==}
+  '@storybook/builder-vite@8.3.0-alpha.3':
+    resolution: {integrity: sha512-/82rf41Bd8PdDYcjXD9eI0rYT9OuXhaXMXU6DzKS3nLHCMObEz6UjxM9rTWpsjJG31+pssMOljxfX+/2YcwYIA==}
     peerDependencies:
       '@preact/preset-vite': '*'
-      storybook: ^8.3.0-alpha.2
+      storybook: ^8.3.0-alpha.3
       typescript: '>= 4.3.x'
       vite: ^4.0.0 || ^5.0.0
       vite-plugin-glimmerx: '*'
@@ -2362,10 +2362,10 @@ packages:
   '@storybook/csf-plugin@7.6.20':
     resolution: {integrity: sha512-dzBzq0dN+8WLDp6NxYS4G7BCe8+vDeDRBRjHmM0xb0uJ6xgQViL8SDplYVSGnk3bXE/1WmtvyRzQyTffBnaj9Q==}
 
-  '@storybook/csf-plugin@8.3.0-alpha.2':
-    resolution: {integrity: sha512-tgji0vx3QweBWmvU+5wIf4h56CAYlaiQjhmHx30aapAPZzrueCBmLQIBjEgdISEUS+t4zVFvnZ+rvcr36ljImg==}
+  '@storybook/csf-plugin@8.3.0-alpha.3':
+    resolution: {integrity: sha512-jh3tLzXItyO2Eq9F47eG0NqkRV9HeyqjFxOFaJessUxzhUDR5kR8TGZULXK+CANzbF9rdjVuBjiUPxghjX3smQ==}
     peerDependencies:
-      storybook: ^8.3.0-alpha.2
+      storybook: ^8.3.0-alpha.3
 
   '@storybook/csf-tools@7.6.20':
     resolution: {integrity: sha512-rwcwzCsAYh/m/WYcxBiEtLpIW5OH1ingxNdF/rK9mtGWhJxXRDV8acPkFrF8rtFWIVKoOCXu5USJYmc3f2gdYQ==}
@@ -7943,7 +7943,7 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 1.0.1
 
-  '@lightningtv/core@1.3.4(@lightningjs/renderer@1.0.1)':
+  '@lightningtv/core@1.3.7(@lightningjs/renderer@1.0.1)':
     dependencies:
       '@lightningjs/renderer': 1.0.1
 
@@ -7958,10 +7958,10 @@ snapshots:
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.18)
       solid-js: 1.8.18
 
-  '@lightningtv/solid@1.4.4(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
+  '@lightningtv/solid@1.4.7(@lightningjs/renderer@1.0.1)(solid-js@1.8.18)':
     dependencies:
       '@lightningjs/renderer': 1.0.1
-      '@lightningtv/core': 1.3.4(@lightningjs/renderer@1.0.1)
+      '@lightningtv/core': 1.3.7(@lightningjs/renderer@1.0.1)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
       '@solid-primitives/mouse': 2.0.19(solid-js@1.8.18)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.18)
@@ -9103,9 +9103,9 @@ snapshots:
       - encoding
       - supports-color
 
-  '@storybook/builder-vite@8.3.0-alpha.2(storybook@7.6.20(encoding@0.1.13))(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12))':
+  '@storybook/builder-vite@8.3.0-alpha.3(storybook@7.6.20(encoding@0.1.13))(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12))':
     dependencies:
-      '@storybook/csf-plugin': 8.3.0-alpha.2(storybook@7.6.20(encoding@0.1.13))
+      '@storybook/csf-plugin': 8.3.0-alpha.3(storybook@7.6.20(encoding@0.1.13))
       '@types/find-cache-dir': 3.2.1
       browser-assert: 1.2.1
       es-module-lexer: 1.5.4
@@ -9317,7 +9317,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/csf-plugin@8.3.0-alpha.2(storybook@7.6.20(encoding@0.1.13))':
+  '@storybook/csf-plugin@8.3.0-alpha.3(storybook@7.6.20(encoding@0.1.13))':
     dependencies:
       storybook: 7.6.20(encoding@0.1.13)
       unplugin: 1.12.0
@@ -13376,7 +13376,7 @@ snapshots:
 
   storybook-solidjs-vite@1.0.0-beta.2(storybook@7.6.20(encoding@0.1.13))(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12)):
     dependencies:
-      '@storybook/builder-vite': 8.3.0-alpha.2(storybook@7.6.20(encoding@0.1.13))(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12))
+      '@storybook/builder-vite': 8.3.0-alpha.3(storybook@7.6.20(encoding@0.1.13))(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.12))
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - storybook

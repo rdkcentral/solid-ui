@@ -30,7 +30,7 @@ const Column: Component<ColumnProps> = (props: ColumnProps) => {
     let y;
     if (props.style) {
       if (Array.isArray(props.style)) {
-        y = props.style[0].y || 0;
+        y = props.style[0].y || props.style[1]?.y || 0;
       } else {
         y = props.style.y || 0;
       }

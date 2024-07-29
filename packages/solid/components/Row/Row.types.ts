@@ -49,6 +49,11 @@ export interface RowProps extends UIComponentProps, RowStyleProperties {
     selectedIndex: number,
     lastSelectedIndex: number
   ) => void;
+
+  /**
+   * Wrap the row so active goes back to the beginning of the row
+   */
+  wrap: boolean;
 }
 
 export interface RowStyleProperties {

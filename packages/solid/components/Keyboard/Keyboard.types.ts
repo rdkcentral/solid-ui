@@ -45,6 +45,11 @@ export interface KeyboardProps extends UIComponentProps, KeyboardStyleProperties
    * returns the value of the activated key
    */
   keySignal: Signal<string>;
+
+  /**
+   * Wrap the keyboard so active goes back to the beginning of the row
+   */
+  rowWrap: boolean;
 }
 
 export type KeyboardFormat = Record<string, Array<Array<string | Partial<KeyProps>>>>;
