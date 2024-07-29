@@ -57,7 +57,7 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   /**
    * Wrap the row so active goes back to the beginning of the row
    */
-  wrap: boolean;
+  wrap?: boolean;
 }
 
 export interface ColumnStyleProperties {
