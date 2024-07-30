@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { ElementNode, ElementText } from '@lightningtv/solid';
+import type { ElementNode, ElementText } from '@lightningtv/core';
 
 // adds properties expected by withScrolling
 export interface ScrollableElement extends ElementNode {
@@ -75,8 +75,10 @@ export function withScrolling(isRow: boolean, adjustment: number = 0) {
       nextPosition = rootPosition - selectedSize - gap;
     } else if (scroll === 'edge' && movement === 'none') {
       let currentChildIndex = 0;
-      while (currentChildIndex < componentRef.children.length && isNotShown(selectedPosition, selectedSize)) {
+      const isNotShownMemo = isNotShown(selectedPosition, selectedSize);
+      while (currentChildIndex < componentRef.children.length && isNotShownMemo) {
         const currentChild = componentRef.children[currentChildIndex++];
+        if (currentChild.skipFocus) continue;
         const currentChildSize = currentChild[dimension] ?? 0;
         rootPosition -= currentChildSize + gap;
       }
@@ -90,21 +92,28 @@ export function withScrolling(isRow: boolean, adjustment: number = 0) {
 }
 
 function updateLastIndex(isRow: boolean, items: ElementNode): [{ position: number; size: number }, number] {
-  let lastItem, containerSize;
-  const lastChild = items.children[items.children.length - 1];
-  if (isRow) {
-    lastItem = {
-      position: lastChild.x ?? 0,
-      size: lastChild.width ?? 0
-    };
-    containerSize = items.width ?? 0;
-  } else {
-    lastItem = {
-      position: lastChild.y ?? 0,
-      size: lastChild.height ?? 0
-    };
-    containerSize = items.height ?? 0;
+  let lastChild;
+  for (let i = items.children.length - 1; i >= 0; i--) {
+    if (!items.children[i].skipFocus) {
+      lastChild = items.children[i];
+      break;
+    }
   }
 
-  return [lastItem, containerSize];
+  if (isRow) {
+    return [
+      {
+        position: lastChild.x ?? 0,
+        size: lastChild.width ?? 0
+      },
+      items.width ?? 0
+    ];
+  }
+  return [
+    {
+      position: lastChild.y ?? 0,
+      size: lastChild.height ?? 0
+    },
+    items.height ?? 0
+  ];
 }

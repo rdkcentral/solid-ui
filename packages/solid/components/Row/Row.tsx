@@ -26,7 +26,17 @@ import type { RowProps } from './Row.types.js';
 const Row: Component<RowProps> = (props: RowProps) => {
   const onLeft = handleNavigation('left');
   const onRight = handleNavigation('right');
-  const scroll = createMemo(() => withScrolling(true, props.x));
+  const scroll = createMemo(() => {
+    let x;
+    if (props.style) {
+      if (Array.isArray(props.style)) {
+        x = props.style[0].x || props.style[1]?.x || 0;
+      } else {
+        x = props.style.x || 0;
+      }
+    }
+    return withScrolling(false, props.x || x);
+  });
 
   return (
     <View

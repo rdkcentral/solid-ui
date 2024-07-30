@@ -65,7 +65,7 @@ const createItems = (length: number) => {
   });
 };
 
-const buttons = () => <>{createItems(7)}</>;
+const buttons = (num = 7) => createItems(num);
 
 export const AlwaysScroll = {
   render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
@@ -109,7 +109,7 @@ export const NoneScroll = {
     );
   },
   args: {
-    children: buttons,
+    children: buttons(6),
     scroll: 'none',
     wrap: false,
     y: 0

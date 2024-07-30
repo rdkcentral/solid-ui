@@ -16,8 +16,7 @@
  */
 
 import { createMemo, type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
-import type { KeyHandler } from '@lightningtv/solid/primitives';
+import { View, type KeyHandler } from '@lightningtv/solid';
 import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
@@ -27,7 +26,17 @@ import type { ColumnProps } from './Column.types.js';
 const Column: Component<ColumnProps> = (props: ColumnProps) => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
-  const scroll = createMemo(() => withScrolling(false, props.y));
+  const scroll = createMemo(() => {
+    let y;
+    if (props.style) {
+      if (Array.isArray(props.style)) {
+        y = props.style[0].y || props.style[1]?.y || 0;
+      } else {
+        y = props.style.y || 0;
+      }
+    }
+    return withScrolling(false, props.y || y);
+  });
 
   return (
     <View

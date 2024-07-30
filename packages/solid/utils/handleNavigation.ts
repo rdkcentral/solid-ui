@@ -15,13 +15,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ElementNode } from '@lightningtv/solid';
-import type { KeyHandler } from '@lightningtv/solid/primitives';
+import { ElementNode, type KeyHandler } from '@lightningtv/core';
 import { assertTruthy } from './index.js';
 
 export function onGridFocus(this: ElementNode) {
-  if (!this || this.selected === undefined || this.children.length === 0) return false;
-  let child = this.children[this.selected];
+  if (!this || this.children.length === 0) return false;
+
+  let child = this.selected ? this.children[this.selected] : this.selectedNode;
+
   while (child?.skipFocus) {
     this.selected++;
     child = this.children[this.selected];
@@ -76,7 +77,7 @@ export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): K
     assertTruthy(active instanceof ElementNode);
     this.onSelectedChanged && this.onSelectedChanged.call(this, this, active, this.selected, lastSelected);
 
-    if (this.plinko && lastSelected !== undefined) {
+    if (this.plinko) {
       // Set the next item to have the same selected index
       // so we move up / down directly
       const lastSelectedChild = this.children[lastSelected];
