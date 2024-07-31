@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.21.1...@lightningtv/solid-ui@0.21.2) (2024-07-31)
+
+### Bug Fixes
+
+- add back in spriteMap ([#31](https://github.com/rdkcentral/solid-ui/issues/31)) ([a25df24](https://github.com/rdkcentral/solid-ui/commit/a25df2461b6d721664b701ea3fa360426093eba7))
+
 ## [0.21.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.21.0...@lightningtv/solid-ui@0.21.1) (2024-07-30)
 
 ### Bug Fixes
