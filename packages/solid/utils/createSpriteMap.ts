@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { renderer } from '@lightningtv/solid';
+import { renderer } from '@lightningtv/core';
 import type { TextureMap } from '@lightningjs/renderer';
 
 export interface SpriteDef {
