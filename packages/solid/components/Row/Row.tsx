@@ -35,7 +35,7 @@ const Row: Component<RowProps> = (props: RowProps) => {
         x = props.style.x || 0;
       }
     }
-    return withScrolling(false, props.x || x);
+    return withScrolling(true, props.x || x);
   });
 
   return (
