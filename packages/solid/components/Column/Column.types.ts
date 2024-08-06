@@ -55,6 +55,11 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   selected?: number;
 
   /**
+   * Allows adjusting the scroll by number of pixels
+   */
+  scrollAdjustment?: number;
+
+  /**
    * Wrap the row so active goes back to the beginning of the row
    */
   wrap?: boolean;
