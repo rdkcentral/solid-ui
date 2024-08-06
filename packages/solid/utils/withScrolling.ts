@@ -21,9 +21,10 @@ import type { ElementNode, ElementText } from '@lightningtv/core';
 export interface ScrollableElement extends ElementNode {
   scrollIndex?: number;
   selected?: number;
+  scrollAdjustment?: number;
 }
 
-export function withScrolling(isRow: boolean, adjustment: number = 0) {
+export function withScrolling(isRow: boolean) {
   const dimension = isRow ? 'width' : 'height';
   const axis = isRow ? 'x' : 'y';
 
@@ -35,18 +36,18 @@ export function withScrolling(isRow: boolean, adjustment: number = 0) {
   ) => {
     if (!componentRef.children.length) return;
 
+    const adjustment = componentRef.scrollAdjustment || 0;
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
-    const [lastItem, containerSize] = updateLastIndex(isRow, componentRef);
 
     let rootPosition = componentRef[axis] ?? 0;
     const selectedPosition = selectedElement?.[axis] ?? 0;
     const selectedSize = selectedElement?.[dimension] ?? 0;
-
     const movement =
       lastSelected === undefined ? 'none' : selected > lastSelected ? 'incremental' : 'decremental';
     let nextPosition = rootPosition;
 
+    const [lastItem, containerSize] = updateLastIndex(isRow, componentRef);
     const isNotShown = (pos: number, size: number) => Math.abs(rootPosition) + containerSize < pos + size;
 
     if (scroll === 'auto') {
