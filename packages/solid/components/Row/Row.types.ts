@@ -51,9 +51,9 @@ export interface RowProps extends UIComponentProps, RowStyleProperties {
   ) => void;
 
   /**
-   * Allows adjusting the scroll by number of pixels
+   * Adjust the x position of the row. Initial value is X
    */
-  scrollAdjustment?: number;
+  offset?: number;
 
   /**
    * Wrap the row so active goes back to the beginning of the row

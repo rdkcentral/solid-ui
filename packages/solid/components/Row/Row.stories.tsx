@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -66,25 +66,23 @@ const buttons = (num = 8) => createItems(num);
 export const Basic = {
   render: args => {
     return (
-      <View width={2000} height={720}>
-        <Row autofocus {...args}>
-          {buttons}
-        </Row>
-      </View>
+      <Row autofocus {...args}>
+        {buttons}
+      </Row>
     );
   },
   args: {
     children: buttons,
     wrap: false,
-    scroll: 'edge',
-    x: 30
+    scroll: 'auto',
+    x: 100
   }
 };
 
 export const edgeScroll = {
   render: args => {
     return (
-      <Row width={1200} autofocus {...args}>
+      <Row autofocus {...args}>
         {buttons}
       </Row>
     );
@@ -93,7 +91,7 @@ export const edgeScroll = {
     children: buttons,
     scroll: 'edge',
     wrap: false,
-    x: 0
+    x: 100
   }
 };
 
@@ -111,7 +109,7 @@ export const AlwaysScroll = {
     children: buttons,
     scroll: 'always',
     wrap: false,
-    x: 0
+    x: 100
   }
 };
 
@@ -147,6 +145,6 @@ export const ScrollIndex = {
     children: buttons,
     scrollIndex: 4,
     wrap: false,
-    x: 0
+    x: 100
   }
 };
