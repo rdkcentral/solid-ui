@@ -38,7 +38,7 @@ const Column: Component<ColumnProps> = (props: ColumnProps) => {
       onBeforeLayout={
         props.selected
           ? chainFunctions(props.onBeforeLayout, (elm, selected) => scroll(elm, selected))
-          : undefined
+          : props.onBeforeLayout
       }
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
