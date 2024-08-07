@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.22.0...@lightningtv/solid-ui@0.22.1) (2024-08-07)
+
+### Bug Fixes
+
+- Column and Rows with offset ([#34](https://github.com/rdkcentral/solid-ui/issues/34)) ([f3fc5ee](https://github.com/rdkcentral/solid-ui/commit/f3fc5ee0883c67ec782417063474c4072e182c99))
+
 # [0.22.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.21.3...@lightningtv/solid-ui@0.22.0) (2024-08-06)
 
 ### Features
