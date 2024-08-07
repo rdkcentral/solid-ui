@@ -21,7 +21,8 @@ import type { ElementNode, ElementText } from '@lightningtv/core';
 export interface ScrollableElement extends ElementNode {
   scrollIndex?: number;
   selected?: number;
-  scrollAdjustment?: number;
+  offset?: number;
+  _targetPosition?: number;
 }
 
 export function withScrolling(isRow: boolean) {
@@ -36,11 +37,12 @@ export function withScrolling(isRow: boolean) {
   ) => {
     if (!componentRef.children.length) return;
 
-    const adjustment = componentRef.scrollAdjustment || 0;
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 
-    let rootPosition = componentRef[axis] ?? 0;
+    let rootPosition = componentRef._targetPosition ?? componentRef[axis] ?? 0;
+    componentRef.offset = componentRef.offset ?? rootPosition;
+    const offset = componentRef.offset;
     const selectedPosition = selectedElement?.[axis] ?? 0;
     const selectedSize = selectedElement?.[dimension] ?? 0;
     const movement =
@@ -61,13 +63,13 @@ export function withScrolling(isRow: boolean) {
           nextPosition = rootPosition + selectedSize + gap;
         }
       } else if (isNotShown(lastItem.position, lastItem.size) || selectedPosition < Math.abs(rootPosition)) {
-        nextPosition = -selectedPosition + adjustment;
+        nextPosition = -selectedPosition + offset;
       }
     } else if (
       scroll === 'always' ||
       (scroll === 'edge' && movement === 'decremental' && Math.abs(rootPosition) > selectedPosition)
     ) {
-      nextPosition = -selectedPosition + adjustment;
+      nextPosition = -selectedPosition + offset;
     } else if (
       scroll === 'edge' &&
       movement === 'incremental' &&
@@ -88,6 +90,9 @@ export function withScrolling(isRow: boolean) {
 
     if (componentRef[axis] !== nextPosition) {
       componentRef[axis] = nextPosition;
+      // Store the new position as animations are occuring and if user scrolls faster than animation
+      // we want to use the new position.
+      componentRef._targetPosition = nextPosition;
     }
   };
 }
