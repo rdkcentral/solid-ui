@@ -34,8 +34,6 @@ const container: InputConfig = {
     // TODO clew uses strokeWidth, but we currently don't account for nested properties (border.width)
     width: getWidthByUpCount(4),
     height: 100,
-    display: 'flex',
-    flexDirection: 'column',
     padding: [theme.spacer.xxxl, theme.spacer.xl],
     color: theme.color.interactiveNeutral,
     contentColor: theme.color.fillInverse,
