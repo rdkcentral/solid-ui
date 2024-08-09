@@ -16,12 +16,11 @@
  */
 
 import { createSignal, type Component, type Signal } from 'solid-js';
-import Keyboard from './Keyboard.jsx';
+import { View } from '@lightningtv/solid';
+import KeyboardQwerty from './KeyboardQwerty.jsx';
+import type { KeyboardProps } from './Keyboard.types.js';
 import Column from '../Column/Column.jsx';
 import Input from '../Input/Input.jsx';
-import type { Tone } from '../../types/types.js';
-import type { KeyboardProps } from './Keyboard.types.js';
-import { View } from '@lightningtv/solid';
 
 export interface KeyboardInputProps extends KeyboardProps {
   /**
@@ -32,8 +31,6 @@ export interface KeyboardInputProps extends KeyboardProps {
    * signal passed in to represent the actual title within the input
    */
   titleSignal: Signal<string>;
-
-  tone?: Tone;
 }
 
 // rows created from each array passed in
@@ -46,7 +43,7 @@ const KeyboardInput: Component<KeyboardInputProps> = (props: KeyboardInputProps)
     <View {...props} forwardFocus={0}>
       <Column selected={1} scroll={'none'}>
         <Input {...props} keyEvent={keyEvent} />
-        <Keyboard {...props} keySignal={keyEvent} />
+        <KeyboardQwerty {...props} keySignal={keyEvent} />
       </Column>
     </View>
   );
