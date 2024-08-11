@@ -31,7 +31,7 @@ export function withScrolling(isRow: boolean) {
 
   return (
     componentRef: ScrollableElement,
-    selectedElement: ElementNode | ElementText,
+    selectedElement?: ElementNode | ElementText,
     selected: number = 0,
     lastSelected?: number
   ) => {
@@ -43,8 +43,9 @@ export function withScrolling(isRow: boolean) {
     let rootPosition = componentRef._targetPosition ?? componentRef[axis] ?? 0;
     componentRef.offset = componentRef.offset ?? rootPosition;
     const offset = componentRef.offset;
-    const selectedPosition = selectedElement?.[axis] ?? 0;
-    const selectedSize = selectedElement?.[dimension] ?? 0;
+    selectedElement = selectedElement || componentRef.children[selected];
+    const selectedPosition = selectedElement[axis] ?? 0;
+    const selectedSize = selectedElement[dimension] ?? 0;
     const movement =
       lastSelected === undefined ? 'none' : selected > lastSelected ? 'incremental' : 'decremental';
     let nextPosition = rootPosition;
