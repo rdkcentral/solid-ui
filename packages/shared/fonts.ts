@@ -14,44 +14,33 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
-import { SdfTrFontFace } from '@lightningjs/renderer';
-
 const basePath = './';
 
-export default function loadFonts(stage) {
-  stage.fontManager.addFontFace(
-    new SdfTrFontFace('msdf', {
+const fonts = [{
+      type: 'msdf',
       fontFamily: 'Arial',
       descriptors: {
         weight: 700
       },
       atlasDataUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.json',
       atlasUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.png',
-      stage
-    })
-  );
-  stage.fontManager.addFontFace(
-    new SdfTrFontFace('msdf', {
+    } as const,
+    { type: 'msdf',
       fontFamily: 'Arial',
       descriptors: {
         weight: 400
       },
       atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
       atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
-      stage
-    })
-  );
-
-  stage.fontManager.addFontFace(
-    new SdfTrFontFace('msdf', {
+    } as const,
+    { type: 'msdf',
       fontFamily: 'Arial',
       descriptors: {
         weight: 500
       },
       atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
       atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
-      stage
-    })
-  );
-}
+    } as const
+  ];
+
+export default fonts;

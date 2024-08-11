@@ -30,7 +30,7 @@ export default defineConfig({
     })
   ],
   resolve: {
-    dedupe: ['solid-js', '@lightningtv/solid', '@lightningjs/renderer']
+    dedupe: ['solid-js', '@lightningtv/solid']
   },
   server: {
     hmr: false,

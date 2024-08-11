@@ -15,8 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { View, Text } from '@lightningtv/solid';
-import type { Stage } from '@lightningjs/renderer';
+import { View, Text, type Stage } from '@lightningtv/solid';
 import { createSignal } from 'solid-js';
 
 const fpsStyle = {
