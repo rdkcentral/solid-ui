@@ -1,6 +1,6 @@
 {
   "name": "@lightningtv/solid-ui",
-  "version": "0.22.1",
+  "version": "0.23.0-rc",
   "description": "A shared library of components for the LightningJS Solid Framework.",
   "main": "dist/index.js",
   "source": "./index.ts",
