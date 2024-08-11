@@ -132,7 +132,7 @@ importers:
         specifier: ^5.4.5
         version: 5.5.4
       vite:
-        specifier: ^5.2.12
+        specifier: ^5.3.5
         version: 5.4.0(@types/node@22.2.0)
       vite-bundle-visualizer:
         specifier: ^1.2.1
