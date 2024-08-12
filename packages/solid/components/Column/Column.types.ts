@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles, KeyHandler } from '@lightningtv/core';
+import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles, KeyHandler } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 
