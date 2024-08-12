@@ -22,23 +22,23 @@ import Row from '../Row/Row.jsx';
 import Key from '../Key/Key.jsx';
 import type { KeyProps } from '../Key/Key.types.js';
 import styles from './Keyboard.styles.js';
-import type { KeyboardProps } from './Keyboard.types.js';
+import type { KeyboardBaseProps } from './Keyboard.types.js';
 import keyStyles from '../Key/Key.styles.js';
 
-const getTone = (props: KeyboardProps) => props.tone ?? styles.tone;
+const getTone = (props: KeyboardBaseProps) => props.tone ?? styles.tone;
 
-const getGap = (props: KeyboardProps) =>
+const getGap = (props: KeyboardBaseProps) =>
   props.gap ??
   props.keySpacing ??
   styles.Container.tones[props.tone ?? styles.tone]?.keySpacing ??
   styles.Container.base.keySpacing;
 
-const getKeyHeight = (props: KeyboardProps) =>
+const getKeyHeight = (props: KeyboardBaseProps) =>
   props.keyHeight ??
   styles.Container.tones[props.tone ?? styles.tone]?.keyHeight ??
   styles.Container.base.keyHeight;
 
-const getTotalWidth = (props: KeyboardProps) =>
+const getTotalWidth = (props: KeyboardBaseProps) =>
   props.screenW ??
   props.width ??
   styles.Container.tones[props.tone ?? styles.tone]?.width ??
@@ -59,7 +59,7 @@ const getKeySpacing = (props: KeyProps) =>
   keyStyles.Container.tones?.[props.tone ?? keyStyles.tone]?.keySpacing ??
   keyStyles.Container.base.keySpacing;
 
-const KeyboardBase: Component<KeyboardProps> = (props: KeyboardProps) => {
+const KeyboardBase: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) => {
   // eslint-disable-next-line solid/reactivity
   const [_, setKeySignal] = props.keySignal ?? createSignal('');
   const [activeKeyboard, setActiveKeyboard] = createSignal('default');
