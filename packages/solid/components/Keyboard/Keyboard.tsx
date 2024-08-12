@@ -16,11 +16,12 @@
  */
 
 import { type Component } from 'solid-js';
-import KeyboardSimple from './KeyboardSimple.jsx';
+import KeyboardBase from './KeyboardBase.jsx';
 import type { KeyboardProps } from './Keyboard.types.js';
+import formats from './formats.js';
 
 const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
-  return <KeyboardSimple {...props} />;
+  return <KeyboardBase {...props} formats={formats.simple} />;
 };
 
 export default Keyboard;

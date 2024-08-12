@@ -17,18 +17,27 @@
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import Keyboard from './Keyboard.jsx';
+import { default as Custom } from './KeyboardCustom.jsx';
 import { default as Dialpad } from './KeyboardDialpad.jsx';
 import { default as DialpadExtended } from './KeyboardDialpadExtended.jsx';
 import { default as Email } from './KeyboardEmail.jsx';
 import { default as Number } from './KeyboardNumber.jsx';
 import { default as Qwerty } from './KeyboardQwerty.jsx';
-import { default as Simple } from './KeyboardSimple.jsx';
 
 type Story = StoryObj<typeof Keyboard>;
+type CustomStory = StoryObj<typeof Custom>;
 
 const meta: Meta<typeof Keyboard> = {
   title: 'Components/Keyboard',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      toc: true,
+      description: {
+        component: 'A verity of button layouts to enable text input'
+      }
+    }
+  },
   component: Keyboard,
   argTypes: {
     states: {
@@ -46,24 +55,18 @@ export const Basic: Story = {
   render: args => {
     return <Keyboard {...args} />;
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeyboard: false,
-    centerKeys: false,
-    width: 1280
-  }
-};
-
-export const KeyboardSimple: Story = {
-  render: args => {
-    return <Simple {...args} />;
+  parameters: {
+    docs: {
+      description: {
+        story: 'a simple keyboard for case-insensitive input'
+      }
+    }
   },
   args: {
     states: 'focus',
-    centerKeys: false,
-    centerKeyboard: false,
     autofocus: true,
+    centerKeyboard: false,
+    centerKeys: false,
     width: 1280
   }
 };
@@ -71,6 +74,13 @@ export const KeyboardSimple: Story = {
 export const KeyboardEmail: Story = {
   render: args => {
     return <Email {...args} />;
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a full featured keyboard with helpful shortcuts for email addresses'
+      }
+    }
   },
   args: {
     states: 'focus',
@@ -85,6 +95,13 @@ export const KeyboardQwerty: Story = {
   render: args => {
     return <Qwerty {...args} />;
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a full featured keyboard for more complex text input'
+      }
+    }
+  },
   args: {
     states: 'focus',
     autofocus: true,
@@ -97,6 +114,13 @@ export const KeyboardQwerty: Story = {
 export const KeyboardNumber: Story = {
   render: args => {
     return <Number {...args} />;
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a simple keyboard for numeric input'
+      }
+    }
   },
   args: {
     states: 'focus',
@@ -111,6 +135,13 @@ export const KeyboardDialpad: Story = {
   render: args => {
     return <Dialpad {...args} />;
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a 3x4 numeric layout mimicking a phone keypad'
+      }
+    }
+  },
   args: {
     states: 'focus',
     autofocus: true,
@@ -124,8 +155,38 @@ export const KeyboardDialpadExtended: Story = {
   render: args => {
     return <DialpadExtended {...args} />;
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a 3x4 numeric layout mimicking a phone keypad with a clear shortcut'
+      }
+    }
+  },
   args: {
     states: 'focus',
+    autofocus: true,
+    centerKeys: false,
+    centerKeyboard: false,
+    width: 1280
+  }
+};
+
+export const KeyboardCustom: CustomStory = {
+  render: args => {
+    return <Custom {...args} formats={args.formats} />;
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'a custom keyboard can be created by providing a formats object'
+      }
+    }
+  },
+  args: {
+    states: 'focus',
+    formats: {
+      default: [['A', 'B', 'C', 'D'], ['E', 'F', 'G'], ['H', 'I'], ['Z']]
+    },
     autofocus: true,
     centerKeys: false,
     centerKeyboard: false,
