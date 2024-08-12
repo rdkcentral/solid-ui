@@ -33,7 +33,6 @@ export interface KeyboardInputProps extends KeyboardProps {
   titleSignal: Signal<string>;
 }
 
-// rows created from each array passed in
 const KeyboardInput: Component<KeyboardInputProps> = (props: KeyboardInputProps) => {
   // signal representing a string of the key pressed and a boolean for if value has been added to the input yet
   // eslint-disable-next-line solid/reactivity

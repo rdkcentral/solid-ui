@@ -16,23 +16,11 @@
  */
 
 import { type Component } from 'solid-js';
-import styles from './Keyboard.styles.js';
 import KeyboardSimple from './KeyboardSimple.jsx';
 import type { KeyboardProps } from './Keyboard.types.js';
 
-// rows created from each array passed in
 const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
-  return (
-    <KeyboardSimple
-      {...props}
-      // @ts-expect-error TODO type needs to be fixed in framework
-      style={[
-        props.style, //
-        styles.Container.tones[props.tone ?? styles.tone],
-        styles.Container.base
-      ]}
-    />
-  );
+  return <KeyboardSimple {...props} />;
 };
 
 export default Keyboard;

@@ -20,7 +20,6 @@ import KeyboardBase from './KeyboardBase.jsx';
 import type { KeyboardProps } from './Keyboard.types.js';
 import formats from './formats.js';
 
-// TODO this keyboard is broken
 const KeyboardDialpadExtended: Component<KeyboardProps> = (props: KeyboardProps) => {
   return <KeyboardBase {...props} formats={formats.dialpadExtended} />;
 };

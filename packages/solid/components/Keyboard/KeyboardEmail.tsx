@@ -20,7 +20,6 @@ import KeyboardBase from './KeyboardBase.jsx';
 import type { KeyboardProps } from './Keyboard.types.js';
 import formats from './formats.js';
 
-// rows created from each array passed in
 const KeyboardEmail: Component<KeyboardProps> = (props: KeyboardProps) => {
   return <KeyboardBase {...props} formats={formats.email} />;
 };
