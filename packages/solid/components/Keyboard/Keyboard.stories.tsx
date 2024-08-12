@@ -17,6 +17,8 @@
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import Keyboard from './Keyboard.jsx';
+import { default as Dialpad } from './KeyboardDialpad.jsx';
+import { default as DialpadExtended } from './KeyboardDialpadExtended.jsx';
 import { default as Email } from './KeyboardEmail.jsx';
 import { default as Number } from './KeyboardNumber.jsx';
 import { default as Qwerty } from './KeyboardQwerty.jsx';
@@ -49,44 +51,7 @@ export const Basic: Story = {
     autofocus: true,
     centerKeyboard: false,
     centerKeys: false,
-    width: 1280,
-    formats: {
-      default: [
-        [
-          '1',
-          '2',
-          '3',
-          '4',
-          '5',
-          '6',
-          '7',
-          '8',
-          '9',
-          '0',
-          {
-            title: 'Delete',
-            size: 'md'
-          }
-        ],
-        ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-        ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
-        [
-          {
-            title: 'Clear',
-            size: 'lg'
-          },
-          {
-            title: 'Space',
-            size: 'xl'
-          },
-          {
-            title: 'Done',
-            size: 'lg'
-          }
-        ]
-      ]
-    }
+    width: 1280
   }
 };
 
@@ -132,6 +97,32 @@ export const KeyboardQwerty: Story = {
 export const KeyboardNumber: Story = {
   render: args => {
     return <Number {...args} />;
+  },
+  args: {
+    states: 'focus',
+    autofocus: true,
+    centerKeys: false,
+    centerKeyboard: false,
+    width: 1280
+  }
+};
+
+export const KeyboardDialpad: Story = {
+  render: args => {
+    return <Dialpad {...args} />;
+  },
+  args: {
+    states: 'focus',
+    autofocus: true,
+    centerKeys: false,
+    centerKeyboard: false,
+    width: 1280
+  }
+};
+
+export const KeyboardDialpadExtended: Story = {
+  render: args => {
+    return <DialpadExtended {...args} />;
   },
   args: {
     states: 'focus',

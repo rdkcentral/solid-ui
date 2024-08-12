@@ -1,5 +1,24 @@
 import type { KeyboardFormat } from './Keyboard.types.js';
 
+const dialpad = { default: [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], ['0']] };
+
+const dialpadExtended = {
+  default: [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+    ['0'],
+    [
+      {
+        title: 'Delete',
+        size: 'lg',
+        keyId: 'delete',
+        announce: 'delete, button'
+      }
+    ]
+  ]
+};
+
 const email: KeyboardFormat = {
   uppercase: [
     [
@@ -653,23 +672,9 @@ const fullscreen: KeyboardFormat = {
   ]
 };
 const numbers: KeyboardFormat = {
-  numbers: [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']],
-  dialpad: [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], ['0']],
-  dialpadExtended: [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9'],
-    ['0'],
-    [
-      {
-        title: 'Delete',
-        size: 'lg',
-        keyId: 'delete',
-        announce: 'delete, button'
-      }
-    ]
-  ]
+  default: [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']]
 };
+
 const qwerty: KeyboardFormat = {
   uppercase: [
     [
@@ -1220,6 +1225,8 @@ const simple: KeyboardFormat = {
 };
 
 export default {
+  dialpad,
+  dialpadExtended,
   email,
   fullscreen,
   numbers,

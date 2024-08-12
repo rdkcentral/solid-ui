@@ -108,7 +108,6 @@ const KeyboardBase: Component<KeyboardProps> = (props: KeyboardProps) => {
     }
     return maxRow;
   };
-
   return (
     <View
       {...props}
