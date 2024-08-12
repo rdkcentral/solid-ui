@@ -1,6 +1,8 @@
 import type { KeyboardFormat } from './Keyboard.types.js';
 
-const dialpad = { default: [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], ['0']] };
+const dialpad = {
+  default: [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], ['0']]
+};
 
 const dialpadExtended = {
   default: [
@@ -17,7 +19,7 @@ const dialpadExtended = {
       }
     ]
   ]
-};
+} satisfies KeyboardFormat; // fixes type issue when assigned to KeyboardBase.formats
 
 const email: KeyboardFormat = {
   uppercase: [
@@ -1233,4 +1235,4 @@ export default {
   qwerty,
   search,
   simple
-} as const;
+};
