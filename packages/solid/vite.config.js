@@ -31,7 +31,7 @@ const config = {
     hexColorTransform({
       include: '**/*.js',
       exclude: '**/*.stories.js'
-    }),
+    })
   ],
   base: './',
   build: {

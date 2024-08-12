@@ -25,6 +25,7 @@ import styles from './Keyboard.styles.js';
 import type { KeyboardBaseProps } from './Keyboard.types.js';
 import keyStyles from '../Key/Key.styles.js';
 
+/* eslint-disable solid/reactivity */
 const getTone = (props: KeyboardBaseProps) => props.tone ?? styles.tone;
 
 const getGap = (props: KeyboardBaseProps) =>
@@ -58,6 +59,7 @@ const getKeySpacing = (props: KeyProps) =>
   props.keySpacing ??
   keyStyles.Container.tones?.[props.tone ?? keyStyles.tone]?.keySpacing ??
   keyStyles.Container.base.keySpacing;
+/* eslint-enable solid/reactivity */
 
 const KeyboardBase: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) => {
   // eslint-disable-next-line solid/reactivity

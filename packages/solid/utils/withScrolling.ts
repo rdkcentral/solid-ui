@@ -90,7 +90,7 @@ export function withScrolling(isRow: boolean) {
 
     if (componentRef[axis] !== nextPosition) {
       componentRef[axis] = nextPosition;
-      // Store the new position as animations are occuring and if user scrolls faster than animation
+      // Store the new position as animations are occurring and if user scrolls faster than animation
       // we want to use the new position.
       componentRef._targetPosition = nextPosition;
     }

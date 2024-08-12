@@ -24,6 +24,7 @@ import type { TileProps } from './Tile.types.js';
 import styles from './Tile.styles.js';
 withPadding;
 
+/* eslint-disable solid/reactivity */
 const getTone = (props: TileProps) => props.tone ?? styles.tone;
 const getPadding = (props: TileProps) =>
   props.padding ??
@@ -45,6 +46,7 @@ const getContentSpacingY = (props: TileProps) =>
   props.contentSpacingY ??
   styles.Container.tones[props.tone ?? styles.tone]?.contentSpacingY ??
   styles.Container.base.contentSpacingY;
+/* eslint-enable solid/reactivity */
 
 const Tile: Component<TileProps> = (props: TileProps) => {
   const [isFocused, setIsFocused] = createSignal(false);
