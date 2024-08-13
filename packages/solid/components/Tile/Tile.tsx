@@ -107,7 +107,7 @@ const Tile: Component<TileProps> = (props: TileProps) => {
           y={height() + contentSpacingY()}
           width={width() - padding()[1] * 2}
         >
-          {props.bottom}
+          {props.bottomCenter}
         </View>
       </Show>
       <Show when={props.progressBar?.progress > 0}>

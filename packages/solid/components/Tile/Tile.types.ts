@@ -78,7 +78,7 @@ export interface TileProps extends UIComponentProps, TileStyleProperties {
    * states are not forwarded to this component. if it should react to states
    * applied to the Tile, they must also be set on this component
    */
-  bottom?: NodeProps['children'];
+  bottomCenter?: NodeProps['children'];
 
   /**
    * props passed to the child ProgressBar, rendered at the bottom of the component.
