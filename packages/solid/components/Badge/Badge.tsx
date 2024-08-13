@@ -42,10 +42,15 @@ const Badge: Component<BadgeProps> = (props: BadgeProps) => {
   const tone = createMemo(() => props.tone ?? styles.tone);
 
   return (
-    <BadgeContainer {...props} height={props.height || styles.Text.base.lineHeight} tone={tone()} style={props.style}>
+    <BadgeContainer
+      {...props}
+      height={props.height || styles.Text.base.lineHeight}
+      tone={tone()}
+      style={props.style}
+    >
       <Text
         color={props.textColor}
-        lineHeight={props.height || styles.Text.base.lineHeight}
+        lineHeight={(props.height || styles.Text.base.lineHeight) + 2}
         style={[
           styles.Text.tones[tone()], //
           styles.Text.base
