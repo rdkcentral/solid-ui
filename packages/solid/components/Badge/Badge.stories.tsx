@@ -67,13 +67,15 @@ export const BadgeIcon = {
           src={lightning}
           width={25}
           height={25}
+          marginLeft={10}
         />
-        <Text style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>{args.title}</Text>
+        <Text marginLeft={6} style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>{args.title}</Text>
       </BadgeContainer>
     );
   },
 
   args: {
-    title: 'Badge Text'
+    title: 'Badge Text',
+    height: 38
   }
 };

@@ -56,12 +56,10 @@ const Tile: Component<TileProps> = (props: TileProps) => {
   const paddingYBetweenContent = createMemo(() => getPaddingYBetweenContent(props));
   const contentSpacingY = createMemo(() => getContentSpacingY(props));
   return (
-    <node
-      use:withPadding={padding()}
+    <View
       {...props}
       borderRadius={props.radius}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
+      onFocusChanged={setIsFocused}
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
@@ -84,7 +82,7 @@ const Tile: Component<TileProps> = (props: TileProps) => {
           {props.topLeft}
         </View>
 
-        <View x={width() - padding()[0]} y={padding()[1]} mountX={1}>
+        <View right={padding()[0]} y={padding()[1]}>
           {props.topRight}
         </View>
 
@@ -118,10 +116,10 @@ const Tile: Component<TileProps> = (props: TileProps) => {
           {...props.progressBar}
           width={width() - padding()[0] * 2}
           x={padding()[0]}
-          y={height() - paddingYProgress() - Number(props?.progressBar?.height ?? 0)}
+          bottom={paddingYProgress()}
         />
       </Show>
-    </node>
+    </View>
   );
 };
 

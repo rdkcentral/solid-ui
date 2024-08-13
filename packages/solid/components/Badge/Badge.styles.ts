@@ -40,6 +40,7 @@ const container: BadgeConfig = {
     gap: theme.spacer.xs,
     display: 'flex',
     justifyContent: 'flexStart',
+    alignItems: 'center'
   },
   tones: {
     inverse: {
