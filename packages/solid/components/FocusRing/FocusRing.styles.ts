@@ -28,7 +28,8 @@ const container: FocusRingConfig = {
     borderRadius: 'radius'
   },
   base: {
-    color: theme.color.fillBrand,
+    x: 0,
+    y: 0,
     borderRadius: theme.radius.lg,
     border: {
       color: theme.color.interactiveNeutralFocus,

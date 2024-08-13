@@ -15,28 +15,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { View } from '@lightningtv/solid';
-import { type Component } from 'solid-js';
-import type { FocusRingProps } from './FocusRing.types.js';
-import styles from './FocusRing.styles.js';
+import { createEffect, on } from 'solid-js';
+import { activeElement } from '@lightningtv/solid';
 
-const FocusRing: Component<FocusRingProps> = (props: FocusRingProps) => {
-  return (
-    <View
-      {...props}
-      radius={props.radius}
-      x={100}
-      y={100}
-      //   tone={tone()}
-      // @ts-expect-error TODO type needs to be fixed in framework
-      style={[
-        props.style, //
-        styles.Container.tones[props.tone ?? styles.tone],
-        styles.Container.base
-      ]}
-      forwardStates
-    />
+export const setFocusRing = focusRef =>
+  createEffect(
+    on(
+      activeElement,
+      element => {
+        focusRef.parent = element.parent;
+        focusRef.x = element.lng.absX;
+        focusRef.y = element.lng.absY;
+        focusRef.width = element.width;
+        focusRef.height = element.height;
+      },
+      { defer: true }
+    )
   );
-};
-
-export default FocusRing;

@@ -29,12 +29,6 @@ export interface FocusRingProps extends UIComponentProps {
 
 export interface FocusRingStyleProperties {
   /**
-   * solid color background of input
-   *
-   */
-  // backgroundColor?: NodeStyles['color'];
-
-  /**
    * corner radius of input
    */
   radius?: NodeStyles['borderRadius'];
