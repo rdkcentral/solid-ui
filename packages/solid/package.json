@@ -48,8 +48,8 @@
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/core": "^1.5.2",
-    "@lightningtv/solid": "^1.6.2",
+    "@lightningtv/core": "^1.5.5",
+    "@lightningtv/solid": "^1.6.5",
     "solid-js": "*"
   },
   "devDependencies": {
