@@ -22,9 +22,8 @@ import type { NodeStyles } from '@lightningtv/solid';
 
 export interface FocusRingProps extends UIComponentProps {
   /**
-   * placeholder signal for when the real signal is in place
+   * placeholder for FocusRingProps
    */
-  // keyEvent: Signal<string>;
 }
 
 export interface FocusRingStyleProperties {

@@ -18,16 +18,16 @@
 import { createEffect, on } from 'solid-js';
 import { activeElement } from '@lightningtv/solid';
 
-export const setFocusRing = focusRef =>
+export const setFocusRing = focusRingRef =>
   createEffect(
     on(
       activeElement,
       element => {
-        focusRef.parent = element.parent;
-        focusRef.x = element.lng.absX;
-        focusRef.y = element.lng.absY;
-        focusRef.width = element.width;
-        focusRef.height = element.height;
+        focusRingRef.parent = element.parent;
+        focusRingRef.x = element.x;
+        focusRingRef.y = element.y;
+        focusRingRef.width = element.width;
+        focusRingRef.height = element.height;
       },
       { defer: true }
     )

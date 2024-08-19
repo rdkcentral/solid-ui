@@ -16,9 +16,42 @@
  */
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import FocusRing from './FocusRing.jsx';
-// import styles from './FocusRing.styles.js';
 
 type Story = StoryObj<typeof FocusRing>;
+
+/**
+ * Fancy ring to focus on Items.
+ *
+ * ## Usage
+ *
+ * Add a focus ring to tile or other items to provide a nice highlight
+ * and shadow effect
+ *
+ * ```js
+ * import { View } from '@lightningtv/solid';
+ * import { useFocusManager } from '@lightningtv/solid/primitives';
+ * import { FocusRing } from '@lightningtv/solid-ui';
+ * import { setFocusRing } from '@lightningtv/solid-ui/utils';
+ *
+ * const App = () => {
+ *   let focusRef;
+ *   useFocusManager();
+ *
+ *   onMount(() => {
+ *     setFocusRing(focusRef);
+ *   });
+ *
+ *   return (
+ *    <View>
+ *      <FocusRing ref={focusRef} />
+ *      // Other components
+ *    </View>
+ *   );
+ *  };
+ *
+ * export default App;
+ * ```
+ */
 
 const meta: Meta<typeof FocusRing> = {
   title: 'Components/FocusRing',
@@ -30,7 +63,7 @@ export default meta;
 
 export const Basic: Story = {
   render: args => {
-    return <FocusRing {...args} width={200} height={200} />;
+    return <FocusRing {...args} width={350} height={200} />;
   },
   args: {}
 };

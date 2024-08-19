@@ -24,10 +24,10 @@ const FocusRing: Component<FocusRingProps> = (props: FocusRingProps) => {
   return (
     <View
       {...props}
+      ref={props.ref}
       radius={props.radius}
-      x={100}
-      y={100}
-      //   tone={tone()}
+      width={props.width}
+      height={props.height}
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
