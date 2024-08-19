@@ -19,7 +19,6 @@ import theme from 'theme';
 import { makeComponentStyles } from '../../utils/index.js';
 import type { FocusRingStyles, FocusRingConfig } from './FocusRing.types.js';
 
-// double check before committing if this error is still valid below
 /* @ts-expect-error next-line themes are supplied by client applications so this setup is necessary */
 const { FocusRing: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.componentConfig;
 
