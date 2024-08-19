@@ -34,7 +34,7 @@ const meta: Meta<typeof Keyboard> = {
     docs: {
       toc: true,
       description: {
-        component: 'A verity of button layouts to enable text input'
+        component: 'A variety of button layouts to enable text input'
       }
     }
   },
