@@ -16,7 +16,6 @@
  */
 
 import type { UIComponentProps } from 'types/interfaces.js';
-//import type { Signal } from 'solid-js';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { NodeStyles } from '@lightningtv/solid';
 
