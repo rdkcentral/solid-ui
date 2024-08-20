@@ -23,6 +23,7 @@ type Story = StoryObj<typeof FocusRing>;
  * Fancy ring to focus on Items.
  *
  * ## Usage
+ * These steps set up a FocusRing component and associates it with a reference. This reference is then used by the setFocusRing function and the focus manager to set the focus ring to the current activeElement.
  * #### 1. Necessary imports:
  *
  * - `useFocusManager`: This primitive is used to manage focus within the application. See more on `useFocusManager` [here](https://lightning-tv.github.io/solid/#/primitives/useFocusManager?id=usefocusmanager-for-key-handling).
@@ -36,13 +37,13 @@ type Story = StoryObj<typeof FocusRing>;
  * import { FocusRing, setFocusRing } from '@lightningtv/solid-ui';
  * ```
  * #### 2. Create a ref:
- * - Declare a ref variable that will hold a reference to the `FocusRing` component. For example `let focusRef;`
+ * Declare a ref variable that will hold a reference to the `FocusRing` component. For example `let focusRef;`
  *
  * #### 3. Use the focus manager:
- * - Use the focus manager (`useFocusManager();`) primitive to activate focus management.
+ * Use the focus manager (`useFocusManager();`) primitive to activate focus management.
  *
  * #### 4. Use the FocusRing reference after the components are rendered:
- * - This code runs after the component has mounted. It calls the `setFocusRing` function to position the FocusRing to the current `activeElement` using the ref variable.
+ * This code runs after the component has mounted. It calls the `setFocusRing` function to position the FocusRing to the current `activeElement` using the ref variable.
  *
  * ```js
  * onMount(() => {
@@ -50,7 +51,7 @@ type Story = StoryObj<typeof FocusRing>;
  * });
  * ```
  * #### 5. Render the FocusRing component and use the declared reference variable:
- * - This line renders the `FocusRing` component, passing `focusRef` as a prop. This allows the `setFocusRing` function to associate the FocusRing with the component instance.
+ * This line renders the `FocusRing` component, passing `focusRef` as a prop. This allows the `setFocusRing` function to associate the FocusRing with the component instance.
  *
  * ```js
  * <FocusRing ref={focusRef} />
