@@ -18,3 +18,4 @@
 export { default as default } from './FocusRing.jsx';
 export { default as focusRingStyles } from './FocusRing.styles.js';
 export type { FocusRingProps, FocusRingStyles } from './FocusRing.types.js';
+export { setFocusRing } from './setFocusRing.js';

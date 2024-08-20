@@ -23,31 +23,63 @@ type Story = StoryObj<typeof FocusRing>;
  * Fancy ring to focus on Items.
  *
  * ## Usage
+ * #### 1. Necessary imports:
  *
- * Add a focus ring to tile or other items to provide a nice highlight
- * and shadow effect
+ * - `useFocusManager`: This primitive is used to manage focus within the application. See more on `useFocusManager` [here](https://lightning-tv.github.io/solid/#/primitives/useFocusManager?id=usefocusmanager-for-key-handling).
+ * - `onMount`: This lifecyle is used to run code after the component has mounted.
+ * - `setFocusRing`: This function in the FocusRing package is used to set the FocusRing reference and position the component on the current `activeElement`.
+ * - `FocusRing` : The FocusRing itself.
+ *
+ * ```js
+ * import { onMount } from 'solid-js';
+ * import { useFocusManager } from '@lightningtv/solid/primitives';
+ * import { FocusRing, setFocusRing } from '@lightningtv/solid-ui';
+ * ```
+ * #### 2. Create a ref:
+ * - Declare a ref variable that will hold a reference to the `FocusRing` component. For example `let focusRef;`
+ *
+ * #### 3. Use the focus manager:
+ * - Use the focus manager (`useFocusManager();`) primitive to activate focus management.
+ *
+ * #### 4. Use the FocusRing reference after the components are rendered:
+ * - This code runs after the component has mounted. It calls the `setFocusRing` function to position the FocusRing to the current `activeElement` using the ref variable.
+ *
+ * ```js
+ * onMount(() => {
+ *    setFocusRing(focusRef);
+ * });
+ * ```
+ * #### 5. Render the FocusRing component and use the declared reference variable:
+ * - This line renders the `FocusRing` component, passing `focusRef` as a prop. This allows the `setFocusRing` function to associate the FocusRing with the component instance.
+ *
+ * ```js
+ * <FocusRing ref={focusRef} />
+ * ```
+ * ## Example usage
  *
  * ```js
  * import { View } from '@lightningtv/solid';
+ * import { onMount } from 'solid-js';
  * import { useFocusManager } from '@lightningtv/solid/primitives';
- * import { FocusRing } from '@lightningtv/solid-ui';
- * import { setFocusRing } from '@lightningtv/solid-ui/utils';
+ * import { Button, FocusRing, setFocusRing } from '@lightningtv/solid-ui';
  *
  * const App = () => {
- *   let focusRef;
- *   useFocusManager();
+ *  let focusRef;            // Declared reference variables
+ *  useFocusManager();       // Primitive that manages focus
  *
- *   onMount(() => {
- *     setFocusRing(focusRef);
- *   });
+ *  onMount(() => {          // Function that runs after components are mounted
+ *    setFocusRing(focusRef);// Sets rings location to the current focused element
+ *  });
  *
- *   return (
+ *  return (
  *    <View>
- *      <FocusRing ref={focusRef} />
- *      // Other components
+ *      <FocusRing ref={focusRef} /> // Passing the ref variable as a ref prop
+ *      // Other components that use receive focus
+ *      <Button autofocus width={100}> 1 </Button>
+ *      <Button width={100}> 2 </Button>
  *    </View>
- *   );
- *  };
+ *  );
+ * };
  *
  * export default App;
  * ```
