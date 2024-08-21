@@ -16,30 +16,30 @@
  */
 
 import { For, Show, createMemo, createSignal, type Accessor, type Component } from 'solid-js';
+import { ElementNode, View } from '@lightningtv/solid';
 import Column from '../Column/Column.jsx';
 import Row from '../Row/Row.jsx';
 import Key from '../Key/Key.jsx';
 import type { KeyProps } from '../Key/Key.types.js';
 import styles from './Keyboard.styles.js';
-import type { KeyboardProps } from './Keyboard.types.js';
-import { ElementNode, View } from '@lightningtv/solid';
+import type { KeyboardBaseProps } from './Keyboard.types.js';
 import keyStyles from '../Key/Key.styles.js';
 
-const getTone = (props: KeyboardProps) => 
-  props.tone ?? styles.tone;
+/* eslint-disable solid/reactivity */
+const getTone = (props: KeyboardBaseProps) => props.tone ?? styles.tone;
 
-const getGap = (props: KeyboardProps) =>
+const getGap = (props: KeyboardBaseProps) =>
   props.gap ??
   props.keySpacing ??
   styles.Container.tones[props.tone ?? styles.tone]?.keySpacing ??
   styles.Container.base.keySpacing;
 
-const getKeyHeight = (props: KeyboardProps) =>
+const getKeyHeight = (props: KeyboardBaseProps) =>
   props.keyHeight ??
   styles.Container.tones[props.tone ?? styles.tone]?.keyHeight ??
   styles.Container.base.keyHeight;
 
-const getTotalWidth = (props: KeyboardProps) =>
+const getTotalWidth = (props: KeyboardBaseProps) =>
   props.screenW ??
   props.width ??
   styles.Container.tones[props.tone ?? styles.tone]?.width ??
@@ -59,8 +59,9 @@ const getKeySpacing = (props: KeyProps) =>
   props.keySpacing ??
   keyStyles.Container.tones?.[props.tone ?? keyStyles.tone]?.keySpacing ??
   keyStyles.Container.base.keySpacing;
+/* eslint-enable solid/reactivity */
 
-const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
+const KeyboardBase: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) => {
   // eslint-disable-next-line solid/reactivity
   const [_, setKeySignal] = props.keySignal ?? createSignal('');
   const [activeKeyboard, setActiveKeyboard] = createSignal('default');
@@ -86,7 +87,7 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
         setRowWidth(keyboardRefList[key.toggle]?.width ?? 0);
       };
     } else {
-      return () => setKeySignal(typeof key === 'string' ? key : key.title ?? '');
+      return () => setKeySignal(typeof key === 'string' ? key : (key.title ?? ''));
     }
   };
 
@@ -109,13 +110,16 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
     }
     return maxRow;
   };
-
   return (
     <View
       {...props}
       forwardFocus={0}
       // @ts-expect-error TODO type needs to be fixed in framework
-      style={[props.style, styles.Container.tones[tone()], styles.Container.base]}
+      style={[
+        props.style, //
+        styles.Container.tones[tone()],
+        styles.Container.base
+      ]}
       width={totalWidth()}
       // height is defined by the height of the keys, the number of rows, as well as the gap between them
       height={undefined}
@@ -145,7 +149,7 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
                 gap={gap()}
               >
                 <For each={props.formats[keyboard]}>
-                  {(row: (string | KeyProps)[], colIdx) => (
+                  {(row, colIdx) => (
                     <Row
                       scroll={'none'}
                       selected={selectedRowIndex()}
@@ -160,7 +164,7 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
                           <Key
                             {...(typeof key === 'string' ? {} : key)}
                             onEnter={setOnEnter(key, rowIdx, colIdx)}
-                            title={typeof key === 'string' ? key : key.title ?? ''}
+                            title={typeof key === 'string' ? key : (key.title ?? '')}
                             height={keyHeight()}
                           />
                         )}
@@ -177,4 +181,4 @@ const KeyboardSimple: Component<KeyboardProps> = (props: KeyboardProps) => {
   );
 };
 
-export default KeyboardSimple;
+export default KeyboardBase;

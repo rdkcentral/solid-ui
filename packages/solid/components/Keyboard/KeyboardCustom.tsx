@@ -17,11 +17,10 @@
 
 import { type Component } from 'solid-js';
 import KeyboardBase from './KeyboardBase.jsx';
-import type { KeyboardProps } from './Keyboard.types.js';
-import formats from './formats.js';
+import type { KeyboardBaseProps } from './Keyboard.types.js';
 
-const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
-  return <KeyboardBase {...props} formats={formats.simple} />;
+const KeyboardCustom: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) => {
+  return <KeyboardBase {...props} />;
 };
 
-export default Keyboard;
+export default KeyboardCustom;

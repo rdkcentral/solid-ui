@@ -22,11 +22,6 @@ import type { Signal } from 'solid-js';
 
 export interface KeyboardProps extends UIComponentProps, KeyboardStyleProperties {
   /**
-   * object containing arrays that represent different formats that the keyboard can be presented in. These arrays can contain strings or objects.
-   */
-  formats: KeyboardFormat;
-
-  /**
    * center the keyboard within it's set width (must set the w property of Keyboard)
    */
   centerKeyboard?: boolean;
@@ -50,6 +45,13 @@ export interface KeyboardProps extends UIComponentProps, KeyboardStyleProperties
    * Wrap the keyboard so active goes back to the beginning of the row
    */
   rowWrap: boolean;
+}
+
+export interface KeyboardBaseProps extends KeyboardProps {
+  /**
+   * object containing arrays that represent different formats that the keyboard can be presented in. These arrays can contain strings or objects.
+   */
+  formats: KeyboardFormat;
 }
 
 export type KeyboardFormat = Record<string, Array<Array<string | Partial<KeyProps>>>>;

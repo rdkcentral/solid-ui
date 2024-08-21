@@ -20,8 +20,8 @@ import KeyboardBase from './KeyboardBase.jsx';
 import type { KeyboardProps } from './Keyboard.types.js';
 import formats from './formats.js';
 
-const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
-  return <KeyboardBase {...props} formats={formats.simple} />;
+const KeyboardNumber: Component<KeyboardProps> = (props: KeyboardProps) => {
+  return <KeyboardBase {...props} formats={formats.numbers} />;
 };
 
-export default Keyboard;
+export default KeyboardNumber;
