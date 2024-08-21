@@ -51,6 +51,14 @@ const meta: Meta<typeof Keyboard> = {
   }
 };
 
+const sharedArgs = {
+  states: 'focus',
+  autofocus: true,
+  centerKeys: true,
+  centerKeyboard: true,
+  width: 1280
+};
+
 export const Basic: Story = {
   render: args => {
     return <Keyboard {...args} />;
@@ -62,13 +70,7 @@ export const Basic: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeyboard: false,
-    centerKeys: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardEmail: Story = {
@@ -82,13 +84,7 @@ export const KeyboardEmail: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeys: false,
-    centerKeyboard: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardQwerty: Story = {
@@ -102,13 +98,7 @@ export const KeyboardQwerty: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeys: false,
-    centerKeyboard: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardNumber: Story = {
@@ -122,13 +112,7 @@ export const KeyboardNumber: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeys: false,
-    centerKeyboard: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardDialpad: Story = {
@@ -142,13 +126,7 @@ export const KeyboardDialpad: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeys: false,
-    centerKeyboard: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardDialpadExtended: Story = {
@@ -162,13 +140,7 @@ export const KeyboardDialpadExtended: Story = {
       }
     }
   },
-  args: {
-    states: 'focus',
-    autofocus: true,
-    centerKeys: false,
-    centerKeyboard: false,
-    width: 1280
-  }
+  args: sharedArgs
 };
 
 export const KeyboardCustom: CustomStory = {
