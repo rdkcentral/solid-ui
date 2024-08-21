@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.22.1...@lightningtv/solid-ui@0.23.0) (2024-08-21)
+
+### Features
+
+- **FocusRing:** mvp for FocusRing component ([#37](https://github.com/rdkcentral/solid-ui/issues/37)) ([7ce2630](https://github.com/rdkcentral/solid-ui/commit/7ce26309fc61ef44ef1fe8ffadab1c641550bfc6))
+
 ## [0.22.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.22.0...@lightningtv/solid-ui@0.22.1) (2024-08-07)
 
 ### Bug Fixes
