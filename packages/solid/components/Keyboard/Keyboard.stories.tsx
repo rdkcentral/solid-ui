@@ -54,8 +54,8 @@ const meta: Meta<typeof Keyboard> = {
 const sharedArgs = {
   states: 'focus',
   autofocus: true,
-  centerKeys: true,
-  centerKeyboard: true,
+  centerKeys: false,
+  centerKeyboard: false,
   width: 1280
 };
 
