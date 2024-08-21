@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.23.0...@lightningtv/solid-ui@0.24.0) (2024-08-21)
+
+### Features
+
+- add new keyboard layouts, fix KeyboardInput sizing bug ([#36](https://github.com/rdkcentral/solid-ui/issues/36)) ([2aff0f6](https://github.com/rdkcentral/solid-ui/commit/2aff0f6800410fd5b88fa089afaaf45b424f0d24))
+
 # [0.23.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.22.1...@lightningtv/solid-ui@0.23.0) (2024-08-21)
 
 ### Features
