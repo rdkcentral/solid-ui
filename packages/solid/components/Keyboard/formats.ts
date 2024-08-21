@@ -17,14 +17,6 @@ const dialpadExtended = {
         keyId: 'delete',
         announce: 'delete, button'
       }
-    ],
-    [
-      {
-        title: 'Delete',
-        size: 'lg',
-        keyId: 'delete',
-        announce: 'delete, button'
-      }
     ]
   ]
 } satisfies KeyboardFormat; // fixes type issue when assigned to KeyboardBase.formats
