@@ -16,9 +16,9 @@
  */
 
 import { createEffect, on } from 'solid-js';
-import { activeElement } from '@lightningtv/solid';
+import { activeElement, type SolidNode } from '@lightningtv/solid';
 
-export const setFocusRing = focusRingRef =>
+export const setFocusRing = (focusRingRef: SolidNode) =>
   createEffect(
     on(
       activeElement,

@@ -26,7 +26,7 @@ type Story = StoryObj<typeof FocusRing>;
  * These steps set up a FocusRing component and associates it with a reference. This reference is then used by the setFocusRing function and the focus manager to set the focus ring to the current activeElement.
  * #### 1. Necessary imports:
  *
- * - `useFocusManager`: This primitive is used to manage focus within the application. See more on `useFocusManager` [here](https://lightning-tv.github.io/solid/#/primitives/useFocusManager?id=usefocusmanager-for-key-handling).
+ * - `useFocusManager`: an Effect used to manage focus within the application. See more on `useFocusManager` [here](https://lightning-tv.github.io/solid/#/primitives/useFocusManager?id=usefocusmanager-for-key-handling).
  * - `onMount`: This lifecyle is used to run code after the component has mounted.
  * - `setFocusRing`: This function in the FocusRing package is used to set the FocusRing reference and position the component on the current `activeElement`.
  * - `FocusRing` : The FocusRing itself.
@@ -37,10 +37,10 @@ type Story = StoryObj<typeof FocusRing>;
  * import { FocusRing, setFocusRing } from '@lightningtv/solid-ui';
  * ```
  * #### 2. Create a ref:
- * Declare a ref variable that will hold a reference to the `FocusRing` component. For example `let focusRef;`
+ * Declare an empty variable that will be used to store a reference to the `FocusRing` component. For example `let focusRef;`
  *
  * #### 3. Use the focus manager:
- * Use the focus manager (`useFocusManager();`) primitive to activate focus management.
+ * Use the focus manager (`useFocusManager();`) Effect to activate focus management.
  *
  * #### 4. Use the FocusRing reference after the components are rendered:
  * This code runs after the component has mounted. It calls the `setFocusRing` function to position the FocusRing to the current `activeElement` using the ref variable.
@@ -66,7 +66,7 @@ type Story = StoryObj<typeof FocusRing>;
  *
  * const App = () => {
  *  let focusRef;            // Declared reference variables
- *  useFocusManager();       // Primitive that manages focus
+ *  useFocusManager();       // Effect that manages focus
  *
  *  onMount(() => {          // Function that runs after components are mounted
  *    setFocusRing(focusRef);// Sets rings location to the current focused element
@@ -75,7 +75,7 @@ type Story = StoryObj<typeof FocusRing>;
  *  return (
  *    <View>
  *      <FocusRing ref={focusRef} /> // Passing the ref variable as a ref prop
- *      // Other components that use receive focus
+ *      // Other components that receive focus
  *      <Button autofocus width={100}> 1 </Button>
  *      <Button width={100}> 2 </Button>
  *    </View>
