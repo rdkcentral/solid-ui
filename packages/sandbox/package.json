@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@lightningjs/renderer": "^1.0.1",
-    "@lightningtv/solid": "^1.1.2",
+    "@lightningtv/solid": "^1.6.6",
     "@solidjs/router": "^0.14.1",
     "solid-js": "^1.8.18"
   },

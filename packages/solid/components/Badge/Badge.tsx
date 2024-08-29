@@ -15,34 +15,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { createMemo, type Component } from 'solid-js';
-import { Text } from '@lightningtv/solid';
-import { withPadding } from '../../utils/index.js';
+import { View, Text } from '@lightningtv/solid';
 import styles from './Badge.styles.js';
 import type { BadgeProps } from './Badge.types.js';
-withPadding; // Preserve the import.
-
-const getTone = (props: BadgeProps) => props.tone ?? styles.tone;
-const getTitle = (title: BadgeProps['title']) => title ?? '';
-const getPadding = (props: BadgeProps, tone: string) =>
-  props.padding ?? styles.Container?.tones[tone]?.padding ?? styles.Container.base.padding;
 
 const BadgeContainer: Component<BadgeProps> = props => {
-  const tone = createMemo(() => getTone(props));
-  const padding = createMemo(() => getPadding(props, tone()));
-
   return (
-    <node
-      use:withPadding={padding()}
+    <View
       {...props}
       // borderColor={props.strokeColor} // TODO clew uses strokeColor, but we currently don't account for nested properties (border.color)
       // borderWidth={props.strokeWidth} // TODO clew uses strokeWidth, but we currently don't account for nested properties (border.width)
       color={props.backgroundColor}
-      itemSpacing={props.contentSpacing}
       borderRadius={props.radius}
       // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
-        styles.Container.tones[tone()],
+        styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
       ]}
       forwardStates
@@ -51,20 +39,24 @@ const BadgeContainer: Component<BadgeProps> = props => {
 };
 
 const Badge: Component<BadgeProps> = (props: BadgeProps) => {
-  const tone = createMemo(() => getTone(props));
-  const title = createMemo(() => getTitle(props.title));
+  const tone = createMemo(() => props.tone ?? styles.tone);
 
   return (
-    <BadgeContainer {...props} padding={props.padding} tone={tone()} style={props.style}>
+    <BadgeContainer
+      {...props}
+      height={props.height || styles.Text.base.lineHeight}
+      tone={tone()}
+      style={props.style}
+    >
       <Text
         color={props.textColor}
+        lineHeight={(props.height || styles.Text.base.lineHeight) + 2}
         style={[
           styles.Text.tones[tone()], //
           styles.Text.base
         ]}
-        tone={tone()}
       >
-        {title()}
+        {props.title}
       </Text>
     </BadgeContainer>
   );

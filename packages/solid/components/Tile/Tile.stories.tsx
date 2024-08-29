@@ -144,7 +144,7 @@ export const MetadataStandard: Story = {
             height={theme.spacer.xxl + theme.spacer.md}
           />
         }
-        bottom={<Metadata {...(args.metadata as MetadataProps)} />}
+        bottomCenter={<Metadata {...(args.metadata as MetadataProps)} />}
       />
     );
   },
@@ -181,7 +181,7 @@ export const TileBadgeLabelSwitch: Story = {
             height={theme.spacer.xxl + theme.spacer.md}
           />
         }
-        bottom={<Metadata {...(args.metadata as MetadataProps)} />}
+        bottomCenter={<Metadata {...(args.metadata as MetadataProps)} />}
       />
     );
   },

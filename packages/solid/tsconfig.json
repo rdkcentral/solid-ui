@@ -10,7 +10,7 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "skipLibCheck": true,
-    "types": ["solid-js"],
+    "types": ["solid-js", "vite/client"],
     "paths": {
       "theme": ["../l3-ui-theme-base/theme.d.ts"]
     }

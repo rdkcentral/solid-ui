@@ -29,11 +29,11 @@ const container: LabelConfig = {
   },
   base: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'flexStart',
     color: theme.color.textNeutral,
     padding: [theme.spacer.md, theme.spacer.lg], // TODO themed padding values
+    height: theme.typography.caption1.lineHeight + theme.spacer.md * 2,
     borderRadius: [theme.radius.md, theme.radius.md, theme.radius.md, theme.radius.none],
-    height: theme.typography.caption1.lineHeight + theme.spacer.md,
     neutral: {
       backgroundColor: theme.color.fillNeutral
     }
@@ -58,7 +58,10 @@ const text: LabelConfig = {
   },
   base: {
     ...theme.typography.caption1,
-    color: theme.color.textInverse
+    color: theme.color.textInverse,
+    lineHeight: theme.typography.caption1.lineHeight + theme.spacer.md * 2,
+    marginRight: theme.spacer.lg,
+    marginLeft: theme.spacer.lg
   },
   tones: {
     inverse: {

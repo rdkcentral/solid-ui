@@ -35,10 +35,10 @@ const Row: Component<RowProps> = (props: RowProps) => {
       onLeft={chainFunctions(props.onLeft, onLeft)}
       onRight={chainFunctions(props.onRight, onRight)}
       forwardFocus={onGridFocus}
-      onBeforeLayout={
+      onLayout={
         props.selected
-          ? chainFunctions(props.onBeforeLayout, (elm, selected) => scroll(elm, selected))
-          : props.onBeforeLayout
+          ? chainFunctions(props.onLayout, scroll)
+          : props.onLayout
       }
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,

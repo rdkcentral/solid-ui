@@ -15,18 +15,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { createRenderer, Config } from '@lightningtv/solid';
+import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
 import App from './pages/App';
-import loadFonts from '../shared/loadFonts';
+import fonts from '../shared/fonts';
 
 Config.fontSettings.fontFamily = 'Roboto';
 Config.fontSettings.color = 0xffffffff;
-
-const driver = 'main';
 Config.renderOptions = {
   // deviceLogicalPixelRatio: 1
 };
 
-const { renderer, render } = createRenderer();
-loadFonts(renderer.stage);
+const { render } = createRenderer();
+loadFonts(fonts);
 render(() => <App />);
