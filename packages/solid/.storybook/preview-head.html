@@ -17,15 +17,18 @@
 
 <!-- use to style elements in Storybook Docs -->
 <style>
+  body {
+    --preview-background-color: #333333;
+  }
   /* transition background Docs to Story */
   /* transition background from Story to Doc */
   .sb-preparing-docs,
   .sb-preparing-story {
-    background-color: #8D8F90;
+    background-color: var(--preview-background-color);
   }
   /* NOTE: this class is set to background and not background-color */
   .sb-previewBlock {
-    background: #8D8F90;
+    background: var(--preview-background-color);
   }
 
   /* hides the args table that shows briefly during transition from Story to Docs */
@@ -35,7 +38,7 @@
 
   /* loading icons only seen during load/transition from Story to Docs */
   .sb-previewBlock_icon {
-    background-color: #8D8F90;
+    background-color: var(--preview-background-color);
   }
 
   /* prevent container from scrolling when addon panel is shown */
@@ -44,6 +47,6 @@
   }
 
   .sb-show-main{
-    background-color: #8D8F90;
+    background-color: var(--preview-background-color);
   }
 </style>

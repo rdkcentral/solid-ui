@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { createMemo, type Component } from 'solid-js';
-import { View, Text } from '@lightningtv/solid';
+import { View, Text, type BorderStyleObject } from '@lightningtv/solid';
 import styles from './Badge.styles.js';
 import type { BadgeProps } from './Badge.types.js';
 
@@ -40,6 +40,7 @@ const BadgeContainer: Component<BadgeProps> = props => {
 
 const Badge: Component<BadgeProps> = (props: BadgeProps) => {
   const tone = createMemo(() => props.tone ?? styles.tone);
+  const baseBorderStyle = styles.Container.base.border as BorderStyleObject;
 
   return (
     <BadgeContainer
@@ -50,7 +51,7 @@ const Badge: Component<BadgeProps> = (props: BadgeProps) => {
     >
       <Text
         color={props.textColor}
-        lineHeight={(props.height || styles.Text.base.lineHeight) + 2}
+        lineHeight={(props.height || styles.Text.base.lineHeight) + baseBorderStyle.width}
         style={[
           styles.Text.tones[tone()], //
           styles.Text.base
