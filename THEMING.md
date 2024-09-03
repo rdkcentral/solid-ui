@@ -124,7 +124,7 @@ componentConfig: {
         disabled: { alpha: 0.25 }
       },
       tone: {
-        brand: { progressColor: '#00ff00' }
+        brand: { progressColor: 0x00ff00ff }
       }
     }
   }
@@ -145,9 +145,9 @@ componentConfig: {
     style: {
       tone: {
         brand: {
-          progressColor: '#00ff00',
+          progressColor: 0x00ff00ff,
           mode: {
-            disabled: { progressColor: '#003300' }
+            disabled: { progressColor: 0x003300ff }
           },
         }
       }
