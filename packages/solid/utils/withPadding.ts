@@ -53,30 +53,28 @@ export function withPadding(el: ElementNode, padding: () => withPaddingInput) {
     top = right = bottom = left = pad;
   }
 
-  el.onBeforeLayout = (_, size) => {
-    if (size) {
-      el.width =
-        el.children.reduce((acc, c) => {
-          return acc + (c.width || 0);
-        }, 0) +
-        left +
-        right;
-      const firstChild = el.children[0];
-      if (firstChild) {
-        // set padding or marginLeft for flex
-        firstChild.x = left;
-        firstChild.marginLeft = left;
-      }
-
-      let maxHeight = 0;
-      el.children.forEach(c => {
-        c.y = top;
-        c.marginTop = top;
-        maxHeight = Math.max(maxHeight, c.height || 0);
-      });
-      el.height = maxHeight + top + bottom;
-      // let flex know we need to re-layout
-      return true;
+  el.onBeforeLayout = () => {
+    el.width =
+      el.children.reduce((acc, c) => {
+        return acc + (c.width || 0);
+      }, 0) +
+      left +
+      right;
+    const firstChild = el.children[0];
+    if (firstChild) {
+      // set padding or marginLeft for flex
+      firstChild.x = left;
+      firstChild.marginLeft = left;
     }
+
+    let maxHeight = 0;
+    el.children.forEach(c => {
+      c.y = top;
+      c.marginTop = top;
+      maxHeight = Math.max(maxHeight, c.height || 0);
+    });
+    el.height = maxHeight + top + bottom;
+    // let flex know we need to re-layout
+    return true;
   };
 }

@@ -15,8 +15,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 /* @refresh reload */
-import { createRenderer, Config } from '@lightningtv/solid';
-import loadFonts from './loadFonts.js';
+import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
+import fonts from '../../shared/fonts';
 import { themes } from '@storybook/theming';
 import { useFocusManager } from '@lightningtv/solid/primitives';
 
@@ -54,8 +54,8 @@ const preview = {
       const solidRoot = document.createElement('div');
       // teardown previous render (cleans up keyhandling)
       dispose && dispose();
-      const { renderer, render } = createRenderer(undefined, solidRoot);
-      loadFonts(renderer.stage);
+      const { render } = createRenderer(undefined, solidRoot);
+      loadFonts(fonts);
 
       dispose = render(() => {
         useFocusManager();

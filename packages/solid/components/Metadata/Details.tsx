@@ -17,7 +17,6 @@
 
 import type { Component, Accessor } from 'solid-js';
 import { View, Text, Show, For } from '@lightningtv/solid';
-import type { ElementNode } from '@lightningtv/solid';
 import styles from './Details.styles.js';
 import type { BadgeProps } from '../Badge/Badge.types.js';
 import Badge from '../Badge/Badge.jsx';
@@ -37,13 +36,6 @@ const Details: Component<DetailsProps> = (props: DetailsProps) => {
         styles.Container.base
       ]}
       forwardStates
-      onBeforeLayout={(node: ElementNode, dimensions) => {
-        if (dimensions?.height && node.parent) {
-          node.parent.height = dimensions.height;
-          return true; // return true to inform renderer we've updated a dimension
-        }
-        return false;
-      }}
     >
       <Show when={props.title}>
         <Text

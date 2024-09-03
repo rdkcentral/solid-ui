@@ -15,8 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ElementNode, type KeyHandler } from '@lightningtv/core';
-import { assertTruthy } from './index.js';
+import { ElementNode, type KeyHandler, assertTruthy } from '@lightningtv/core';
 
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;

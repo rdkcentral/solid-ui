@@ -17,20 +17,13 @@
  */
 
 import { type Component } from 'solid-js';
-import { Text } from '@lightningtv/solid';
-import { withPadding } from '../../utils/index.js';
+import { View, Text } from '@lightningtv/solid';
 import styles from './Label.styles.js';
 import type { LabelProps } from './Label.types.js';
-withPadding;
 
 const Label: Component<LabelProps> = props => {
   return (
-    <node
-      use:withPadding={
-        props.padding ??
-        styles.Container.tones[props.tone ?? styles.tone]?.padding ??
-        styles.Container.base.padding
-      }
+    <View
       {...props}
       color={props.backgroundColor}
       borderRadius={props.radius}
@@ -51,7 +44,7 @@ const Label: Component<LabelProps> = props => {
       >
         {props.title}
       </Text>
-    </node>
+    </View>
   );
 };
 

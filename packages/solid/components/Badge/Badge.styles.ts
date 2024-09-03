@@ -39,13 +39,8 @@ const container: BadgeConfig = {
     },
     gap: theme.spacer.xs,
     display: 'flex',
-    justifyContent: 'spaceEvenly',
-    padding: [
-      theme.spacer.md - theme.stroke.sm,
-      theme.spacer.xs + theme.stroke.sm,
-      theme.spacer.md + theme.stroke.sm,
-      theme.spacer.md + theme.stroke.sm
-    ]
+    justifyContent: 'flexStart',
+    alignItems: 'center'
   },
   tones: {
     inverse: {
@@ -74,7 +69,10 @@ const text: BadgeConfig = {
   },
   base: {
     ...theme.typography.tag1,
-    color: theme.color.textNeutral
+    color: theme.color.textNeutral,
+    lineHeight: theme.typography.tag1.lineHeight + 12,
+    marginRight: theme.spacer.md + theme.stroke.sm,
+    marginLeft: theme.spacer.md + theme.stroke.sm
   },
   tones: {
     inverse: {
