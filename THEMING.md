@@ -158,7 +158,7 @@ componentConfig: {
 
 ## App Setup
 
-Themes are loaded at compile time by the app bundler (we recommend [vite](https://vitejs.dev/) which is built on top of [rollup](https://rollupjs.org/)). In your bundler config, you'll need add an import alias. We're working on a plugin to clean this up a little but for now:
+Themes are loaded at compile time by the app bundler (we recommend [vite](https://vitejs.dev/) which is built on top of [rollup](https://rollupjs.org/)). In your bundler config, you'll need to add an import alias. We're working on a plugin to clean this up a little but for now:
 
 _the app will not run without this configuration_
 
