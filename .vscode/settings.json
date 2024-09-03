@@ -1,0 +1,4 @@
+{
+  "cSpell.words": ["autodocs", "lorum", "noto"],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
