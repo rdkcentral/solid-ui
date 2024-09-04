@@ -46,9 +46,9 @@ export function makeComponentStyles(
   {
     themeKeys,
     base,
+    themeStyles,
     modes = {},
     tones = {},
-    themeStyles,
     modeKeys = defaultModeKeys,
     toneKeys = defaultToneKeys
   },

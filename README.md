@@ -11,7 +11,7 @@ If you haven't already, follow the steps found [here](https://github.com/lightni
 1. install this package and the base theme with your package manager of choice
 
 ```sh
-pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or pnpm/yarn
+pnpm add @lightningtv/solid-ui @lightningtv/l3-ui-theme-base # or npm/yarn
 ```
 
 2. add the theme package as an alias in your vite config(see the [theming docs](THEMING.md) for more information on this)
@@ -37,6 +37,8 @@ import { Button } from '@lightningtv/solid-ui';
 
 ## Reporting a Bug
 
+If you come across a bug in this library, please open an [issue](https://github.com/rdkcentral/solid-ui/issues) with a detailed description of what you've encountered
+
 ## Development
 
 If you don't have pnpm
@@ -57,3 +59,7 @@ Run the solid sandbox environment:
 ```sh
 pnpm sandbox
 ```
+
+## Theming
+
+Theming in the context of solid-ui is a system for providing a set of values to control the look and feel of the components. Head over to our [theming documentation](THEMING.md) for more information
