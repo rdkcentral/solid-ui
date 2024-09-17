@@ -43,8 +43,5 @@ const config = {
     reactDocgen: 'react-docgen',
     check: false
   }
-  // docs: {
-  //   autodocs: 'tag'
-  // }
 };
 export default config;
