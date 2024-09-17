@@ -49,7 +49,7 @@ importers:
         version: 0.1.6
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.4.5(vitest@1.6.0(@types/node@22.2.0)(@vitest/browser@1.6.0)(jsdom@24.1.1)))(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
+        version: 2.10.2(@testing-library/jest-dom@6.4.5)(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
 
   packages/l3-ui-theme-base: {}
 
@@ -85,7 +85,7 @@ importers:
         version: 0.1.6
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.4.5(vitest@1.6.0(@types/node@22.2.0)(@vitest/browser@1.6.0)(jsdom@24.1.1)))(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
+        version: 2.10.2(@testing-library/jest-dom@6.4.5)(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
 
   packages/solid:
     dependencies:
@@ -132,6 +132,9 @@ importers:
       '@storybook/html-vite':
         specifier: ^8.2.9
         version: 8.2.9(storybook@8.2.9(@babel/preset-env@7.25.3(@babel/core@7.25.2)))(typescript@5.5.4)(vite@5.4.0(@types/node@22.2.0))
+      '@storybook/icons':
+        specifier: ^1.2.10
+        version: 1.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/manager-api':
         specifier: ^8.2.9
         version: 8.2.9(storybook@8.2.9(@babel/preset-env@7.25.3(@babel/core@7.25.2)))
@@ -159,6 +162,9 @@ importers:
       storybook:
         specifier: ^8.2.9
         version: 8.2.9(@babel/preset-env@7.25.3(@babel/core@7.25.2))
+      storybook-solidjs:
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(babel-preset-solid@1.8.19(@babel/core@7.25.2))(solid-js@1.8.20)
       typescript:
         specifier: ^5.4.5
         version: 5.5.4
@@ -176,7 +182,7 @@ importers:
         version: 3.9.1(@types/node@22.2.0)(rollup@4.20.0)(typescript@5.5.4)(vite@5.4.0(@types/node@22.2.0))
       vite-plugin-solid:
         specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.4.5(vitest@1.6.0(@types/node@22.2.0)(@vitest/browser@1.6.0)(jsdom@24.1.1)))(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
+        version: 2.10.2(@testing-library/jest-dom@6.4.5)(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0))
       vitest:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@22.2.0)(@vitest/browser@1.6.0)(jsdom@24.1.1)
@@ -4755,6 +4761,13 @@ packages:
   stop-iteration-iterator@1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
     engines: {node: '>= 0.4'}
+
+  storybook-solidjs@1.0.0-beta.2:
+    resolution: {integrity: sha512-wXjM/uH29IPjgxlPvQVNTM/7iBFNNzjuOugpk7iM2oy+sZl7K70eBjvOqGgX5v35pNHTaA8Ju3BlLdp+O20abg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      babel-preset-solid: ^1.6.6
+      solid-js: ^1.6.6
 
   storybook@8.2.9:
     resolution: {integrity: sha512-S7Q/Yt4A+nu1O23rg39lQvBqL2Vg+PKXbserDWUR4LFJtfmoZ2xGO8oFIhJmvvhjUBvolw1q7QDeswPq2i0sGw==}
@@ -10833,6 +10846,11 @@ snapshots:
     dependencies:
       internal-slot: 1.0.7
 
+  storybook-solidjs@1.0.0-beta.2(babel-preset-solid@1.8.19(@babel/core@7.25.2))(solid-js@1.8.20):
+    dependencies:
+      babel-preset-solid: 1.8.19(@babel/core@7.25.2)
+      solid-js: 1.8.20
+
   storybook@8.2.9(@babel/preset-env@7.25.3(@babel/core@7.25.2)):
     dependencies:
       '@babel/core': 7.25.2
@@ -11252,7 +11270,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.4.5(vitest@1.6.0(@types/node@22.2.0)(@vitest/browser@1.6.0)(jsdom@24.1.1)))(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0)):
+  vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.4.5)(solid-js@1.8.20)(vite@5.4.0(@types/node@22.2.0)):
     dependencies:
       '@babel/core': 7.25.2
       '@types/babel__core': 7.20.5
