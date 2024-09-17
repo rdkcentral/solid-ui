@@ -32,15 +32,16 @@ const config = {
   ],
   framework: {
     name: '@storybook/html-vite',
-    options: {}
+    options: {
+      builder: {
+        viteConfigPath: '.storybook/vite.config.storybook.js'
+      }
+    }
   },
   typescript: {
     // Overrides the default Typescript configuration to allow multi-package components to be documented via Autodocs.
     reactDocgen: 'react-docgen',
     check: false
   }
-  // docs: {
-  //   autodocs: 'tag'
-  // }
 };
 export default config;
