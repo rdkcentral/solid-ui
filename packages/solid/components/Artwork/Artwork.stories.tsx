@@ -36,16 +36,15 @@ const meta: Meta<typeof Artwork> = {
       description: 'solid color background, displayed if src undefined or invalid',
       control: { type: 'color' }
     },
-    // TODO re-enable gradient once rendering bug is resolved
-    // gradient: {
-    //   description: 'enable to display a gradient overlay, color can be set with `gradientColor`',
-    //   control: { type: 'boolean' },
-    //   default: 'false'
-    // },
-    // gradientColor: {
-    //   description: '',
-    //   control: { type: 'color' }
-    // },
+    gradient: {
+      description: 'enable to display a gradient overlay, color can be set with `gradientColor`',
+      control: { type: 'boolean' },
+      default: 'false'
+    },
+    gradientColor: {
+      description: 'Color used in gradient ramp when `gradient="true"`',
+      control: { type: 'color' }
+    },
     srcCallback: {
       description:
         'optional callback function that can be used to generate custom strings to request an image. The callback will be passed an object containing the following parameters: `aspectRatio`, `src`, `w`, `h`. Be default aspect ratio will match the closest value from srcCallbackAspectRatios'
@@ -61,16 +60,16 @@ export const Image: StoryObj<typeof Artwork> = {
       src={args.src}
       fallbackSrc={args.fallbackSrc}
       fillColor={hexColor(args.fillColor) || hexColor(theme.color.blue)}
-      // gradient={args.gradient}
-      // gradientColor={hexColor(args.gradientColor) || hexColor(theme.color.black)}
+      gradient={args.gradient}
+      gradientColor={hexColor(args.gradientColor) || hexColor(theme.color.blue)}
       width={400}
       height={240}
     />
   ),
   args: {
     src: 'https://image.tmdb.org/t/p/w500/zHdQ6yaqDf3OQO5uhr0auAgwK6O.jpg',
-    fallbackSrc: 'https://image.tmdb.org/t/p/w500/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg'
-    // gradient: false
+    fallbackSrc: 'https://image.tmdb.org/t/p/w500/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg',
+    gradient: false
   }
 };
 
@@ -81,5 +80,8 @@ export const Color: StoryObj<typeof Artwork> = {
       width={400}
       height={240}
     />
-  )
+  ),
+  args: {
+    gradient: false
+  }
 };

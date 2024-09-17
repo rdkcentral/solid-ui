@@ -56,7 +56,7 @@ export interface ArtworkStyleProperties {
   fillColor?: NodeStyles['color'];
 
   /**
-   * starting color the linear gradient effect to apply on top of image
+   * bottom color of the linear gradient effect, top color is transparent
    *
    * core reference: {@link https://github.com/lightning-js/renderer/blob/aefee0064a48055b3cf8dd459396ad4996b68ef5/src/core/renderers/webgl/shaders/effects/LinearGradientEffect.ts#L35 LinearGradientEffectProps.colors}
    * */

@@ -50,29 +50,27 @@ const getColor = (props: ArtworkProps, formattedArtwork: string) =>
       styles.Container.tones[props.tone ?? styles.tone]?.fillColor ??
       styles.Container.base.fillColor);
 
-const getLinearGradient = (props: ArtworkProps, tone: Tone) => {
+const getGradientColor = (props: ArtworkProps, tone: Tone) => {
   if (!props.gradient) {
     return undefined;
   }
   const gradientColor =
     props.gradientColor ?? styles.Container.tones[tone]?.gradientColor ?? styles.Container.base.gradientColor;
 
-  return {
-    colors: [0xff000000, Number(gradientColor)]
-  };
+  return Number(gradientColor);
 };
 
 const Artwork: Component<ArtworkProps> = props => {
   const tone = createMemo(() => getTone(props));
   const src = createMemo(() => formatSrc(props, tone()));
   const color = createMemo(() => getColor(props, src()));
-  const linearGradient = createMemo(() => getLinearGradient(props, tone()));
+  const gradientColor = createMemo(() => getGradientColor(props, tone()));
 
   return (
     <View
       {...props}
       color={color()}
-      linearGradient={linearGradient()}
+      colorBottom={gradientColor()}
       pivotX={props.imageScalePivotX}
       pivotY={props.imageScalePivotX}
       scale={props.imageScale}
