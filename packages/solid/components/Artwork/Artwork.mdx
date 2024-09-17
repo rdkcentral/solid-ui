@@ -1,0 +1,24 @@
+import { ArgTypes, Meta, Primary, Title } from '@storybook/blocks';
+import * as ArtworkStories from './Artwork.stories.tsx';
+import { GithubIcon } from '@storybook/icons'
+
+<Meta of={ArtworkStories} />
+
+<Title />
+
+A simple component for displaying images with support for a fallback image or color.
+
+<a
+  style={{ display: 'flex', margin: '20px 0', width: 'fit-content' }}
+  target="_blank"
+  rel="noreferrer"
+  href="https://github.com/rdkcentral/solid-ui/tree/main/packages/solid/components/Artwork"
+><GithubIcon height="24" width="24" style={{ color: 'white', marginRight: '10px' }} />Github Code</a>
+
+<Primary of={ArtworkStories} />
+
+## API
+
+### Component properties
+
+<ArgTypes of={ArtworkStories} />
