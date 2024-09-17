@@ -25,9 +25,9 @@ const getTone = (props: ArtworkProps) => props.tone ?? styles.tone;
 
 const formatSrc = (props: ArtworkProps, tone: Tone) => {
   let src = //
-    props.src ??
-    props.fallbackSrc ??
-    styles.Container.tones[tone]?.fallbackSrc ??
+    props.src ||
+    props.fallbackSrc ||
+    styles.Container.tones[tone]?.fallbackSrc ||
     styles.Container.base.fallbackSrc;
 
   if (src && props.srcCallback && typeof props.srcCallback === 'function') {
@@ -46,9 +46,9 @@ const getColor = (props: ArtworkProps, formattedArtwork: string) =>
   Boolean(formattedArtwork)
     ? undefined
     : // using fillColor here because props.color will alter the image
-      props.fillColor ??
+      (props.fillColor ??
       styles.Container.tones[props.tone ?? styles.tone]?.fillColor ??
-      styles.Container.base.fillColor;
+      styles.Container.base.fillColor);
 
 const getLinearGradient = (props: ArtworkProps, tone: Tone) => {
   if (!props.gradient) {
