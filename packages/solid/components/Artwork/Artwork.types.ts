@@ -60,7 +60,7 @@ export interface ArtworkStyleProperties {
    *
    * core reference: {@link https://github.com/lightning-js/renderer/blob/aefee0064a48055b3cf8dd459396ad4996b68ef5/src/core/renderers/webgl/shaders/effects/LinearGradientEffect.ts#L35 LinearGradientEffectProps.colors}
    * */
-  gradientColor?: NodeStyles['linearGradient'];
+  gradientColor?: NodeStyles['color'];
 
   /**
    * The scale value multiplies the provided width and height of the Node.
