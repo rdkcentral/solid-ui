@@ -16,7 +16,12 @@
  */
 
 const config = {
-  stories: ['../components/**/*.stories.@(ts|tsx)', '../components/**/*.mdx'],
+  stories: [
+    '../components/**/*.stories.@(ts|tsx)', //
+    '../components/**/*.mdx',
+    '../recipes/**/*.stories.@(ts|tsx)',
+    '../recipes/**/*.mdx'
+  ],
   addons: [
     {
       name: '@storybook/addon-essentials',
