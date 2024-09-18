@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.25.1...@lightningtv/solid-ui@0.26.0) (2024-09-18)
+
+### Features
+
+- update to storybook 8, update Artwork docs ([#43](https://github.com/rdkcentral/solid-ui/issues/43)) ([be29d41](https://github.com/rdkcentral/solid-ui/commit/be29d4152847b0beeae451ccad59b5c20aca9893))
+
 ## [0.25.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.25.0...@lightningtv/solid-ui@0.25.1) (2024-09-04)
 
 **Note:** Version bump only for package @lightningtv/solid-ui
