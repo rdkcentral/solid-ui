@@ -24,12 +24,13 @@ const { Artwork: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme
 
 const container: ArtworkConfig = {
   themeKeys: {
+    borderRadius: 'radius',
     fallbackSrc: 'fallbackSrc',
     fillColor: 'fillColor',
-    scale: 'imageScale',
+    gradientColor: 'gradientColor',
     pivotX: 'imageScalePivotX',
     pivotY: 'imageScalePivotY',
-    borderRadius: 'radius'
+    scale: 'imageScale'
   },
   base: {
     fallbackSrc: undefined,
