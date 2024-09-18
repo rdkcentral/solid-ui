@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles, KeyHandler } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, NodeStyles, KeyHandler } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 
@@ -30,15 +30,6 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
 
   /** function to be called on up click */
   onUp?: KeyHandler;
-
-  /** function to be called when the selected of the component changes */
-  onSelectedChanged?: (
-    this: ElementNode,
-    elm: ElementNode,
-    active: ElementNode,
-    selectedIndex: number,
-    lastSelectedIndex: number
-  ) => void;
 
   /** Determines when to scroll(shift items along the axis):
    * auto - scroll items immediately

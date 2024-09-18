@@ -14,7 +14,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { ElementNode, IntrinsicNodeCommonProps, NodeStyles, KeyHandler } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, NodeStyles, KeyHandler } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 
@@ -40,15 +40,6 @@ export interface RowProps extends UIComponentProps, RowStyleProperties {
 
   /** function to be called on right click */
   onLeft?: KeyHandler;
-
-  /** function to be called when the selected of the component changes */
-  onSelectedChanged?: (
-    this: ElementNode,
-    elm: ElementNode,
-    active: ElementNode,
-    selectedIndex: number,
-    lastSelectedIndex: number
-  ) => void;
 
   /**
    * Adjust the x position of the row. Initial value is X
