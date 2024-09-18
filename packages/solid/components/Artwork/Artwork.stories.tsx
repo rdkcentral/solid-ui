@@ -44,10 +44,6 @@ const meta: Meta<typeof Artwork> = {
     gradientColor: {
       description: 'Color used in gradient ramp when `gradient="true"`',
       control: { type: 'color' }
-    },
-    srcCallback: {
-      description:
-        'optional callback function that can be used to generate custom strings to request an image. The callback will be passed an object containing the following parameters: `aspectRatio`, `src`, `w`, `h`. Be default aspect ratio will match the closest value from srcCallbackAspectRatios'
     }
   }
 };
