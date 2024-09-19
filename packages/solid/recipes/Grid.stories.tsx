@@ -46,7 +46,7 @@ const Tile = props => <View {...props} style={tileStyle} />;
 
 export const Example: StoryObj = {
   render: () => (
-    <Column autofocus>
+    <Column autofocus plinko>
       <Row height={100}>
         <Tile color={0xa32eacff} />
         <Tile color={0xa32eacff} />
