@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.1...@lightningtv/solid-ui@0.26.2) (2024-09-19)
+
+### Bug Fixes
+
+- plinko the grid ([#46](https://github.com/rdkcentral/solid-ui/issues/46)) ([413c427](https://github.com/rdkcentral/solid-ui/commit/413c4273c152020c293aa38be798e22c4c465eb2))
+
 ## [0.26.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.0...@lightningtv/solid-ui@0.26.1) (2024-09-19)
 
 **Note:** Version bump only for package @lightningtv/solid-ui
