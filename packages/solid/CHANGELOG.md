@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.2...@lightningtv/solid-ui@0.27.0) (2024-09-19)
+
+### Features
+
+- Update SolidUI to with Renderer 2.0 & Solid 2.0 ([#45](https://github.com/rdkcentral/solid-ui/issues/45)) ([6479c41](https://github.com/rdkcentral/solid-ui/commit/6479c41abdd7b89d7e3e879a19f0b715f7ecc471))
+
 ## [0.26.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.1...@lightningtv/solid-ui@0.26.2) (2024-09-19)
 
 ### Bug Fixes
