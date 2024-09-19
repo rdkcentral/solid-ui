@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.26.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.0...@lightningtv/solid-ui@0.26.1) (2024-09-19)
+
+**Note:** Version bump only for package @lightningtv/solid-ui
+
 # [0.26.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.25.1...@lightningtv/solid-ui@0.26.0) (2024-09-18)
 
 ### Features
