@@ -16,6 +16,11 @@
  */
 /* @refresh reload */
 import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
+import {
+  WebGlCoreRenderer,
+  SdfTextRenderer,
+} from "@lightningjs/renderer/webgl";
+import { Inspector } from '@lightningjs/renderer/inspector';
 import fonts from '../../shared/fonts';
 import { themes } from '@storybook/theming';
 import { useFocusManager } from '@lightningtv/solid/primitives';
@@ -24,7 +29,10 @@ Config.rendererOptions = {
   appWidth: 1280,
   appHeight: 720,
   deviceLogicalPixelRatio: 2 / 3,
-  enableInspector: true
+  inspector: Inspector,
+  devicePhysicalPixelRatio: 1,
+  fontEngines: [SdfTextRenderer],
+  renderEngine: WebGlCoreRenderer,
 };
 
 let dispose;

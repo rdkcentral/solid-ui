@@ -18,11 +18,21 @@
 import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
 import App from './pages/App';
 import fonts from '../shared/fonts';
+import {
+  WebGlCoreRenderer,
+  SdfTextRenderer,
+} from "@lightningjs/renderer/webgl";
+import { Inspector } from '@lightningjs/renderer/inspector';
+
 
 Config.fontSettings.fontFamily = 'Roboto';
 Config.fontSettings.color = 0xffffffff;
-Config.renderOptions = {
-  // deviceLogicalPixelRatio: 1
+Config.rendererOptions = {
+  deviceLogicalPixelRatio: 1,
+  inspector: Inspector,
+  devicePhysicalPixelRatio: 1,
+  fontEngines: [SdfTextRenderer],
+  renderEngine: WebGlCoreRenderer,
 };
 
 const { render } = createRenderer();
