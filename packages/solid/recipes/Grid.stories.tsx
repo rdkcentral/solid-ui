@@ -19,6 +19,7 @@ import type { Meta, StoryObj } from 'storybook-solidjs';
 import { View, type IntrinsicNodeStyleProps } from '@lightningtv/solid';
 import Column from '../components/Column/Column.jsx';
 import Row from '../components/Row/Row.jsx';
+import { createSelector, createSignal, For } from 'solid-js';
 
 const meta: Meta = {
   title: 'Recipes/Grid'
@@ -44,7 +45,7 @@ const tileStyle: IntrinsicNodeStyleProps = {
 
 const Tile = props => <View {...props} style={tileStyle} />;
 
-export const Example: StoryObj = {
+export const Grid: StoryObj = {
   render: () => (
     <Column autofocus plinko>
       <Row height={100}>
@@ -73,4 +74,27 @@ export const Example: StoryObj = {
       </Row>
     </Column>
   )
+};
+
+export const GridActiveRow: StoryObj = {
+  render: () => {
+    const Colors = [0xa32eacff, 0x23adccff, 0x23cc37ff, 0xcd8518ff];
+    const highlightRow = { color: 0x00ff00ff, active: { color: 0xff0000ff } };
+    const [selectedIndex, setSelectedIndex] = createSignal(0);
+    const isSelected = createSelector(selectedIndex);
+    return (
+      <Column autofocus plinko onSelect={setSelectedIndex}>
+        <For each={Colors}>
+          {(color, index) => (
+            <Row height={100} states={{ active: isSelected(index()) }} style={highlightRow}>
+              <Tile color={color} marginLeft={8} />
+              <Tile color={color} />
+              <Tile color={color} />
+              <Tile color={color} />
+            </Row>
+          )}
+        </For>
+      </Column>
+    );
+  }
 };

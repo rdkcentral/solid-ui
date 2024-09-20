@@ -18,7 +18,7 @@
 import { type Component } from 'solid-js';
 import { View } from '@lightningtv/solid';
 import { chainFunctions } from '../../utils/chainFunctions.js';
-import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
+import { handleNavigation, handleOnSelect, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import styles from './Row.styles.js';
 import type { RowProps } from './Row.types.js';
@@ -34,6 +34,7 @@ const Row: Component<RowProps> = (props: RowProps) => {
       selected={props.selected || 0}
       onLeft={chainFunctions(props.onLeft, onLeft)}
       onRight={chainFunctions(props.onRight, onRight)}
+      onFocus={chainFunctions(props.onFocus, handleOnSelect)}
       forwardFocus={onGridFocus}
       onLayout={
         props.selected

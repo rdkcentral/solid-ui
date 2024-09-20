@@ -17,7 +17,7 @@
 
 import { type Component } from 'solid-js';
 import { View, type KeyHandler } from '@lightningtv/solid';
-import { handleNavigation, onGridFocus } from '../../utils/handleNavigation.js';
+import { handleNavigation, onGridFocus, handleOnSelect } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
 import styles from './Column.styles.js';
@@ -35,11 +35,8 @@ const Column: Component<ColumnProps> = (props: ColumnProps) => {
       onDown={chainFunctions<KeyHandler | undefined>(props.onDown, onDown)}
       selected={props.selected || 0}
       forwardFocus={onGridFocus}
-      onLayout={
-        props.selected
-          ? chainFunctions(props.onLayout, scroll)
-          : props.onLayout
-      }
+      onFocus={chainFunctions(props.onFocus, handleOnSelect)}
+      onLayout={props.selected ? chainFunctions(props.onLayout, scroll) : props.onLayout}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
         props.scroll !== 'none' ? scroll : undefined
