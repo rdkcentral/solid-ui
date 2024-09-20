@@ -23,6 +23,17 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import path from 'path';
 
+import viteBaseConfig from '../vite.config';
+
+viteBaseConfig.plugins.hexColorTransform = undefined;
+viteBaseConfig.resolve.alias = {
+  theme: path.resolve(__dirname, '../../l3-ui-theme-base/theme.js'),
+  utils: path.resolve(__dirname, '../../shared/utils/index.ts'),
+  assets: path.resolve(__dirname, '../assets/')
+};
+
+// export default defineConfig(viteBaseConfig);
+
 const config = {
   plugins: [
     solidPlugin({
@@ -50,7 +61,8 @@ const config = {
     alias: {
       theme: path.resolve(__dirname, '../../l3-ui-theme-base/theme.js'),
       utils: path.resolve(__dirname, '../../shared/utils/index.ts'),
-      types: path.resolve(__dirname, '../types/')
+      types: path.resolve(__dirname, '../types/'),
+      assets: path.resolve(__dirname, '../assets/')
     },
     dedupe: ['solid-js', '@lightningtv/solid']
   },

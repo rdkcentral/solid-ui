@@ -19,7 +19,7 @@ import Icon from '../Icon/Icon.jsx';
 import Badge, { BadgeContainer } from './Badge.jsx';
 import { Text } from '@lightningtv/solid';
 import styles from './Badge.styles.js';
-const lightning = '/assets/images/ic_lightning_white_32.png';
+const lightning = 'assets/images/ic_lightning_white_32.png';
 
 const meta = {
   title: 'Components/Badge',
@@ -69,7 +69,9 @@ export const BadgeIcon = {
           height={25}
           marginLeft={10}
         />
-        <Text marginLeft={6} style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>{args.title}</Text>
+        <Text marginLeft={6} style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>
+          {args.title}
+        </Text>
       </BadgeContainer>
     );
   },
