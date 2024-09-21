@@ -19,8 +19,8 @@
 
 import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles } from '@lightningtv/solid';
 import type { KeyHandler } from '@lightningtv/core/focusManager';
-import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
-import type { UIComponentProps } from 'types/interfaces.js';
+import type { ComponentStyleConfig, NodeStyleSet, Tone } from '../../types/types.js';
+import type { UIComponentProps } from '../../types/interfaces.js';
 
 export interface GridProps extends UIComponentProps, GridStyleProperties {
   /** function run on component mount */
