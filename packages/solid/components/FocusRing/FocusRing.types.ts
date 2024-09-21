@@ -15,8 +15,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { UIComponentProps } from 'types/interfaces.js';
-import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
+import type { UIComponentProps } from '../../types/interfaces.js';
+import type { ComponentStyleConfig, NodeStyleSet, Tone } from '../../types/types.js';
 import type { NodeStyles } from '@lightningtv/solid';
 
 export interface FocusRingProps extends UIComponentProps {

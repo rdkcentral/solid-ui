@@ -17,8 +17,8 @@
  */
 
 import type { NodeStyles, TextProps } from '@lightningtv/solid';
-import type { ComponentStyleConfig, NodeStyleSet, Tone, TextStyleSet } from 'types/types.js';
-import type { UIComponentProps } from 'types/interfaces.js';
+import type { ComponentStyleConfig, NodeStyleSet, Tone, TextStyleSet } from '../../types/types.js';
+import type { UIComponentProps } from '../../types/interfaces.js';
 
 export interface BadgeProps extends UIComponentProps, BadgeStyleProperties {
   /**

@@ -15,8 +15,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { NodeProps, NodeStyles, TextStyles } from '@lightningtv/solid';
-import type { ComponentStyleConfig, NodeStyleSet, TextStyleSet, Tone } from 'types/types.js';
-import type { UIComponentProps } from 'types/interfaces.js';
+import type { ComponentStyleConfig, NodeStyleSet, TextStyleSet, Tone } from '../../types/types.js';
+import type { UIComponentProps } from '../../types/interfaces.js';
 import type { IconProps } from '../Icon/Icon.types.jsx';
 
 export interface RatingProps extends UIComponentProps, RatingStyleProperties {

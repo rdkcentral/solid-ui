@@ -17,8 +17,8 @@
  */
 
 import type { NodeProps, NodeStyles, TextProps, TextStyles } from '@lightningtv/solid';
-import type { ComponentStyleConfig, NodeStyleSet, TextStyleSet, Tone } from 'types/types.js';
-import type { UIComponentProps } from 'types/interfaces.js';
+import type { ComponentStyleConfig, NodeStyleSet, TextStyleSet, Tone } from '../../types/types.js';
+import type { UIComponentProps } from '../../types/interfaces.js';
 
 export interface ButtonProps extends UIComponentProps, ButtonStyleProperties {
   children: TextProps['children'];
