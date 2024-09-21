@@ -15,7 +15,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ElementNode, type KeyHandler, assertTruthy } from '@lightningtv/core';
+import { ElementNode, assertTruthy } from '@lightningtv/core';
+import { type KeyHandler } from '@lightningtv/core/focusManager';
+import { type GridElement } from 'components/Column/Grid.types.js';
 
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;
@@ -31,12 +33,13 @@ export function onGridFocus(this: ElementNode) {
   return true;
 }
 
-export function handleOnSelect(this: ElementNode, lastSelected?: number) {
-  return this.onSelect && this.onSelect.call(this, this.selected, lastSelected);
+export function handleOnSelect(this: GridElement, lastSelected?: number | ElementNode) {
+  const last = lastSelected instanceof ElementNode ? undefined : lastSelected;
+  return this.onSelect && this.onSelect.call(this, this, this.selected, last);
 }
 
 export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): KeyHandler {
-  return function () {
+  return function (this: GridElement) {
     const numChildren = this.children.length;
     const wrap = this.wrap;
     const lastSelected = this.selected || 0;

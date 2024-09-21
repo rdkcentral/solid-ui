@@ -39,8 +39,8 @@ export { default as Checkbox, checkboxStyles, type CheckboxProps } from './compo
 export {
   default as Column,
   columnStyles,
-  type ColumnProps,
-  type ColumnStyles
+  type GridProps,
+  type GridStyles
 } from './components/Column/index.js';
 export {
   default as FocusRing,
@@ -95,7 +95,7 @@ export {
   type RadioProps,
   type RadioStyles
 } from './components/Radio/index.js';
-export { default as Row, rowStyles, type RowProps, type RowStyles } from './components/Row/index.js';
+export { default as Row, rowStyles } from './components/Row/index.js';
 export { default as Tile, tileStyles, type TileProps, type TileStyles } from './components/Tile/index.js';
 export {
   default as Toggle,

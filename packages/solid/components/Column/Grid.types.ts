@@ -17,11 +17,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles, KeyHandler } from '@lightningtv/solid';
+import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles } from '@lightningtv/solid';
+import type { KeyHandler } from '@lightningtv/core/focusManager';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from 'types/types.js';
 import type { UIComponentProps } from 'types/interfaces.js';
 
-export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
+export interface GridProps extends UIComponentProps, GridStyleProperties {
   /** function run on component mount */
   onCreate?: IntrinsicNodeCommonProps['onCreate'];
 
@@ -31,13 +32,27 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   /** function to be called on up click */
   onUp?: KeyHandler;
 
+  /** function to be called on down click */
+  onLeft?: KeyHandler;
+
+  /** function to be called on up click */
+  onRight?: KeyHandler;
+
   /** function to be called when the selected of the component changes */
   onSelectedChanged?: (
-    this: ElementNode,
-    elm: ElementNode,
+    this: GridElement,
+    elm: GridElement,
     active: ElementNode,
     selectedIndex: number,
     lastSelectedIndex: number
+  ) => void;
+
+  /** function to be called when the selected of the component changes with index first and onfocus */
+  onSelect?: (
+    this: GridElement,
+    grid: GridElement,
+    selectedIndex: number,
+    lastSelectedIndex?: number
   ) => void;
 
   /** Determines when to scroll(shift items along the axis):
@@ -60,12 +75,20 @@ export interface ColumnProps extends UIComponentProps, ColumnStyleProperties {
   offset?: number;
 
   /**
+   * Plinko - sets the selected item of the next row to match the previous row
+   */
+  plinko?: boolean;
+
+  /**
    * Wrap the row so active goes back to the beginning of the row
    */
   wrap?: boolean;
 }
 
-export interface ColumnStyleProperties {
+// @ts-expect-error animationSettings is not identical - weird
+export interface GridElement extends ElementNode, GridProps {}
+
+export interface GridStyleProperties {
   /**
    * the index of which we want scrolling to start
    */
@@ -80,9 +103,9 @@ export interface ColumnStyleProperties {
   itemTransition?: NodeStyles['transition'];
 }
 
-export interface ColumnStyles {
+export interface GridStyles {
   tone: Tone;
   Container: NodeStyleSet;
 }
 
-export type ColumnConfig = ComponentStyleConfig<ColumnStyleProperties>;
+export type GridConfig = ComponentStyleConfig<GridStyleProperties>;

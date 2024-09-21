@@ -16,12 +16,12 @@
  */
 import theme from 'theme';
 import { makeComponentStyles } from '../../utils/index.js';
-import type { RowConfig, RowStyles } from './Row.types.js';
+import type { GridConfig, GridStyles } from '../Column/Grid.types.js';
 
 /* @ts-expect-error next-line themes are supplied by client applications so this setup is necessary */
 const { Row: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.componentConfig;
 
-const container: RowConfig = {
+const container: GridConfig = {
   themeKeys: {
     gap: 'itemSpacing',
     scrollIndex: 'scrollIndex',
@@ -42,9 +42,9 @@ const container: RowConfig = {
   themeStyles
 };
 
-const Container = makeComponentStyles<RowStyles['Container']>(container);
+const Container = makeComponentStyles<GridStyles['Container']>(container);
 
-const styles: RowStyles = {
+const styles: GridStyles = {
   tone: defaultTone,
   Container
 };

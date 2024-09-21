@@ -16,14 +16,14 @@
  */
 
 import { type Component } from 'solid-js';
-import { View, type KeyHandler } from '@lightningtv/solid';
+import { View } from '@lightningtv/solid';
 import { handleNavigation, onGridFocus, handleOnSelect } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
 import styles from './Column.styles.js';
-import type { ColumnProps } from './Column.types.js';
+import type { GridProps } from './Grid.types.js';
 
-const Column: Component<ColumnProps> = (props: ColumnProps) => {
+const Column: Component<GridProps> = (props: GridProps) => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
   const scroll = withScrolling(false);
@@ -31,8 +31,8 @@ const Column: Component<ColumnProps> = (props: ColumnProps) => {
   return (
     <View
       {...props}
-      onUp={chainFunctions<KeyHandler | undefined>(props.onUp, onUp)}
-      onDown={chainFunctions<KeyHandler | undefined>(props.onDown, onDown)}
+      onUp={chainFunctions(props.onUp, onUp)}
+      onDown={chainFunctions(props.onDown, onDown)}
       selected={props.selected || 0}
       forwardFocus={onGridFocus}
       onFocus={chainFunctions(props.onFocus, handleOnSelect)}

@@ -17,4 +17,4 @@
 
 export { default as default } from './Column.jsx';
 export { default as columnStyles } from './Column.styles.js';
-export type { ColumnProps, ColumnStyles } from './Column.types.js';
+export type { GridProps, GridStyles } from './Grid.types.js';

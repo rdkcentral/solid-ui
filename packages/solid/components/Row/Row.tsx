@@ -21,9 +21,9 @@ import { chainFunctions } from '../../utils/chainFunctions.js';
 import { handleNavigation, handleOnSelect, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import styles from './Row.styles.js';
-import type { RowProps } from './Row.types.js';
+import type { GridProps } from '../Column/Grid.types.js';
 
-const Row: Component<RowProps> = (props: RowProps) => {
+const Row: Component<GridProps> = (props: GridProps) => {
   const onLeft = handleNavigation('left');
   const onRight = handleNavigation('right');
   const scroll = withScrolling(true);
@@ -36,11 +36,7 @@ const Row: Component<RowProps> = (props: RowProps) => {
       onRight={chainFunctions(props.onRight, onRight)}
       onFocus={chainFunctions(props.onFocus, handleOnSelect)}
       forwardFocus={onGridFocus}
-      onLayout={
-        props.selected
-          ? chainFunctions(props.onLayout, scroll)
-          : props.onLayout
-      }
+      onLayout={props.selected ? chainFunctions(props.onLayout, scroll) : props.onLayout}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,
         props.scroll !== 'none' ? scroll : undefined

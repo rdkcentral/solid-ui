@@ -16,7 +16,7 @@
  */
 
 import Column from './Column.jsx';
-import type { ColumnProps } from './Column.types.js';
+import type { GridProps } from './Grid.types.js';
 import Button from '../Button/Button.jsx';
 import type { JSX } from 'solid-js/jsx-runtime';
 import { View } from '@lightningtv/solid';
@@ -68,7 +68,7 @@ const createItems = (length: number) => {
 const buttons = (num = 7) => createItems(num);
 
 export const AlwaysScroll = {
-  render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
+  render: (args: JSX.IntrinsicAttributes & GridProps) => {
     return (
       <View height={720} width={400}>
         <Column autofocus {...args} />
@@ -84,7 +84,7 @@ export const AlwaysScroll = {
 };
 
 export const AutoScrollIndex = {
-  render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
+  render: (args: JSX.IntrinsicAttributes & GridProps) => {
     return (
       <View height={720} width={400}>
         <Column autofocus {...args} />
@@ -101,7 +101,7 @@ export const AutoScrollIndex = {
 };
 
 export const NoneScroll = {
-  render: (args: JSX.IntrinsicAttributes & ColumnProps) => {
+  render: (args: JSX.IntrinsicAttributes & GridProps) => {
     return (
       <View height={720} width={400}>
         <Column autofocus {...args} />
