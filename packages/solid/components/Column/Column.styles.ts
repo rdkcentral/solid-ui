@@ -16,12 +16,12 @@
  */
 import theme from 'theme';
 import { makeComponentStyles } from '../../utils/index.js';
-import type { ColumnStyles, ColumnConfig } from './Column.types.js';
+import type { NavigableStyles, NavigableConfig } from 'types/Navigable.types.js';
 
 /* @ts-expect-error next-line themes are supplied by client applications so this setup is necessary */
 const { Column: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.componentConfig;
 
-const container: ColumnConfig = {
+const container: NavigableConfig = {
   themeKeys: {
     gap: 'itemSpacing',
     scrollIndex: 'scrollIndex',
@@ -42,9 +42,9 @@ const container: ColumnConfig = {
   themeStyles
 };
 
-const Container = makeComponentStyles<ColumnStyles['Container']>(container);
+const Container = makeComponentStyles<NavigableStyles['Container']>(container);
 
-const styles: ColumnStyles = {
+const styles: NavigableStyles = {
   tone: defaultTone || 'neutral',
   Container
 };

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.27.0...@lightningtv/solid-ui@0.28.0) (2024-09-23)
+
+### Features
+
+- add onSelect, show focus of grid rows ([#47](https://github.com/rdkcentral/solid-ui/issues/47)) ([f5651f0](https://github.com/rdkcentral/solid-ui/commit/f5651f054aafee44ca54d0ff2aaa2e53fac8fec2))
+
 # [0.27.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.26.2...@lightningtv/solid-ui@0.27.0) (2024-09-19)
 
 ### Features

@@ -15,12 +15,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import type { AnimationSettings } from '@lightningtv/core';
 export type Color = number | string;
-export type AnimationSettings = { duration?: number; delay?: number; timing?: string };
 export type TextAlign = 'left' | 'center' | 'right';
 export type ContentAlign = 'center' | 'flexStart' | 'flexEnd' | 'spaceBetween' | 'spaceEvenly';
 export type States = 'active' | 'focus' | 'disabled';
-
 /**
  * allows the property to either be the supplied type,
  * or an array containing that type and an animationSettings object

@@ -36,12 +36,7 @@ export {
   type ButtonStyles
 } from './components/Button/index.js';
 export { default as Checkbox, checkboxStyles, type CheckboxProps } from './components/Checkbox/index.js';
-export {
-  default as Column,
-  columnStyles,
-  type ColumnProps,
-  type ColumnStyles
-} from './components/Column/index.js';
+export { default as Column, columnStyles } from './components/Column/index.js';
 export {
   default as FocusRing,
   focusRingStyles,
@@ -81,7 +76,7 @@ export {
   type RadioProps,
   type RadioStyles
 } from './components/Radio/index.js';
-export { default as Row, rowStyles, type RowProps, type RowStyles } from './components/Row/index.js';
+export { default as Row, rowStyles } from './components/Row/index.js';
 export {
   default as Toggle,
   toggleStyles,

@@ -15,7 +15,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ElementNode, type KeyHandler, assertTruthy } from '@lightningtv/core';
+import { ElementNode, assertTruthy } from '@lightningtv/core';
+import { type KeyHandler } from '@lightningtv/core/focusManager';
+import { type NavigableElement } from 'types/Navigable.types.js';
 
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;
@@ -31,8 +33,15 @@ export function onGridFocus(this: ElementNode) {
   return true;
 }
 
+// Converts params from onFocus to onSelectedChanged
+export function handleOnSelect(onSelectedChanged) {
+  return function (this: NavigableElement) {
+    return onSelectedChanged.call(this, this.selected, this, this.children[this.selected] as ElementNode);
+  };
+}
+
 export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): KeyHandler {
-  return function () {
+  return function (this: NavigableElement) {
     const numChildren = this.children.length;
     const wrap = this.wrap;
     const lastSelected = this.selected || 0;
@@ -74,7 +83,7 @@ export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): K
     }
     const active = this.children[this.selected];
     assertTruthy(active instanceof ElementNode);
-    this.onSelectedChanged && this.onSelectedChanged.call(this, this, active, this.selected, lastSelected);
+    this.onSelectedChanged && this.onSelectedChanged.call(this, this.selected, this, active, lastSelected);
 
     if (this.plinko) {
       // Set the next item to have the same selected index
