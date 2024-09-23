@@ -50,8 +50,8 @@ export interface GridProps extends UIComponentProps, GridStyleProperties {
   /** function to be called when the selected of the component changes with index first and onfocus */
   onSelect?: (
     this: GridElement,
-    grid: GridElement,
     selectedIndex: number,
+    grid: GridElement,
     lastSelectedIndex?: number
   ) => void;
 

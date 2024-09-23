@@ -35,7 +35,7 @@ export function onGridFocus(this: ElementNode) {
 
 export function handleOnSelect(this: GridElement, lastSelected?: number | ElementNode) {
   const last = lastSelected instanceof ElementNode ? undefined : lastSelected;
-  return this.onSelect && this.onSelect.call(this, this, this.selected, last);
+  return this.onSelect && this.onSelect.call(this, this.selected, this, last);
 }
 
 export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): KeyHandler {

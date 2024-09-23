@@ -79,7 +79,7 @@ export const Grid: StoryObj = {
 export const GridActiveRow: StoryObj = {
   render: () => {
     const Colors = [0xa32eacff, 0x23adccff, 0x23cc37ff, 0xcd8518ff];
-    const highlightRow = { color: 0x00ff00ff, active: { color: 0xff0000ff } };
+    const highlightRow = { color: 0x00000011, active: { color: 0xffffffff } };
     const [selectedIndex, setSelectedIndex] = createSignal(0);
     const isSelected = createSelector(selectedIndex);
     return (
