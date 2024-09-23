@@ -1,0 +1,56 @@
+import { ArgTypes, Meta, Primary, Title } from '@storybook/blocks';
+import * as MetadataStories from './Metadata.stories.tsx';
+
+<Meta of={MetadataStories} />
+
+<Title />
+
+A common UI pattern in TV applications is displaying an entity's metadata on a given page. This is often done with text styled in various ways to display the entity's title, description, genre or rating information, etc.
+
+<Primary of={MetadataStories} />
+
+This kind of component can be created using primarily `View` and `Text` and adding some styles or even additional components:
+
+```tsx
+import theme from 'theme';
+
+const App = () => {
+  const containerStyles: IntrinsicNodeStyleProps = {
+    display: 'flex',
+    justifyContent: 'flexStart',
+    flexBoundary: 'contain'
+  };
+
+  return (
+    <View style={{ ...containerStyles, flexDirection: 'column' }}>
+      <Text style={{ ...theme.typography.headline1, fontWeight: 700 } as IntrinsicNodeStyleProps}>Title</Text>
+      <Text
+        style={
+          {
+            width: 800,
+            contain: 'width',
+            maxLines: 3,
+            ...theme.typography.body2,
+            fontWeight: 400
+          } as IntrinsicNodeStyleProps
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales est eu eleifend interdum.
+        Vivamus egestas maximus elementum. Sed condimentum ligula justo, non sollicitudin lectus rutrum vel.
+        Integer iaculis vitae nisl quis tincidunt. Sed quis dui vehicula, vehicula felis a, tempor leo. Fusce
+        tincidunt, ante eget pretium efficitur, libero elit volutpat quam, sit amet porta tortor odio non
+        ligula. Ut sed dolor eleifend massa auctor porttitor eget ut lectus. Vivamus elementum lorem mauris,
+        eu luctus tortor posuere sit amet. Nunc a interdum metus.
+      </Text>
+      <View style={{ ...containerStyles, flexDirection: 'row', gap: 8 }}>
+        <Text style={{ ...theme.typography.body3, marginRight: 16 } as IntrinsicNodeStyleProps}>
+          Support text
+        </Text>
+        <Badge title="TV-14" />
+        <Badge title="HD" />
+        <Badge title="CC" />
+      </View>
+    </View>
+  );
+};
+```
