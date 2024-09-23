@@ -17,8 +17,8 @@
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { View, type IntrinsicNodeStyleProps } from '@lightningtv/solid';
-import Column from '../components/Column/Column.jsx';
-import Row from '../components/Row/Row.jsx';
+import Column from '../../components/Column/Column.jsx';
+import Row from '../../components/Row/Row.jsx';
 
 const meta: Meta = {
   title: 'Recipes/Grid'
@@ -44,7 +44,7 @@ const tileStyle: IntrinsicNodeStyleProps = {
 
 const Tile = props => <View {...props} style={tileStyle} />;
 
-export const Example: StoryObj = {
+export const Grid: StoryObj = {
   render: () => (
     <Column autofocus plinko>
       <Row height={100}>
