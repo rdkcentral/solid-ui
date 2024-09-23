@@ -17,31 +17,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IntrinsicNodeCommonProps, ElementNode, NodeStyles } from '@lightningtv/solid';
-import type { KeyHandler } from '@lightningtv/core/focusManager';
-import type { ComponentStyleConfig, NodeStyleSet, Tone } from '../../types/types.js';
-import type { UIComponentProps } from '../../types/interfaces.js';
+import type { ElementNode, NodeStyles } from '@lightningtv/solid';
+import type { ComponentStyleConfig, NodeStyleSet, Tone } from './types.js';
+import type { UIComponentProps } from './interfaces.js';
 
-export interface GridProps extends UIComponentProps, GridStyleProperties {
-  /** function run on component mount */
-  onCreate?: IntrinsicNodeCommonProps['onCreate'];
+/* These interfaces describe a component that handle navigation events by implementing the [handleNavigation](https://github.com/rdkcentral/solid-ui/blob/main/packages/solid/utils/handleNavigation.ts) utility, currently the Column and Row */
 
-  /** function to be called on down click */
-  onDown?: KeyHandler;
-
-  /** function to be called on up click */
-  onUp?: KeyHandler;
-
-  /** function to be called on left click */
-  onLeft?: KeyHandler;
-
-  /** function to be called on right click */
-  onRight?: KeyHandler;
-
+export interface NavigableProps extends UIComponentProps, NavigableStyleProperties {
   /** function to be called when the selected of the component changes */
   onSelectedChanged?: (
-    this: GridElement,
-    elm: GridElement,
+    this: NavigableElement,
+    elm: NavigableElement,
     active: ElementNode,
     selectedIndex: number,
     lastSelectedIndex: number
@@ -49,9 +35,9 @@ export interface GridProps extends UIComponentProps, GridStyleProperties {
 
   /** function to be called when the selected of the component changes with index first and onfocus */
   onSelect?: (
-    this: GridElement,
+    this: NavigableElement,
     selectedIndex: number,
-    grid: GridElement,
+    grid: NavigableElement,
     lastSelectedIndex?: number
   ) => void;
 
@@ -86,9 +72,9 @@ export interface GridProps extends UIComponentProps, GridStyleProperties {
 }
 
 // @ts-expect-error animationSettings is not identical - weird
-export interface GridElement extends ElementNode, GridProps {}
+export interface NavigableElement extends ElementNode, NavigableProps {}
 
-export interface GridStyleProperties {
+export interface NavigableStyleProperties {
   /**
    * the index of which we want scrolling to start
    */
@@ -103,9 +89,9 @@ export interface GridStyleProperties {
   itemTransition?: NodeStyles['transition'];
 }
 
-export interface GridStyles {
+export interface NavigableStyles {
   tone: Tone;
   Container: NodeStyleSet;
 }
 
-export type GridConfig = ComponentStyleConfig<GridStyleProperties>;
+export type NavigableConfig = ComponentStyleConfig<NavigableStyleProperties>;
