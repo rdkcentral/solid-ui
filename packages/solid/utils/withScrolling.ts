@@ -30,13 +30,17 @@ export function withScrolling(isRow: boolean) {
   const axis = isRow ? 'x' : 'y';
 
   return (
-    componentRef: ScrollableElement,
+    selected: number | ScrollableElement,
+    componentRef?: ScrollableElement,
     selectedElement?: ElementNode | ElementText,
-    selected: number = 0,
     lastSelected?: number
   ) => {
     if (!componentRef.children.length) return;
 
+    if (typeof selected !== 'number') {
+      componentRef = selected;
+      selected = 0;
+    }
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 

@@ -35,7 +35,10 @@ const Column: Component<ColumnProps> = props => {
       onDown={chainFunctions(props.onDown, onDown)}
       selected={props.selected || 0}
       forwardFocus={onGridFocus}
-      onFocus={chainFunctions(props.onFocus, handleOnSelect)}
+      onFocus={chainFunctions(
+        props.onFocus,
+        props.onSelectedChanged && handleOnSelect(props.onSelectedChanged)
+      )}
       onLayout={props.selected ? chainFunctions(props.onLayout, scroll) : props.onLayout}
       onSelectedChanged={chainFunctions(
         props.onSelectedChanged,

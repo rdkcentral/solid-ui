@@ -27,17 +27,9 @@ export interface NavigableProps extends UIComponentProps, NavigableStyleProperti
   /** function to be called when the selected of the component changes */
   onSelectedChanged?: (
     this: NavigableElement,
+    selectedIndex: number,
     elm: NavigableElement,
     active: ElementNode,
-    selectedIndex: number,
-    lastSelectedIndex: number
-  ) => void;
-
-  /** function to be called when the selected of the component changes with index first and onfocus */
-  onSelect?: (
-    this: NavigableElement,
-    selectedIndex: number,
-    grid: NavigableElement,
     lastSelectedIndex?: number
   ) => void;
 

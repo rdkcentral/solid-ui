@@ -33,9 +33,11 @@ export function onGridFocus(this: ElementNode) {
   return true;
 }
 
-export function handleOnSelect(this: NavigableElement, lastSelected?: number | ElementNode) {
-  const last = lastSelected instanceof ElementNode ? undefined : lastSelected;
-  return this.onSelect && this.onSelect.call(this, this.selected, this, last);
+// Converts params from onFocus to onSelectedChanged
+export function handleOnSelect(onSelectedChanged) {
+  return function (this: NavigableElement) {
+    return onSelectedChanged.call(this, this.selected, this, this.children[this.selected] as ElementNode);
+  };
 }
 
 export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): KeyHandler {
@@ -81,8 +83,7 @@ export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): K
     }
     const active = this.children[this.selected];
     assertTruthy(active instanceof ElementNode);
-    this.onSelectedChanged && this.onSelectedChanged.call(this, this, active, this.selected, lastSelected);
-    handleOnSelect.call(this, lastSelected);
+    this.onSelectedChanged && this.onSelectedChanged.call(this, this.selected, this, active, lastSelected);
 
     if (this.plinko) {
       // Set the next item to have the same selected index
