@@ -32,10 +32,10 @@ export interface GridProps extends UIComponentProps, GridStyleProperties {
   /** function to be called on up click */
   onUp?: KeyHandler;
 
-  /** function to be called on down click */
+  /** function to be called on left click */
   onLeft?: KeyHandler;
 
-  /** function to be called on up click */
+  /** function to be called on right click */
   onRight?: KeyHandler;
 
   /** function to be called when the selected of the component changes */
