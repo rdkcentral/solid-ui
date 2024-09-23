@@ -36,12 +36,7 @@ export {
   type ButtonStyles
 } from './components/Button/index.js';
 export { default as Checkbox, checkboxStyles, type CheckboxProps } from './components/Checkbox/index.js';
-export {
-  default as Column,
-  columnStyles,
-  type GridProps,
-  type GridStyles
-} from './components/Column/index.js';
+export { default as Column, columnStyles } from './components/Column/index.js';
 export {
   default as FocusRing,
   focusRingStyles,

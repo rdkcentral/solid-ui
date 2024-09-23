@@ -20,10 +20,10 @@ import { View } from '@lightningtv/solid';
 import { handleNavigation, onGridFocus, handleOnSelect } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import { chainFunctions } from '../../utils/chainFunctions.js';
+import type { ColumnProps } from './Column.types.js';
 import styles from './Column.styles.js';
-import type { GridProps } from './Grid.types.js';
 
-const Column: Component<GridProps> = (props: GridProps) => {
+const Column: Component<ColumnProps> = props => {
   const onUp = handleNavigation('up');
   const onDown = handleNavigation('down');
   const scroll = withScrolling(false);

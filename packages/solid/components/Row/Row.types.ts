@@ -1,6 +1,7 @@
-/*
+/**
  * Copyright 2023 Comcast Cable Communications Management, LLC
- * Licensed under the Apache License, Version 2.0 (the "License");
+ *
+ * Licensed under the Apache License, Version 2.0 (the License);
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -12,8 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
+import type { KeyHandler } from '@lightningtv/core/focusManager';
+import type { NavigableProps, NavigableStyleProperties } from 'types/Navigable.types.js';
 
-export { default as default } from './Column.jsx';
-export { default as columnStyles } from './Column.styles.js';
+export interface ColumnProps extends NavigableProps, NavigableStyleProperties {
+  /** function to be called on down click */
+  onLeft?: KeyHandler;
+
+  /** function to be called on up click */
+  onRight?: KeyHandler;
+}

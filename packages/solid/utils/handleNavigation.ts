@@ -17,7 +17,7 @@
 
 import { ElementNode, assertTruthy } from '@lightningtv/core';
 import { type KeyHandler } from '@lightningtv/core/focusManager';
-import { type GridElement } from '../components/Column/Grid.types.js';
+import { type NavigableElement } from 'types/Navigable.types.js';
 
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;
@@ -33,13 +33,13 @@ export function onGridFocus(this: ElementNode) {
   return true;
 }
 
-export function handleOnSelect(this: GridElement, lastSelected?: number | ElementNode) {
+export function handleOnSelect(this: NavigableElement, lastSelected?: number | ElementNode) {
   const last = lastSelected instanceof ElementNode ? undefined : lastSelected;
   return this.onSelect && this.onSelect.call(this, this.selected, this, last);
 }
 
 export function handleNavigation(direction: 'up' | 'right' | 'down' | 'left'): KeyHandler {
-  return function (this: GridElement) {
+  return function (this: NavigableElement) {
     const numChildren = this.children.length;
     const wrap = this.wrap;
     const lastSelected = this.selected || 0;
