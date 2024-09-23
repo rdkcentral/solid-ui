@@ -21,7 +21,10 @@ import type { ElementNode, NodeStyles } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from './types.js';
 import type { UIComponentProps } from './interfaces.js';
 
-/* These interfaces describe a component that handle navigation events by implementing the [handleNavigation](https://github.com/rdkcentral/solid-ui/blob/main/packages/solid/utils/handleNavigation.ts) utility, currently the Column and Row */
+/** These interfaces describe a component that handles navigation events by implementing the
+ * [handleNavigation](https://github.com/rdkcentral/solid-ui/blob/main/packages/solid/utils/handleNavigation.ts) utility,
+ * currently the Column and Row
+ */
 
 export interface NavigableProps extends UIComponentProps, NavigableStyleProperties {
   /** function to be called when the selected of the component changes */
