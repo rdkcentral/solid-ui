@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.3...@lightningtv/solid-ui@0.29.0) (2024-09-24)
+
+### Features
+
+- **Tile:** replace Metadata and Tile with recipes ([#48](https://github.com/rdkcentral/solid-ui/issues/48)) ([a35886f](https://github.com/rdkcentral/solid-ui/commit/a35886fb877cd2ed081c9f41b74fb4983987c5af))
+
 ## [0.28.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.2...@lightningtv/solid-ui@0.28.3) (2024-09-24)
 
 ### Bug Fixes
