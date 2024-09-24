@@ -7,12 +7,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.ts",
-      "types": "./index.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./utils": {
-      "import": "./utils/index.ts",
-      "types": "./utils/index.ts"
+      "import": "./dist/utils/index.js",
+      "types": "./dist/utils/index.d.ts"
+    },
+    "./src": {
+      "import": "./index.ts",
+      "types": "./index.ts"
     }
   },
   "files": [
