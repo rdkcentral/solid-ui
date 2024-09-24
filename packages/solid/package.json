@@ -48,6 +48,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdkcentral/solid-ui.git"
+  },
   "dependencies": {
     "@lightningjs/renderer": "^2.1.2",
     "@solid-primitives/refs": "^1.0.8"
