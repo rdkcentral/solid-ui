@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.0...@lightningtv/solid-ui@0.28.1) (2024-09-24)
+
+### Bug Fixes
+
+- add tsc-alias to fix typescript paths ([#49](https://github.com/rdkcentral/solid-ui/issues/49)) ([77bb68d](https://github.com/rdkcentral/solid-ui/commit/77bb68d3fafddeb926eb88ae547edd6ef8b0b185))
+
 # [0.28.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.27.0...@lightningtv/solid-ui@0.28.0) (2024-09-23)
 
 ### Features
