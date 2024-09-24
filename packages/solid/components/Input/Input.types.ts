@@ -38,6 +38,16 @@ export interface InputProps extends UIComponentProps, InputStyleProperties {
   titleSignal: Signal<string>;
 
   /**
+   * general styles applied to input `View` container
+   */
+  style?: unknown;
+
+  /**
+   * specific styles applied to input `Text` item
+   */
+  textStyle?: unknown;
+
+  /**
    * when true the content will be masked to the user
    */
   password?: boolean;
