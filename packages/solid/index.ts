@@ -65,20 +65,6 @@ export {
   type LabelStyles
 } from './components/Label/index.js';
 export {
-  default as Metadata,
-  metadataStyles,
-  type MetadataProps,
-  type MetadataStyles,
-  Details,
-  detailsStyles,
-  type DetailsProps,
-  type DetailsStyles,
-  Rating,
-  ratingStyles,
-  type RatingProps,
-  type RatingStyles
-} from './components/Metadata/index.js';
-export {
   default as ProgressBar,
   progressBarStyles,
   type ProgressBarProps,
@@ -91,7 +77,6 @@ export {
   type RadioStyles
 } from './components/Radio/index.js';
 export { default as Row, rowStyles } from './components/Row/index.js';
-export { default as Tile, tileStyles, type TileProps, type TileStyles } from './components/Tile/index.js';
 export {
   default as Toggle,
   toggleStyles,
