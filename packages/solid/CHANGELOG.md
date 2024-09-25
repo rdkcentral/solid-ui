@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.2...@lightningtv/solid-ui@0.29.3) (2024-09-25)
+
+### Bug Fixes
+
+- ensure getThemeStyles ts def is included in build ([#55](https://github.com/rdkcentral/solid-ui/issues/55)) ([3d9b659](https://github.com/rdkcentral/solid-ui/commit/3d9b659c5717e9ae7e82caf9d93e92dcde2a59a8))
+
 ## [0.29.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.1...@lightningtv/solid-ui@0.29.2) (2024-09-25)
 
 **Note:** Version bump only for package @lightningtv/solid-ui
