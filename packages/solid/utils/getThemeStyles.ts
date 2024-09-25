@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ComponentStyleConfig } from '../types/types.js';
+import type { ComponentStyleConfig } from '../types/types.js';
 
 export declare function makeComponentStyles<T>(
   { themeKeys, base, themeStyles, tones, modes, modeKeys, toneKeys }: ComponentStyleConfig,
