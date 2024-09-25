@@ -24,5 +24,4 @@ const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
   return <KeyboardBase {...props} formats={formats.simple} />;
 };
 
-export { formats };
 export default Keyboard;
