@@ -45,7 +45,7 @@ export interface InputProps extends UIComponentProps, InputStyleProperties {
   /**
    * specific styles applied to input `Text` item
    */
-  textStyle?: unknown;
+  textStyle?: TextStyles;
 
   /**
    * when true the content will be masked to the user
