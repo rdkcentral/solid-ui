@@ -21,7 +21,7 @@ import type { KeyboardProps } from './Keyboard.types.js';
 import formats from './formats.js';
 
 const Keyboard: Component<KeyboardProps> = (props: KeyboardProps) => {
-  return <KeyboardBase {...props} formats={props.formats} />;
+  return <KeyboardBase {...props} formats={formats.simple} />;
 };
 
 export { formats };
