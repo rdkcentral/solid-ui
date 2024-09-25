@@ -39,7 +39,7 @@ const meta: Meta<typeof ProgressBar> = {
       description: 'Percentage of current progress in a decimal format from 0 to 1',
       control: { type: 'number', step: 0.1, min: 0, max: 1.0 }
     },
-    borderRadius: {
+    radius: {
       description: 'Radius of the bar',
       control: { type: 'number', step: 1, min: 0, max: 50 }
     }
@@ -62,6 +62,6 @@ export const Basic: Story = {
     width: 500,
     height: theme.spacer.md,
     progress: 0.5,
-    borderRadius: theme.radius.xs
+    radius: theme.radius.xs
   }
 };
