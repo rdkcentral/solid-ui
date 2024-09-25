@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.4](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.3...@lightningtv/solid-ui@0.29.4) (2024-09-25)
+
+### Bug Fixes
+
+- consolidate getThemeStyles types and logic into a single file ([#56](https://github.com/rdkcentral/solid-ui/issues/56)) ([d120264](https://github.com/rdkcentral/solid-ui/commit/d120264c65600f3febc6d1a493b828f93c8b50bc))
+
 ## [0.29.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.2...@lightningtv/solid-ui@0.29.3) (2024-09-25)
 
 ### Bug Fixes
