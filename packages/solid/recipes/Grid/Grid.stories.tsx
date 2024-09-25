@@ -17,8 +17,8 @@
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { View, type IntrinsicNodeStyleProps } from '@lightningtv/solid';
-import Column from '../components/Column/Column.jsx';
-import Row from '../components/Row/Row.jsx';
+import Column from '../../components/Column/Column.jsx';
+import Row from '../../components/Row/Row.jsx';
 import { createSelector, createSignal, For } from 'solid-js';
 
 const meta: Meta = {

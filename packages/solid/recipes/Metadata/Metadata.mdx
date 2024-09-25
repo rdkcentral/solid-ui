@@ -1,0 +1,71 @@
+{/*
+ * Copyright 2023 Comcast Cable Communications Management, LLC
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+*/}
+
+import { ArgTypes, Meta, Primary, Title } from '@storybook/blocks';
+import * as MetadataStories from './Metadata.stories.tsx';
+
+<Meta of={MetadataStories} />
+
+<Title />
+
+Presenting key information about an entity using properties from its metadata is a common UI pattern in TV applications. This is often done with styled text displaying the entity's title, description, genre or rating information, etc. on a page dedicated to the entity:
+
+<Primary of={MetadataStories} />
+
+This kind of component can be created by simply adding some styles to `View` and `Text` as well as incorporating additional components as needed:
+
+```tsx
+const App = () => {
+  const containerStyles = {
+    display: 'flex',
+    justifyContent: 'flexStart',
+    flexBoundary: 'contain'
+  };
+
+  return (
+    <View style={{ ...containerStyles, flexDirection: 'column' }}>
+      <Text style={{ ...theme.typography.headline1, fontWeight: 700 }}>Title</Text>
+      <Text
+        style={
+          {
+            width: 800,
+            contain: 'width',
+            maxLines: 3,
+            ...theme.typography.body2,
+            fontWeight: 400
+          }
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales est eu eleifend interdum.
+        Vivamus egestas maximus elementum. Sed condimentum ligula justo, non sollicitudin lectus rutrum vel.
+        Integer iaculis vitae nisl quis tincidunt. Sed quis dui vehicula, vehicula felis a, tempor leo. Fusce
+        tincidunt, ante eget pretium efficitur, libero elit volutpat quam, sit amet porta tortor odio non
+        ligula. Ut sed dolor eleifend massa auctor porttitor eget ut lectus. Vivamus elementum lorem mauris,
+        eu luctus tortor posuere sit amet. Nunc a interdum metus.
+      </Text>
+      <View style={{ ...containerStyles, flexDirection: 'row', gap: 8 }}>
+        <Text style={{ ...theme.typography.body3, marginRight: 16 }}>
+          Support text
+        </Text>
+        <Badge title="TV-14" />
+        <Badge title="HD" />
+        <Badge title="CC" />
+      </View>
+    </View>
+  );
+};
+```

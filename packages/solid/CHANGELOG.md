@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.0...@lightningtv/solid-ui@0.29.1) (2024-09-25)
+
+**Note:** Version bump only for package @lightningtv/solid-ui
+
+# [0.29.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.3...@lightningtv/solid-ui@0.29.0) (2024-09-24)
+
+### Features
+
+- **Tile:** replace Metadata and Tile with recipes ([#48](https://github.com/rdkcentral/solid-ui/issues/48)) ([a35886f](https://github.com/rdkcentral/solid-ui/commit/a35886fb877cd2ed081c9f41b74fb4983987c5af))
+
+## [0.28.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.2...@lightningtv/solid-ui@0.28.3) (2024-09-24)
+
+### Bug Fixes
+
+- ensure js files are included in the final dist, exclude tests ([#53](https://github.com/rdkcentral/solid-ui/issues/53)) ([8c0b9f2](https://github.com/rdkcentral/solid-ui/commit/8c0b9f25b645439b34c764389097a65afbd2df62))
+
+## [0.28.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.1...@lightningtv/solid-ui@0.28.2) (2024-09-24)
+
+### Bug Fixes
+
+- update imports to point to dist files, add `src` import for source file access ([#52](https://github.com/rdkcentral/solid-ui/issues/52)) ([1c7ce6f](https://github.com/rdkcentral/solid-ui/commit/1c7ce6f6941e98dab04c8805d421ec74a926befe))
+
 ## [0.28.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.28.0...@lightningtv/solid-ui@0.28.1) (2024-09-24)
 
 ### Bug Fixes
