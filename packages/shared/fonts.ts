@@ -25,7 +25,7 @@ const fonts = [
       weight: 700
     },
     atlasDataUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.json',
-    atlasUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.png',
+    atlasUrl: basePath + 'fonts/roboto/Roboto-Bold.msdf.png'
   } as const,
   {
     type: 'msdf',
@@ -34,7 +34,7 @@ const fonts = [
       weight: 400
     },
     atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
-    atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
+    atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png'
   } as const,
   {
     type: 'msdf',
@@ -43,7 +43,7 @@ const fonts = [
       weight: 500
     },
     atlasDataUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.json',
-    atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png',
+    atlasUrl: basePath + 'fonts/roboto/Roboto-Regular.msdf.png'
   } as const
 ];
 
