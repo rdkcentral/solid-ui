@@ -16,7 +16,7 @@
  */
 import theme from 'theme';
 import { makeComponentStyles } from '../../utils/index.js';
-import type { NavigableConfig, NavigableStyles } from 'types/Navigable.types.js';
+import type { NavigableConfig, NavigableStyles } from '../../types/Navigable.types.js';
 
 /* @ts-expect-error next-line themes are supplied by client applications so this setup is necessary */
 const { Row: { defaultTone, ...themeStyles } = { themeStyles: {} } } = theme?.componentConfig;

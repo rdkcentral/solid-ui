@@ -13,8 +13,7 @@
     "skipLibCheck": true,
     "types": ["solid-js", "vite/client"],
     "paths": {
-      "theme": ["../l3-ui-theme-base/theme.d.ts"],
-      "types": ["./types/*"]
+      "theme": ["../l3-ui-theme-base/theme.d.ts"]
     }
   }
 }

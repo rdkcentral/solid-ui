@@ -36,7 +36,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "pnpm run storybook",
-    "build-lib": "tsc -b && tsc-alias",
+    "build-lib": "tsc -b",
     "build-storybook": "storybook build",
     "prepack": "npm run build-lib",
     "storybook": "storybook dev -p 6006",

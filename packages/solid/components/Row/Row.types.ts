@@ -17,7 +17,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import type { KeyHandler } from '@lightningtv/core/focusManager';
-import type { NavigableProps, NavigableStyleProperties } from 'types/Navigable.types.js';
+import type { NavigableProps, NavigableStyleProperties } from '../../types/Navigable.types.js';
 
 export interface ColumnProps extends NavigableProps, NavigableStyleProperties {
   /** function to be called on down click */

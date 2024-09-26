@@ -17,7 +17,7 @@
 
 import { ElementNode, assertTruthy } from '@lightningtv/core';
 import { type KeyHandler } from '@lightningtv/core/focusManager';
-import { type NavigableElement } from 'types/Navigable.types.js';
+import { type NavigableElement } from '../types/Navigable.types.js';
 
 export function onGridFocus(this: ElementNode) {
   if (!this || this.children.length === 0) return false;
