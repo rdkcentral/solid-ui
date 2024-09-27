@@ -17,7 +17,7 @@
 
 import Icon from './Icon.jsx';
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import lightning from '../../assets/images/ic_lightning_white_32.png';
+import lightning from 'assets/images/ic_lightning_white_32.png';
 import { hexColor } from '@lightningtv/solid';
 
 type Story = StoryObj<typeof Icon>;

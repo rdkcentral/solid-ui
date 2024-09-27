@@ -18,7 +18,7 @@ import Checkbox from './Checkbox.jsx';
 import Icon from '../Icon/Icon.jsx';
 import checkboxStyles from '../Checkbox/Checkbox.styles.js';
 
-const icon = '/assets/images/ic_lightning_white_32.png';
+const icon = 'assets/images/ic_lightning_white_32.png';
 
 const meta = {
   title: 'Components/Checkbox',

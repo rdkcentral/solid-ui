@@ -21,7 +21,7 @@ import styles from './Checkbox.styles.js';
 import Icon from '../Icon/Icon.jsx';
 import type { CheckboxProps } from './Checkbox.types.js';
 
-const check = '/assets/images/check-icon.png';
+const check = 'assets/images/check-icon.png';
 
 const Checkbox: Component<CheckboxProps> = (props: CheckboxProps) => {
   return (

@@ -21,7 +21,7 @@ import { chainFunctions } from '../../utils/chainFunctions.js';
 import { handleNavigation, handleOnSelect, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
 import styles from './Row.styles.js';
-import type { NavigableProps } from 'types/Navigable.types.js';
+import type { NavigableProps } from '../../types/Navigable.types.js';
 
 const Row: Component<NavigableProps> = props => {
   const onLeft = handleNavigation('left');

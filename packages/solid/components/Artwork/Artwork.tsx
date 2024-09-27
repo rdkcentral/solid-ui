@@ -17,7 +17,7 @@
 
 import { type Component, createMemo } from 'solid-js';
 import { View } from '@lightningtv/solid';
-import type { Tone } from 'types/types.js';
+import type { Tone } from '../../types/types.js';
 import styles from './Artwork.styles.js';
 import type { ArtworkProps } from './Artwork.types.js';
 

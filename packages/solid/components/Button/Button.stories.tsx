@@ -21,8 +21,8 @@ import { Text } from '@lightningtv/solid';
 import Icon from '../Icon/Icon.jsx';
 import Checkbox from '../Checkbox/Checkbox.jsx';
 
-const lightning = '/assets/images/ic_lightning_white_32.png';
-const check = '/assets/images/check-icon.png';
+const lightning = 'assets/images/ic_lightning_white_32.png';
+const check = 'assets/images/check-icon.png';
 
 type Story = StoryObj<typeof Button>;
 

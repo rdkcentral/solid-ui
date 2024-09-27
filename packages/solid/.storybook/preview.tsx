@@ -16,10 +16,7 @@
  */
 /* @refresh reload */
 import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
-import {
-  WebGlCoreRenderer,
-  SdfTextRenderer,
-} from "@lightningjs/renderer/webgl";
+import { WebGlCoreRenderer, SdfTextRenderer } from '@lightningjs/renderer/webgl';
 import { Inspector } from '@lightningjs/renderer/inspector';
 import fonts from '../../shared/fonts';
 import { themes } from '@storybook/theming';
@@ -32,8 +29,10 @@ Config.rendererOptions = {
   inspector: Inspector,
   devicePhysicalPixelRatio: 1,
   fontEngines: [SdfTextRenderer],
-  renderEngine: WebGlCoreRenderer,
+  renderEngine: WebGlCoreRenderer
 };
+
+Config.fontSettings.fontFamily = 'Arial';
 
 let dispose;
 

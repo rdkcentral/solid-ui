@@ -51,7 +51,7 @@ const config = {
     alias: {
       theme: path.resolve(__dirname, '../l3-ui-theme-base/theme.js'),
       utils: path.resolve(__dirname, '../shared/utils/index.ts'),
-      types: path.resolve(__dirname, './types/')
+      assets: path.resolve(__dirname, '../assets/')
     },
     dedupe: ['solid-js', '@lightningtv/solid']
   },

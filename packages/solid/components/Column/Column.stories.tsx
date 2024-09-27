@@ -16,7 +16,7 @@
  */
 
 import Column from './Column.jsx';
-import type { NavigableProps } from 'types/Navigable.types.js';
+import type { NavigableProps } from '../../types/Navigable.types.js';
 import Button from '../Button/Button.jsx';
 import type { JSX } from 'solid-js/jsx-runtime';
 import { View } from '@lightningtv/solid';
