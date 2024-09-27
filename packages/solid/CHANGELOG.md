@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.5](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.4...@lightningtv/solid-ui@0.29.5) (2024-09-27)
+
+### Bug Fixes
+
+- add asset alias, remove type alias ([#57](https://github.com/rdkcentral/solid-ui/issues/57)) ([ddc82f1](https://github.com/rdkcentral/solid-ui/commit/ddc82f131c8ded315644601dca9c8b23eb4f11ee))
+
 ## [0.29.4](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.3...@lightningtv/solid-ui@0.29.4) (2024-09-25)
 
 ### Bug Fixes
