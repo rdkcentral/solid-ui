@@ -117,7 +117,7 @@ function updateLastIndex(isRow: boolean, items: ElementNode): [{ position: numbe
         position: lastChild.x ?? 0,
         size: lastChild.width ?? 0
       },
-      items.width ?? 0
+      (items.preFlexwidth || items.width) ?? 0
     ];
   }
   return [
@@ -125,6 +125,6 @@ function updateLastIndex(isRow: boolean, items: ElementNode): [{ position: numbe
       position: lastChild.y ?? 0,
       size: lastChild.height ?? 0
     },
-    items.height ?? 0
+    (items.preFlexheight || items.height) ?? 0
   ];
 }
