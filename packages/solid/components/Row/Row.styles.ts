@@ -29,7 +29,6 @@ const container: NavigableConfig = {
   },
   base: {
     display: 'flex',
-    flexBoundary: 'fixed',
     flexDirection: 'row',
     gap: theme.layout.gutterX,
     transition: {
