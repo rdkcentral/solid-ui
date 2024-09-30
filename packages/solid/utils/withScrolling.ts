@@ -35,12 +35,11 @@ export function withScrolling(isRow: boolean) {
     selectedElement?: ElementNode | ElementText,
     lastSelected?: number
   ) => {
-    if (!componentRef.children.length) return;
-
     if (typeof selected !== 'number') {
       componentRef = selected;
       selected = 0;
     }
+    if (!componentRef.children.length) return;
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 
