@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.6](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.5...@lightningtv/solid-ui@0.29.6) (2024-09-30)
+
+### Bug Fixes
+
+- Update column and row to use fit items ([#58](https://github.com/rdkcentral/solid-ui/issues/58)) ([a84ba1d](https://github.com/rdkcentral/solid-ui/commit/a84ba1de693d280a081ee71d1b9810aa538c009e))
+
 ## [0.29.5](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.4...@lightningtv/solid-ui@0.29.5) (2024-09-27)
 
 ### Bug Fixes
