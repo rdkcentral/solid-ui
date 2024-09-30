@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.7](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.6...@lightningtv/solid-ui@0.29.7) (2024-09-30)
+
+### Bug Fixes
+
+- Use componentRef after we figure out componentRef ([#59](https://github.com/rdkcentral/solid-ui/issues/59)) ([3baddb1](https://github.com/rdkcentral/solid-ui/commit/3baddb1d33a4af23a2d0d026638593e9f45fd42b))
+
 ## [0.29.6](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.5...@lightningtv/solid-ui@0.29.6) (2024-09-30)
 
 ### Bug Fixes
