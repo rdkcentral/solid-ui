@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.8](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.7...@lightningtv/solid-ui@0.29.8) (2024-10-02)
+
+### Bug Fixes
+
+- update Row type, export navigable interface ([#60](https://github.com/rdkcentral/solid-ui/issues/60)) ([8004506](https://github.com/rdkcentral/solid-ui/commit/80045062bdaba74a9695321499afd72822bc14aa))
+
 ## [0.29.7](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.6...@lightningtv/solid-ui@0.29.7) (2024-09-30)
 
 ### Bug Fixes
