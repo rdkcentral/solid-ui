@@ -87,3 +87,4 @@ export { FPSCounter, setupFPS, resetCounter } from './components/FPSCounter/inde
 export * from './utils/index.js';
 export * from './types/types.js';
 export * from './types/interfaces.js';
+export * from './types/Navigable.types.js';
