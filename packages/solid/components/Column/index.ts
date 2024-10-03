@@ -17,3 +17,4 @@
 
 export { default as default } from './Column.jsx';
 export { default as columnStyles } from './Column.styles.js';
+export type { ColumnProps } from './Column.types.js';
