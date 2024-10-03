@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.10](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.9...@lightningtv/solid-ui@0.29.10) (2024-10-03)
+
+### Bug Fixes
+
+- **Toggle:** remove debugger from getBackgroundColor method ([#62](https://github.com/rdkcentral/solid-ui/issues/62)) ([03beadc](https://github.com/rdkcentral/solid-ui/commit/03beadcb7ae169c3605d8df6104372de55297c0a))
+
 ## [0.29.9](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.8...@lightningtv/solid-ui@0.29.9) (2024-10-03)
 
 ### Bug Fixes
