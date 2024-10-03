@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.9](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.8...@lightningtv/solid-ui@0.29.9) (2024-10-03)
+
+### Bug Fixes
+
+- export types from Row and Column index ([#61](https://github.com/rdkcentral/solid-ui/issues/61)) ([3c47af8](https://github.com/rdkcentral/solid-ui/commit/3c47af8c3d07a0a4058d5611ab2acd127d8aee50))
+
 ## [0.29.8](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.7...@lightningtv/solid-ui@0.29.8) (2024-10-02)
 
 ### Bug Fixes
