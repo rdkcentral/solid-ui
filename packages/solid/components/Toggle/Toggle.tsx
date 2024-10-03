@@ -41,21 +41,20 @@ const positionToggle = (checked: boolean | undefined, props: ToggleProps) => {
 
 const getKnobColor = (checked: boolean | undefined, props: ToggleProps) => {
   return checked != undefined && props.checked
-    ? props.knobColorChecked ??
+    ? (props.knobColorChecked ??
         styles.Knob.tones?.[props.tone ?? styles.tone]?.colorChecked ??
-        styles.Knob.base.colorChecked
-    : props.knobColor ?? styles.Knob.tones?.[props.tone ?? styles.tone]?.color ?? styles.Knob.base.color;
+        styles.Knob.base.colorChecked)
+    : (props.knobColor ?? styles.Knob.tones?.[props.tone ?? styles.tone]?.color ?? styles.Knob.base.color);
 };
 
 const getBackgroundColor = (checked: boolean | undefined, props: ToggleProps) => {
-  debugger;
   return checked != undefined && props.checked
-    ? props.backgroundColorChecked ??
+    ? (props.backgroundColorChecked ??
         styles.Container.tones?.[props.tone ?? styles.tone]?.colorChecked ??
-        styles.Container.base.colorChecked
-    : props.backgroundColor ??
+        styles.Container.base.colorChecked)
+    : (props.backgroundColor ??
         styles.Container.tones?.[props.tone ?? styles.tone]?.color ??
-        styles.Container.base.color;
+        styles.Container.base.color);
 };
 
 const Toggle: Component<ToggleProps> = (props: ToggleProps) => {
