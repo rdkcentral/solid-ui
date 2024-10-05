@@ -23,11 +23,10 @@ import { chainFunctions } from '../../utils/chainFunctions.js';
 import type { ColumnProps } from './Column.types.js';
 import styles from './Column.styles.js';
 
+const onUp = handleNavigation('up');
+const onDown = handleNavigation('down');
+const scroll = withScrolling(false);
 const Column: Component<ColumnProps> = props => {
-  const onUp = handleNavigation('up');
-  const onDown = handleNavigation('down');
-  const scroll = withScrolling(false);
-
   return (
     <View
       {...props}
