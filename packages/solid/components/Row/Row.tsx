@@ -23,11 +23,11 @@ import { withScrolling } from '../../utils/withScrolling.js';
 import styles from './Row.styles.js';
 import type { RowProps } from './Row.types.js';
 
-const Row: Component<RowProps> = props => {
-  const onLeft = handleNavigation('left');
-  const onRight = handleNavigation('right');
-  const scroll = withScrolling(true);
+const onLeft = handleNavigation('left');
+const onRight = handleNavigation('right');
+const scroll = withScrolling(true);
 
+const Row: Component<RowProps> = props => {
   return (
     <View
       {...props}
