@@ -16,7 +16,7 @@
  */
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Text, View, type IntrinsicNodeStyleProps } from '@lightningtv/solid';
+import { Text, View, type TextStyles } from '@lightningtv/solid';
 import theme from 'theme';
 import Artwork from '../../components/Artwork/Artwork.js';
 import Badge from '../../components/Badge/Badge.js';
@@ -71,7 +71,7 @@ export const Tile: StoryObj = {
           y: 204
         }}
       >
-        <Text style={{ ...theme.typography.body1 } as IntrinsicNodeStyleProps}>Title</Text>
+        <Text style={{ ...theme.typography.body1 } as TextStyles}>Title</Text>
         <Text
           style={
             {
@@ -80,7 +80,7 @@ export const Tile: StoryObj = {
               contain: 'width',
               maxLines: 1,
               fontWeight: 400
-            } as IntrinsicNodeStyleProps
+            } as TextStyles
           }
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales est eu eleifend

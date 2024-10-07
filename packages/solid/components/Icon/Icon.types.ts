@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { NodeStyles, IntrinsicNodeProps } from '@lightningtv/solid';
+import type { NodeStyles, NodeProps } from '@lightningtv/solid';
 import type { ComponentStyleConfig, NodeStyleSet, Tone } from '../../types/types.js';
 import type { UIComponentProps } from '../../types/interfaces.js';
 
@@ -28,17 +28,17 @@ export interface IconProps extends UIComponentProps {
   /**
    * icon height
    */
-  height?: IntrinsicNodeProps['height'];
+  height?: NodeProps['height'];
 
   /**
    * path to image or inline SVG XML
    */
-  src?: IntrinsicNodeProps['src'];
+  src?: NodeProps['src'];
 
   /**
    * icon width
    */
-  width?: IntrinsicNodeProps['width'];
+  width?: NodeProps['width'];
 }
 
 export interface IconStyleProperties {
