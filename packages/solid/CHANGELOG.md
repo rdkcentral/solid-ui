@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.11](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.10...@lightningtv/solid-ui@0.29.11) (2024-10-07)
+
+### Bug Fixes
+
+- Optimize reuse on Row and Column helpers ([#63](https://github.com/rdkcentral/solid-ui/issues/63)) ([3ef23a6](https://github.com/rdkcentral/solid-ui/commit/3ef23a6b8c89a4dcd32d1fd8131e08a9bd0acfa4))
+
 ## [0.29.10](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.9...@lightningtv/solid-ui@0.29.10) (2024-10-03)
 
 ### Bug Fixes
