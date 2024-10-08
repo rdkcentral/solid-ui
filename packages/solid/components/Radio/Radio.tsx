@@ -22,20 +22,20 @@ import type { RadioProps } from './Radio.types.js';
 
 const getKnobColor = (checked: boolean | undefined, props: RadioProps) => {
   return checked != undefined && props.checked
-    ? props.knobColorChecked ??
+    ? (props.knobColorChecked ??
         styles.Knob.tones?.[props.tone ?? styles.tone]?.colorChecked ??
-        styles.Knob.base.colorChecked
-    : props.knobColor ?? styles.Knob.tones?.[props.tone ?? styles.tone]?.color ?? styles.Knob.base.color;
+        styles.Knob.base.colorChecked)
+    : (props.knobColor ?? styles.Knob.tones?.[props.tone ?? styles.tone]?.color ?? styles.Knob.base.color);
 };
 
 const getColor = (checked: boolean | undefined, props: RadioProps) => {
   return checked != undefined && props.checked
-    ? props.backgroundColorChecked ??
+    ? (props.backgroundColorChecked ??
         styles.Container.tones?.[props.tone ?? styles.tone]?.colorChecked ??
-        styles.Container.base.colorChecked
-    : props.backgroundColor ??
+        styles.Container.base.colorChecked)
+    : (props.backgroundColor ??
         styles.Container.tones?.[props.tone ?? styles.tone]?.color ??
-        styles.Container.base.color;
+        styles.Container.base.color);
 };
 
 const Radio: Component<RadioProps> = props => {
@@ -46,7 +46,6 @@ const Radio: Component<RadioProps> = props => {
     <View
       {...props}
       color={backgroundColor()}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
@@ -55,7 +54,7 @@ const Radio: Component<RadioProps> = props => {
       states={{ checked: props.checked }}
       children={
         props.checked
-          ? props.children ?? (
+          ? (props.children ?? (
               <View
                 color={knobColor()}
                 mount={0.5}
@@ -67,7 +66,7 @@ const Radio: Component<RadioProps> = props => {
                 borderRadius={props.knobRadius}
                 style={[styles.Knob.tones?.[props.tone ?? styles.tone], styles.Knob.base]}
               />
-            )
+            ))
           : ''
       }
     />

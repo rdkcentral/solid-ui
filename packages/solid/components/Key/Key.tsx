@@ -46,7 +46,6 @@ const Key: Component<KeyProps> = props => {
   return (
     <ButtonContainer
       {...props}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones?.[tone()],

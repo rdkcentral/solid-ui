@@ -27,7 +27,6 @@ const BadgeContainer: Component<BadgeProps> = props => {
       // borderWidth={props.strokeWidth} // TODO clew uses strokeWidth, but we currently don't account for nested properties (border.width)
       color={props.backgroundColor}
       borderRadius={props.radius}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],

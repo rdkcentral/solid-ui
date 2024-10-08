@@ -51,7 +51,6 @@ const ButtonContainer: Component<ButtonContainerProps> = props => {
       color={props.backgroundColor}
       justifyContent={props.justify}
       itemSpacing={props.contentSpacing}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
