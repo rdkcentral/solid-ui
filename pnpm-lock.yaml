@@ -87,8 +87,14 @@ importers:
   packages/solid:
     dependencies:
       '@lightningjs/renderer':
-        specifier: ^2.1.2
-        version: 2.1.2
+        specifier: ^2.3.2
+        version: 2.3.2
+      '@lightningtv/core':
+        specifier: ^2.2.2
+        version: 2.2.2(@lightningjs/renderer@2.3.2)
+      '@lightningtv/solid':
+        specifier: ^2.2.0
+        version: 2.2.0(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.22)
@@ -96,15 +102,9 @@ importers:
         specifier: '*'
         version: 1.8.22
     devDependencies:
-      '@lightningtv/core':
-        specifier: ^2.2.2
-        version: 2.2.2(@lightningjs/renderer@2.1.2)
       '@lightningtv/l3-ui-theme-base':
         specifier: workspace:*
         version: link:../l3-ui-theme-base
-      '@lightningtv/solid':
-        specifier: ^2.2.0
-        version: 2.2.0(@lightningjs/renderer@2.1.2)(solid-js@1.8.22)
       '@lightningtv/vite-hex-transform':
         specifier: ^1.1.0
         version: 1.1.0(@types/node@22.5.5)
@@ -653,6 +653,10 @@ packages:
 
   '@lightningjs/renderer@2.1.2':
     resolution: {integrity: sha512-Lyi93GNYDmqInG5yHuUlm7Ak7Dwmjti5D8t+lK0+CxUXf2UOc1XU9Ha04m4aikeP0K+3RDPT4aYbBQVTCVT1MQ==}
+    engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
+
+  '@lightningjs/renderer@2.3.2':
+    resolution: {integrity: sha512-3MLNnpk7Uu3fis9sx5uSgFzSVGiHZ7m3NjPoR/MFV82YmTje/RRVAsFghkE/+bdsnf8C2cI/UHG2GLTB+Z/DWg==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
   '@lightningtv/core@2.0.1':
@@ -5436,13 +5440,15 @@ snapshots:
 
   '@lightningjs/renderer@2.1.2': {}
 
+  '@lightningjs/renderer@2.3.2': {}
+
   '@lightningtv/core@2.0.1':
     dependencies:
       '@lightningjs/renderer': 2.1.2
 
-  '@lightningtv/core@2.2.2(@lightningjs/renderer@2.1.2)':
+  '@lightningtv/core@2.2.2(@lightningjs/renderer@2.3.2)':
     dependencies:
-      '@lightningjs/renderer': 2.1.2
+      '@lightningjs/renderer': 2.3.2
 
   '@lightningtv/solid@2.0.1(solid-js@1.8.22)':
     dependencies:
@@ -5452,9 +5458,9 @@ snapshots:
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.22)
       solid-js: 1.8.22
 
-  '@lightningtv/solid@2.2.0(@lightningjs/renderer@2.1.2)(solid-js@1.8.22)':
+  '@lightningtv/solid@2.2.0(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)':
     dependencies:
-      '@lightningtv/core': 2.2.2(@lightningjs/renderer@2.1.2)
+      '@lightningtv/core': 2.2.2(@lightningjs/renderer@2.3.2)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.22)
       '@solid-primitives/mouse': 2.0.20(solid-js@1.8.22)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.22)
