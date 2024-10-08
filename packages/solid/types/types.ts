@@ -92,8 +92,8 @@ export type FlexibleTextStyles<AdditionalTypes = unknown> = TextStyles & Additio
 
 // could be a nested object
 export type NodeStyleSet<AdditionalTypes = unknown> = {
-  base: Required<FlexibleNodeStyles<AdditionalTypes>> & WithModes<FlexibleNodeStyles<AdditionalTypes>>;
-  tones: WithTonesModes<FlexibleNodeStyles<AdditionalTypes>>; // includes modes of tones
+  base: Required<FlexibleNodeStyles & AdditionalTypes> & WithModes<FlexibleNodeStyles & AdditionalTypes>;
+  tones: WithTonesModes<FlexibleNodeStyles & AdditionalTypes>; // includes modes of tones
 };
 
 // could be a nested object
