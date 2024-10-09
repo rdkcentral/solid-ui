@@ -75,7 +75,6 @@ const Artwork: Component<ArtworkProps> = props => {
       pivotY={props.imageScalePivotX}
       scale={props.imageScale}
       src={src()}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],

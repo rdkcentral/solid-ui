@@ -67,7 +67,6 @@ const Toggle: Component<ToggleProps> = (props: ToggleProps) => {
       {...props}
       color={backgroundColor()}
       borderRadius={props.strokeRadius}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],

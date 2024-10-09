@@ -16,7 +16,7 @@
  */
 
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Text, View, type IntrinsicNodeStyleProps } from '@lightningtv/solid';
+import { Text, View, type NodeStyles, type TextStyles } from '@lightningtv/solid';
 import theme from 'theme';
 import Badge from '../../components/Badge/Badge.js';
 
@@ -26,7 +26,7 @@ const meta: Meta = {
 
 export default meta;
 
-const containerStyles: IntrinsicNodeStyleProps = {
+const containerStyles: NodeStyles = {
   display: 'flex',
   justifyContent: 'flexStart',
   flexBoundary: 'contain'
@@ -35,7 +35,7 @@ const containerStyles: IntrinsicNodeStyleProps = {
 export const Metadata: StoryObj = {
   render: () => (
     <View style={{ ...containerStyles, flexDirection: 'column' }}>
-      <Text style={{ ...theme.typography.headline1, fontWeight: 700 } as IntrinsicNodeStyleProps}>Title</Text>
+      <Text style={{ ...theme.typography.headline1, fontWeight: 700 } as TextStyles}>Title</Text>
       <Text
         style={
           {
@@ -44,7 +44,7 @@ export const Metadata: StoryObj = {
             maxLines: 3,
             ...theme.typography.body2,
             fontWeight: 400
-          } as IntrinsicNodeStyleProps
+          } as TextStyles
         }
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales est eu eleifend interdum.
@@ -55,9 +55,7 @@ export const Metadata: StoryObj = {
         eu luctus tortor posuere sit amet. Nunc a interdum metus.
       </Text>
       <View style={{ ...containerStyles, flexDirection: 'row', gap: 8 }}>
-        <Text style={{ ...theme.typography.body3, marginRight: 16 } as IntrinsicNodeStyleProps}>
-          Support text
-        </Text>
+        <Text style={{ ...theme.typography.body3, marginRight: 16 } as TextStyles}>Support text</Text>
         <Badge title="TV-14" />
         <Badge title="HD" />
         <Badge title="CC" />

@@ -114,7 +114,6 @@ const KeyboardBase: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) =>
     <View
       {...props}
       forwardFocus={0}
-      // @ts-expect-error TODO type needs to be fixed in framework
       style={[
         props.style, //
         styles.Container.tones[tone()],

@@ -15,17 +15,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { type IntrinsicNodeProps } from '@lightningtv/solid';
+import { type NodeProps } from '@lightningtv/solid';
 import type { Tone } from './types.js';
 
-// TODO extends NodeProps, we may want to narrow this
-/**
- * ensures all our components provide the same API for tone
- * omits children, not all ui-components support children
- * overrides color - strings are accepted by the renderer even though the type
- * is number, and all our colors are strings due to JSON limitations
- */
-export interface UIComponentProps extends IntrinsicNodeProps {
+export interface UIComponentProps extends NodeProps {
   /**
    * sets the component's color palette
    */

@@ -179,7 +179,7 @@ export const FPSCounter = props => {
             renderableTexturesLoaded:
           </Text>
           <Text fontSize={infoFontSize} style={fpsLabel} x={230}>
-            {renderableTexturesLoadedSignal()}
+            {renderableTexturesLoadedSignal().toString()}
           </Text>
         </View>
 
@@ -188,7 +188,7 @@ export const FPSCounter = props => {
             loadedTextures:
           </Text>
           <Text fontSize={infoFontSize} style={fpsLabel} x={230}>
-            {loadedTexturesSignal()}
+            {loadedTexturesSignal().toString()}
           </Text>
         </View>
       </View>

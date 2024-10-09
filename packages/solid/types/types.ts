@@ -15,7 +15,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// import * as Solid from '@lightningtv/solid';
 import type { TextStyles, NodeStyles } from '@lightningtv/solid';
 
 export type ThemeKeys<BaseStyleType, ComponentStyleList = object> = {
@@ -27,7 +26,7 @@ export interface ComponentStyleConfig<
   ComponentStyleList = object,
   ModeSet extends string = Mode,
   ToneSet extends string = Tone,
-  BaseStyleType extends NodeStyles | TextStyles | NodeColor = NodeStyles | TextStyles
+  BaseStyleType extends NodeStyles | TextStyles = NodeStyles | TextStyles
 > {
   themeKeys: ThemeKeys<BaseStyleType, ComponentStyleList>;
   base: BaseStyleType;
@@ -92,33 +91,13 @@ export type FlexibleNodeStyles<AdditionalTypes = unknown> = NodeStyles & Additio
 export type FlexibleTextStyles<AdditionalTypes = unknown> = TextStyles & AdditionalTypes;
 
 // could be a nested object
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type NodeStyleSet<AdditionalTypes = unknown> = {
-  base: Required<FlexibleNodeStyles<AdditionalTypes>> & WithModes<FlexibleNodeStyles<AdditionalTypes>>;
-  tones: WithTonesModes<FlexibleNodeStyles<AdditionalTypes>>; // includes modes of tones
+  base: Required<FlexibleNodeStyles & AdditionalTypes> & WithModes<FlexibleNodeStyles & AdditionalTypes>;
+  tones: WithTonesModes<FlexibleNodeStyles & AdditionalTypes>; // includes modes of tones
 };
 
 // could be a nested object
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TextStyleSet<AdditionalTypes = unknown> = {
-  base: Required<TextStyles & AdditionalTypes> & WithModes<TextStyles & AdditionalTypes>;
-  tones: WithTonesModes<TextStyles & AdditionalTypes>;
-};
-
-/**
- * renderer accepts 0xRGBA as either a number or string
- */
-export type NodeColor = number | string;
-
-export type TypographySet = {
-  [key: string]: Typography;
-};
-
-export type Typography = {
-  fontFamily: string;
-  fontSize: number;
-  lineHeight: number;
-  fontWeight: number;
-  verticalAlign: string;
-  textBaseline: string;
+  base: Required<FlexibleTextStyles & AdditionalTypes> & WithModes<FlexibleTextStyles & AdditionalTypes>;
+  tones: WithTonesModes<FlexibleTextStyles & AdditionalTypes>;
 };

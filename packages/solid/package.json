@@ -53,12 +53,12 @@
     "url": "git+https://github.com/rdkcentral/solid-ui.git"
   },
   "dependencies": {
-    "@lightningjs/renderer": "^2.1.2",
+    "@lightningjs/renderer": "^2.3.2",
     "@solid-primitives/refs": "^1.0.8"
   },
   "peerDependencies": {
-    "@lightningtv/core": "^2.1.8",
-    "@lightningtv/solid": "^2.1.2",
+    "@lightningtv/core": "^2.2.2",
+    "@lightningtv/solid": "^2.2.1",
     "solid-js": "*"
   },
   "devDependencies": {
