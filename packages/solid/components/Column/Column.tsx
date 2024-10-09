@@ -45,7 +45,6 @@ const Column: Component<ColumnProps> = props => {
       )}
       style={[
         props.style, //
-        styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
       ]}
     />
