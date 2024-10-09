@@ -58,7 +58,7 @@
   },
   "peerDependencies": {
     "@lightningtv/core": "^2.2.2",
-    "@lightningtv/solid": "^2.2.0",
+    "@lightningtv/solid": "^2.2.1",
     "solid-js": "*"
   },
   "devDependencies": {

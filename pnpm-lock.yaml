@@ -60,7 +60,7 @@ importers:
         version: 2.1.2
       '@lightningtv/solid':
         specifier: ^2.0.1
-        version: 2.0.1(solid-js@1.8.22)
+        version: 2.0.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.22)
       '@solidjs/router':
         specifier: ^0.14.5
         version: 0.14.5(solid-js@1.8.22)
@@ -93,8 +93,8 @@ importers:
         specifier: ^2.2.2
         version: 2.2.2(@lightningjs/renderer@2.3.2)
       '@lightningtv/solid':
-        specifier: ^2.2.0
-        version: 2.2.0(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)
+        specifier: ^2.2.1
+        version: 2.2.1(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.22)
@@ -659,9 +659,6 @@ packages:
     resolution: {integrity: sha512-3MLNnpk7Uu3fis9sx5uSgFzSVGiHZ7m3NjPoR/MFV82YmTje/RRVAsFghkE/+bdsnf8C2cI/UHG2GLTB+Z/DWg==}
     engines: {node: '>= 20.9.0', npm: '>= 10.0.0', pnpm: '>= 8.9.2'}
 
-  '@lightningtv/core@2.0.1':
-    resolution: {integrity: sha512-G9Ry5UYDnzJkbSo0aJLQRbuBR9KmHmJKMUGSiCzDJFQleXa5eVYzQlXJ5+wNwd7AryTkAG57J8cVmQ/OiL7Hzg==}
-
   '@lightningtv/core@2.2.2':
     resolution: {integrity: sha512-V4BeqhBPEphpZsEUFGPdHkhBiTTDK0vUFupSYIKQyTr6N+zSOFwNp0nvH2FWBKouVdrGRR9+szkk8DMAZ/YQvQ==}
     peerDependencies:
@@ -672,8 +669,8 @@ packages:
     peerDependencies:
       solid-js: '*'
 
-  '@lightningtv/solid@2.2.0':
-    resolution: {integrity: sha512-rVyksUPGXwGKvCG+EHC74eqrWCotLcYxxTPYvbiCa11XttPHlPfRej5zj3eJVtDwiobHO/3q2mPLP8M/O6AB7A==}
+  '@lightningtv/solid@2.2.1':
+    resolution: {integrity: sha512-T5sDJV328vSlxYFB3FQoxjKAMRMaIhPicr0hTPZtZxDyNKFoVBeYBBR+VdpTZabtHMvjFMttRvg4CfP3ruhrGQ==}
     peerDependencies:
       solid-js: '*'
 
@@ -5442,7 +5439,7 @@ snapshots:
 
   '@lightningjs/renderer@2.3.2': {}
 
-  '@lightningtv/core@2.0.1':
+  '@lightningtv/core@2.2.2(@lightningjs/renderer@2.1.2)':
     dependencies:
       '@lightningjs/renderer': 2.1.2
 
@@ -5450,15 +5447,17 @@ snapshots:
     dependencies:
       '@lightningjs/renderer': 2.3.2
 
-  '@lightningtv/solid@2.0.1(solid-js@1.8.22)':
+  '@lightningtv/solid@2.0.1(@lightningjs/renderer@2.1.2)(solid-js@1.8.22)':
     dependencies:
-      '@lightningtv/core': 2.0.1
+      '@lightningtv/core': 2.2.2(@lightningjs/renderer@2.1.2)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.22)
       '@solid-primitives/mouse': 2.0.20(solid-js@1.8.22)
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.22)
       solid-js: 1.8.22
+    transitivePeerDependencies:
+      - '@lightningjs/renderer'
 
-  '@lightningtv/solid@2.2.0(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)':
+  '@lightningtv/solid@2.2.1(@lightningjs/renderer@2.3.2)(solid-js@1.8.22)':
     dependencies:
       '@lightningtv/core': 2.2.2(@lightningjs/renderer@2.3.2)
       '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.22)
