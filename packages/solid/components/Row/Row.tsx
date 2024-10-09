@@ -46,7 +46,6 @@ const Row: Component<RowProps> = props => {
       )}
       style={[
         props.style, //
-        styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
       ]}
     />
