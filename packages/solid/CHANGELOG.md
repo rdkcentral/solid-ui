@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.11...@lightningtv/solid-ui@0.30.0) (2024-10-09)
+
+### Features
+
+- update framework packages to 2.2.x ([#64](https://github.com/rdkcentral/solid-ui/issues/64)) ([8bfd975](https://github.com/rdkcentral/solid-ui/commit/8bfd9755a2316ba7fdd1143878d2d0893d40866f))
+
 ## [0.29.11](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.10...@lightningtv/solid-ui@0.29.11) (2024-10-07)
 
 ### Bug Fixes
