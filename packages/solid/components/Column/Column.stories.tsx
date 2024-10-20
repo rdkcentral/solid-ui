@@ -67,6 +67,71 @@ const createItems = (length: number) => {
 
 const buttons = (num = 7) => createItems(num);
 
+export const AutoScroll = {
+  render: (args: JSX.IntrinsicAttributes & NavigableProps) => {
+    return (
+      <View height={720} width={400}>
+        <Column autofocus {...args} />
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    wrap: false,
+    y: 0
+  }
+};
+
+export const EdgeScroll = {
+  render: (args: JSX.IntrinsicAttributes & NavigableProps) => {
+    return (
+      <View height={720} width={400}>
+        <Column autofocus {...args} />
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    scroll: 'edge',
+    wrap: false,
+    y: 0
+  }
+};
+
+export const EdgeScrollLastSelected = {
+  render: (args: JSX.IntrinsicAttributes & NavigableProps) => {
+    return (
+      <View height={720} width={400}>
+        <Column autofocus {...args} />
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    scroll: 'edge',
+    selected: 6,
+    wrap: false,
+    y: 0
+  }
+};
+
+export const AutoScrollY = {
+  render: (args: JSX.IntrinsicAttributes & NavigableProps) => {
+    return (
+      <View height={720} width={400}>
+        <Column autofocus {...args} />
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    wrap: true,
+    y: 300,
+    flexBoundary: 'fixed',
+    height: 420
+  }
+};
+
 export const AlwaysScroll = {
   render: (args: JSX.IntrinsicAttributes & NavigableProps) => {
     return (
