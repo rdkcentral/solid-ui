@@ -28,7 +28,7 @@ export interface ScrollableElement extends ElementNode {
 /*
   Auto Scrolling starts scrolling right away until the last item is shown. Keeping a full view of the list.
   Edge starts scrolling when it reaches the edge of the viewport.
-  Always scroll moves the list everytime
+  Always scroll moves the list every time
 */
 
 export function withScrolling(isRow: boolean) {
