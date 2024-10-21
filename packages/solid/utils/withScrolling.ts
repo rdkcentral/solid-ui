@@ -25,6 +25,12 @@ export interface ScrollableElement extends ElementNode {
   _targetPosition?: number;
 }
 
+/*
+  Auto Scrolling starts scrolling right away until the last item is shown. Keeping a full view of the list.
+  Edge starts scrolling when it reaches the edge of the viewport.
+  Always scroll moves the list every time
+*/
+
 export function withScrolling(isRow: boolean) {
   const dimension = isRow ? 'width' : 'height';
   const axis = isRow ? 'x' : 'y';
@@ -37,24 +43,30 @@ export function withScrolling(isRow: boolean) {
   ) => {
     if (typeof selected !== 'number') {
       componentRef = selected;
-      selected = 0;
+      selected = componentRef.selected || 0;
     }
     if (!componentRef.children.length) return;
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 
-    let rootPosition = componentRef._targetPosition ?? componentRef[axis] ?? 0;
+    const rootPosition = componentRef._targetPosition ?? componentRef[axis] ?? 0;
     componentRef.offset = componentRef.offset ?? rootPosition;
     const offset = componentRef.offset;
     selectedElement = selectedElement || componentRef.children[selected];
     const selectedPosition = selectedElement[axis] ?? 0;
     const selectedSize = selectedElement[dimension] ?? 0;
+    // The -1 is due to wrap, so if we wrap we use incremental
     const movement =
-      lastSelected === undefined ? 'none' : selected > lastSelected ? 'incremental' : 'decremental';
+      lastSelected === undefined
+        ? 'incremental'
+        : lastSelected - 1 === selected
+          ? 'decremental'
+          : 'incremental';
     let nextPosition = rootPosition;
 
     const [lastItem, containerSize] = updateLastIndex(isRow, componentRef);
-    const isNotShown = (pos: number, size: number) => Math.abs(rootPosition) + containerSize < pos + size;
+    const isNotShown = (pos: number, size: number) =>
+      Math.abs(rootPosition - offset) + containerSize < pos + size;
 
     if (scroll === 'auto') {
       if (componentRef.scrollIndex != undefined && componentRef.scrollIndex >= 0) {
@@ -64,6 +76,10 @@ export function withScrolling(isRow: boolean) {
               ? rootPosition - selectedSize - gap
               : rootPosition + selectedSize + gap;
         } else if (movement === 'decremental' && componentRef.selected === componentRef.scrollIndex - 1) {
+          nextPosition = rootPosition + selectedSize + gap;
+        }
+      } else if (movement === 'decremental') {
+        if (rootPosition - offset < 0) {
           nextPosition = rootPosition + selectedSize + gap;
         }
       } else if (isNotShown(lastItem.position, lastItem.size) || selectedPosition < Math.abs(rootPosition)) {
@@ -80,16 +96,6 @@ export function withScrolling(isRow: boolean) {
       isNotShown(selectedPosition, selectedSize)
     ) {
       nextPosition = rootPosition - selectedSize - gap;
-    } else if (scroll === 'edge' && movement === 'none') {
-      let currentChildIndex = 0;
-      const isNotShownMemo = isNotShown(selectedPosition, selectedSize);
-      while (currentChildIndex < componentRef.children.length && isNotShownMemo) {
-        const currentChild = componentRef.children[currentChildIndex++];
-        if (currentChild.skipFocus) continue;
-        const currentChildSize = currentChild[dimension] ?? 0;
-        rootPosition -= currentChildSize + gap;
-      }
-      nextPosition = rootPosition;
     }
 
     if (componentRef[axis] !== nextPosition) {
