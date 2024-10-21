@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.30.0...@lightningtv/solid-ui@0.30.1) (2024-10-21)
+
+### Bug Fixes
+
+- Scrolling to handle offset, wrap, selected correctly ([#66](https://github.com/rdkcentral/solid-ui/issues/66)) ([0e66cfa](https://github.com/rdkcentral/solid-ui/commit/0e66cfa255a77308799b528f159f14dbb782fd37))
+
 # [0.30.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.29.11...@lightningtv/solid-ui@0.30.0) (2024-10-09)
 
 ### Features
