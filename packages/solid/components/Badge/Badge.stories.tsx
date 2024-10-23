@@ -17,7 +17,7 @@
 
 import Icon from '../Icon/Icon.jsx';
 import Badge, { BadgeContainer } from './Badge.jsx';
-import { Text } from '@lightningtv/solid';
+import { combineStyles, Text } from '@lightningtv/solid';
 import styles from './Badge.styles.js';
 const lightning = 'assets/images/ic_lightning_white_32.png';
 
@@ -62,14 +62,17 @@ export const BadgeIcon = {
     return (
       <BadgeContainer {...args}>
         <Icon
-          style={[styles.Icon.tones[args.tone ?? styles.tone], styles.Icon.base]}
+          style={combineStyles(styles.Icon.tones[args.tone ?? styles.tone], styles.Icon.base)}
           tone={args.tone ?? styles.tone}
           src={lightning}
           width={25}
           height={25}
           marginLeft={10}
         />
-        <Text marginLeft={6} style={[styles.Text.tones[args.tone ?? styles.tone], styles.Text.base]}>
+        <Text
+          marginLeft={6}
+          style={combineStyles(styles.Text.tones[args.tone ?? styles.tone], styles.Text.base)}
+        >
           {args.title}
         </Text>
       </BadgeContainer>

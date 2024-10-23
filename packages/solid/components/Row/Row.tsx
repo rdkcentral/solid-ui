@@ -15,8 +15,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { type Component, createMemo } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { type Component } from 'solid-js';
+import { combineStyles, View } from '@lightningtv/solid';
 import { chainFunctions } from '../../utils/chainFunctions.js';
 import { handleNavigation, handleOnSelect, onGridFocus } from '../../utils/handleNavigation.js';
 import { withScrolling } from '../../utils/withScrolling.js';
@@ -28,11 +28,6 @@ const onRight = handleNavigation('right');
 const scroll = withScrolling(true);
 
 const Row: Component<RowProps> = props => {
-  const mergedStyle = createMemo(() => [
-    props.style,
-    styles.Container.tones[props.tone ?? styles.tone],
-    styles.Container.base
-  ]);
   return (
     <View
       {...props}
@@ -49,7 +44,11 @@ const Row: Component<RowProps> = props => {
         props.onSelectedChanged,
         props.scroll !== 'none' ? scroll : undefined
       )}
-      style={mergedStyle()}
+      style={combineStyles(
+        props.style,
+        styles.Container.tones[props.tone ?? styles.tone],
+        styles.Container.base
+      )}
     />
   );
 };

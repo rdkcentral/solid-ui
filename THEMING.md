@@ -191,7 +191,7 @@ or if you have your own local theme:
 Each themeable element in the Component has a similar style property setup. Making use of [SolidJS styling features](https://lightning-js.github.io/solid/#/styling), we can provide a set of styles that are merged together. This allows us to provide a base set of styles that are then overridden in specific instances.
 
 ```jsx
-<View style={[styles.Container[tone], styles.Container.base]} />
+<View style={combineStyles(styles.Container[tone], styles.Container.base)} />
 ```
 
 ### Style Files

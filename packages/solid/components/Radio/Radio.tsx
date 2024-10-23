@@ -16,7 +16,7 @@
  */
 
 import { createMemo, type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import styles from './Radio.styles.js';
 import type { RadioProps } from './Radio.types.js';
 
@@ -46,11 +46,11 @@ const Radio: Component<RadioProps> = props => {
     <View
       {...props}
       color={backgroundColor()}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       states={{ checked: props.checked }}
       children={
         props.checked
@@ -64,7 +64,7 @@ const Radio: Component<RadioProps> = props => {
                 width={props.knobWidth}
                 height={props.knobHeight}
                 borderRadius={props.knobRadius}
-                style={[styles.Knob.tones?.[props.tone ?? styles.tone], styles.Knob.base]}
+                style={combineStyles(styles.Knob.tones?.[props.tone ?? styles.tone], styles.Knob.base)}
               />
             ))
           : ''
