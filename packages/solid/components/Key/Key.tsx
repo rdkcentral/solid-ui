@@ -16,7 +16,7 @@
  */
 
 import { createMemo, type Component } from 'solid-js';
-import { Text } from '@lightningtv/solid';
+import { combineStyles, Text } from '@lightningtv/solid';
 import { ButtonContainer } from '../Button/Button.jsx';
 import styles from './Key.styles.js';
 import type { KeyProps } from './Key.types.js';
@@ -46,21 +46,21 @@ const Key: Component<KeyProps> = props => {
   return (
     <ButtonContainer
       {...props}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[tone()],
         styles.Container.base
-      ]}
+      )}
       forwardStates
       width={multiplier() * baseWidth() + keySpacing() * (multiplier() - 1)}
     >
       <Text
         contain={props.contain ?? 'width'}
         textAlign={props.textAlign}
-        style={[
+        style={combineStyles(
           styles.Text.tones[tone()], //
           styles.Text.base
-        ]}
+        )}
       >
         {props.title ? props.title : ''}
       </Text>

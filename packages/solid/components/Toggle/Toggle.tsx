@@ -16,7 +16,7 @@
  */
 
 import { createMemo, type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import styles from './Toggle.styles.js';
 import type { ToggleProps } from './Toggle.types.js';
 
@@ -67,14 +67,14 @@ const Toggle: Component<ToggleProps> = (props: ToggleProps) => {
       {...props}
       color={backgroundColor()}
       borderRadius={props.strokeRadius}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
     >
       <View
-        style={[styles.Knob.tones?.[props.tone ?? styles.tone], styles.Knob.base]}
+        style={combineStyles(styles.Knob.tones?.[props.tone ?? styles.tone], styles.Knob.base)}
         color={knobColor()}
         y={
           ((styles.Container.tones[props.tone ?? styles.tone]?.height ?? styles.Container.base.height ?? 0) -

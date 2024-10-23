@@ -16,7 +16,7 @@
  */
 
 import { type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { View, combineStyles } from '@lightningtv/solid';
 import type { <ComponentName>Props } from './<ComponentName>.types.js';
 import styles from './<ComponentName>.styles.js';
 
@@ -24,11 +24,11 @@ const <ComponentName>: Component<<ComponentName>Props> = props => {
   return (
     <View
       {...props}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
     />
   );
 };

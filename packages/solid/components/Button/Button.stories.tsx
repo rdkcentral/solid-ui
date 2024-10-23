@@ -17,7 +17,7 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import Button, { ButtonContainer } from './Button.jsx';
 import buttonStyles from './Button.styles.js';
-import { Text } from '@lightningtv/solid';
+import { combineStyles, Text } from '@lightningtv/solid';
 import Icon from '../Icon/Icon.jsx';
 import Checkbox from '../Checkbox/Checkbox.jsx';
 
@@ -104,9 +104,17 @@ export const Container: Story = {
           width={22}
           height={28}
           src={lightning}
-          style={[buttonStyles.Content.tones[args.tone ?? buttonStyles.tone], buttonStyles.Content.base]}
+          style={combineStyles(
+            buttonStyles.Content.tones[args.tone ?? buttonStyles.tone],
+            buttonStyles.Content.base
+          )}
         />
-        <Text style={[buttonStyles.Text.tones[args.tone ?? buttonStyles.tone], buttonStyles.Text.base]}>
+        <Text
+          style={combineStyles(
+            buttonStyles.Text.tones[args.tone ?? buttonStyles.tone],
+            buttonStyles.Text.base
+          )}
+        >
           Button
         </Text>
       </ButtonContainer>
@@ -125,7 +133,12 @@ export const WithCheckbox: Story = {
         <Checkbox checked tone={args.tone ?? buttonStyles.tone}>
           <Icon tone={args.tone ?? buttonStyles.tone} width={18} height={14} src={check} />
         </Checkbox>
-        <Text style={[buttonStyles.Text.tones[args.tone ?? buttonStyles.tone], buttonStyles.Text.base]}>
+        <Text
+          style={combineStyles(
+            buttonStyles.Text.tones[args.tone ?? buttonStyles.tone],
+            buttonStyles.Text.base
+          )}
+        >
           Button
         </Text>
       </ButtonContainer>
@@ -141,7 +154,12 @@ export const WithCheckboxRight: Story = {
   render: args => {
     return (
       <ButtonContainer {...args}>
-        <Text style={[buttonStyles.Text.tones[args.tone ?? buttonStyles.tone], buttonStyles.Text.base]}>
+        <Text
+          style={combineStyles(
+            buttonStyles.Text.tones[args.tone ?? buttonStyles.tone],
+            buttonStyles.Text.base
+          )}
+        >
           Button
         </Text>
         <Checkbox tone={args.tone ?? buttonStyles.tone} checked>

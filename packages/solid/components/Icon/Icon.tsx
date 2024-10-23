@@ -16,7 +16,7 @@
  */
 
 import { type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import styles from './Icon.styles.js';
 import type { IconProps } from './Icon.types.js';
 
@@ -24,11 +24,11 @@ const Icon: Component<IconProps> = props => {
   return (
     <View
       {...props}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     />
   );

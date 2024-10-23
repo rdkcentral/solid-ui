@@ -16,7 +16,7 @@
  */
 
 import { type Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import styles from './ProgressBar.styles.js';
 import type { ProgressBarProps } from './ProgressBar.types.js';
 
@@ -26,11 +26,11 @@ const ProgressBar: Component<ProgressBarProps> = (props: ProgressBarProps) => {
       {...props}
       borderRadius={props.radius}
       color={props.barColor}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     >
       <View
@@ -38,11 +38,10 @@ const ProgressBar: Component<ProgressBarProps> = (props: ProgressBarProps) => {
         animationSettings={props.animationSettings}
         width={props.width * props.progress}
         color={props.progressColor}
-        style={[
+        style={combineStyles(
           styles.ProgressBar.tones[props.tone ?? styles.tone], //
           styles.ProgressBar.base
-        ]}
-        forwardStates
+        )}
       />
     </View>
   );
