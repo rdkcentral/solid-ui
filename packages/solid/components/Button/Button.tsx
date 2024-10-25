@@ -16,7 +16,7 @@
  */
 
 import { type Component } from 'solid-js';
-import { View, Text } from '@lightningtv/solid';
+import { View, Text, combineStyles } from '@lightningtv/solid';
 import styles from './Button.styles.js';
 import type { ButtonContainerProps, ButtonProps } from './Button.types.js';
 
@@ -33,10 +33,10 @@ const Button: Component<ButtonProps> = props => {
         color={props.textColor}
         contain={props.contain ?? 'width'}
         textAlign={props.textAlign}
-        style={[
+        style={combineStyles(
           styles.Text.tones[props.tone ?? styles.tone], //
           styles.Text.base
-        ]}
+        )}
       >
         {props.children}
       </Text>
@@ -51,11 +51,11 @@ const ButtonContainer: Component<ButtonContainerProps> = props => {
       color={props.backgroundColor}
       justifyContent={props.justify}
       itemSpacing={props.contentSpacing}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones?.[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     />
   );

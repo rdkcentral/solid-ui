@@ -17,6 +17,7 @@
 import Checkbox from './Checkbox.jsx';
 import Icon from '../Icon/Icon.jsx';
 import checkboxStyles from '../Checkbox/Checkbox.styles.js';
+import { combineStyles } from '@lightningtv/solid';
 
 const icon = 'assets/images/ic_lightning_white_32.png';
 
@@ -63,7 +64,10 @@ export const WithIcon = {
     <Checkbox {...args}>
       <Icon
         tone={args.tone}
-        style={[checkboxStyles.Icon.tones[args.tone ?? checkboxStyles.tone], checkboxStyles.Icon.base]}
+        style={combineStyles(
+          checkboxStyles.Icon.tones[args.tone ?? checkboxStyles.tone],
+          checkboxStyles.Icon.base
+        )}
         src={icon}
       />
     </Checkbox>

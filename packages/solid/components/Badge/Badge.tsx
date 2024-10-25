@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { createMemo, type Component } from 'solid-js';
-import { View, Text, type BorderStyleObject } from '@lightningtv/solid';
+import { View, Text, type BorderStyleObject, combineStyles } from '@lightningtv/solid';
 import styles from './Badge.styles.js';
 import type { BadgeProps } from './Badge.types.js';
 
@@ -27,11 +27,11 @@ const BadgeContainer: Component<BadgeProps> = props => {
       // borderWidth={props.strokeWidth} // TODO clew uses strokeWidth, but we currently don't account for nested properties (border.width)
       color={props.backgroundColor}
       borderRadius={props.radius}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     />
   );
@@ -51,10 +51,10 @@ const Badge: Component<BadgeProps> = (props: BadgeProps) => {
       <Text
         color={props.textColor}
         lineHeight={(props.height || styles.Text.base.lineHeight) + baseBorderStyle.width}
-        style={[
+        style={combineStyles(
           styles.Text.tones[tone()], //
           styles.Text.base
-        ]}
+        )}
       >
         {props.title}
       </Text>

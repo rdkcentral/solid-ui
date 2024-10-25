@@ -16,7 +16,7 @@
  */
 
 import { For, Show, createMemo, createSignal, type Accessor, type Component } from 'solid-js';
-import { ElementNode, View } from '@lightningtv/solid';
+import { combineStyles, ElementNode, View } from '@lightningtv/solid';
 import Column from '../Column/Column.jsx';
 import Row from '../Row/Row.jsx';
 import Key from '../Key/Key.jsx';
@@ -114,11 +114,11 @@ const KeyboardBase: Component<KeyboardBaseProps> = (props: KeyboardBaseProps) =>
     <View
       {...props}
       forwardFocus={0}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[tone()],
         styles.Container.base
-      ]}
+      )}
       width={totalWidth()}
       // height is defined by the height of the keys, the number of rows, as well as the gap between them
       height={undefined}

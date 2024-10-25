@@ -16,7 +16,7 @@
  */
 
 import type { Component } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import styles from './Checkbox.styles.js';
 import Icon from '../Icon/Icon.jsx';
 import type { CheckboxProps } from './Checkbox.types.js';
@@ -38,19 +38,19 @@ const Checkbox: Component<CheckboxProps> = (props: CheckboxProps) => {
                 // color={props.strokeColor} TODO clew uses strokeColor, but we currently don't account for nested properties (border.color)
                 width={props.checkWidth}
                 height={props.checkHeight}
-                style={[
+                style={combineStyles(
                   styles.Icon.tones[props.tone || styles.tone], //
                   styles.Icon.base
-                ]}
+                )}
               />
             )
           : ''
       }
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     />
   );
