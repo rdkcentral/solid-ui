@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.4](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.30.3...@lightningtv/solid-ui@0.30.4) (2024-10-25)
+
+### Bug Fixes
+
+- cause stories to reload to render correctly ([#69](https://github.com/rdkcentral/solid-ui/issues/69)) ([f93836e](https://github.com/rdkcentral/solid-ui/commit/f93836e73e09aa1dcc18a2f4e67e1edffb61173b))
+
 ## [0.30.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.30.2...@lightningtv/solid-ui@0.30.3) (2024-10-25)
 
 **Note:** Version bump only for package @lightningtv/solid-ui
