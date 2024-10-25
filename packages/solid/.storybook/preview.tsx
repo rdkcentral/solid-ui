@@ -34,7 +34,7 @@ Config.rendererOptions = {
 
 Config.fontSettings.fontFamily = 'Arial';
 
-let dispose;
+let shouldReload = false;
 
 const preview = {
   tags: ['autodocs'],
@@ -57,14 +57,18 @@ const preview = {
     }
   },
   decorators: [
-    Story => {
+    (Story, context) => {
       const solidRoot = document.createElement('div');
-      // teardown previous render (cleans up keyhandling)
-      dispose && dispose();
+      if (shouldReload) {
+        shouldReload = false;
+        window.location.reload();
+      }
+
+      shouldReload = true;
       const { render } = createRenderer(undefined, solidRoot);
       loadFonts(fonts);
 
-      dispose = render(() => {
+      render(() => {
         useFocusManager();
         return <Story />;
       });
