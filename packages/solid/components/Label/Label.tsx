@@ -17,7 +17,7 @@
  */
 
 import { type Component } from 'solid-js';
-import { View, Text } from '@lightningtv/solid';
+import { View, Text, combineStyles } from '@lightningtv/solid';
 import styles from './Label.styles.js';
 import type { LabelProps } from './Label.types.js';
 
@@ -27,19 +27,19 @@ const Label: Component<LabelProps> = props => {
       {...props}
       color={props.backgroundColor}
       borderRadius={props.radius}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone || styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     >
       <Text
         color={props.textColor}
-        style={[
+        style={combineStyles(
           styles.Text.tones[props.tone || styles.tone], //
           styles.Text.base
-        ]}
+        )}
       >
         {props.title}
       </Text>

@@ -16,7 +16,7 @@
  */
 
 import { type Component, createMemo } from 'solid-js';
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import type { Tone } from '../../types/types.js';
 import styles from './Artwork.styles.js';
 import type { ArtworkProps } from './Artwork.types.js';
@@ -75,11 +75,11 @@ const Artwork: Component<ArtworkProps> = props => {
       pivotY={props.imageScalePivotX}
       scale={props.imageScale}
       src={src()}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
     />
   );
 };

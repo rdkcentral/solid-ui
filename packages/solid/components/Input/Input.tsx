@@ -16,7 +16,7 @@
  */
 
 import { createSignal, type Component, createEffect, on, createMemo } from 'solid-js';
-import { View, Text } from '@lightningtv/solid';
+import { View, Text, combineStyles } from '@lightningtv/solid';
 import styles from './Input.styles.js';
 import type { InputProps } from './Input.types.js';
 
@@ -106,19 +106,19 @@ const Input: Component<InputProps> = props => {
       position={position()}
       onLeft={onLeft}
       onRight={onRight}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
     >
       <Text
         tone={props.tone ?? styles.tone}
         color={props.textColor}
-        style={[
+        style={combineStyles(
           styles.Text.tones[props.tone ?? styles.tone], //
           styles.Text.base
-        ]}
+        )}
       >
         {formatTitleText() || ' '}
       </Text>

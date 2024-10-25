@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { View } from '@lightningtv/solid';
+import { combineStyles, View } from '@lightningtv/solid';
 import { type Component } from 'solid-js';
 import type { FocusRingProps } from './FocusRing.types.js';
 import styles from './FocusRing.styles.js';
@@ -24,11 +24,11 @@ const FocusRing: Component<FocusRingProps> = (props: FocusRingProps) => {
   return (
     <View
       {...props}
-      style={[
+      style={combineStyles(
         props.style, //
         styles.Container.tones[props.tone ?? styles.tone],
         styles.Container.base
-      ]}
+      )}
       forwardStates
     />
   );
