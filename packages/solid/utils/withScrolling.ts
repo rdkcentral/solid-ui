@@ -83,8 +83,12 @@ export function withScrolling(isRow: boolean) {
     let nextPosition = rootPosition;
 
     // Update nextPosition based on scroll type and specific conditions
-    if (scroll === 'always') {
+    if (selectedElement.centerScroll) {
+      nextPosition = -selectedPosition + (screenSize - selectedSize) / 2;
+    } else if (scroll === 'always') {
       nextPosition = -selectedPosition + offset;
+    } else if (scroll === 'center') {
+      nextPosition = -selectedPosition + (screenSize - selectedSize) / 2 - screenOffset;
     } else if (!nextElement) {
       // If at the last element, align to end
       nextPosition = isIncrementing ? maxOffset : offset;
@@ -95,7 +99,7 @@ export function withScrolling(isRow: boolean) {
         componentRef.selected >= componentRef.scrollIndex
       ) {
         nextPosition = rootPosition - selectedSize - gap;
-      } else if (isIncrementing || offset) {
+      } else if (isIncrementing) {
         nextPosition = -selectedPosition + offset;
       } else {
         nextPosition = rootPosition + selectedSize + gap;

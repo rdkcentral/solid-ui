@@ -40,9 +40,10 @@ export interface NavigableProps extends UIComponentProps, NavigableStyleProperti
    * auto - scroll items immediately
    * edge - scroll items when focus reaches the last item on screen
    * always - focus remains at index 0, scroll until the final item is at index 0
+   * center - selected element will be centered to the screen
    * none - disable scrolling behavior, focus shifts as expected
    * in both `auto` and `edge` items will only scroll until the last item is on screen */
-  scroll?: 'always' | 'none' | 'edge' | 'auto';
+  scroll?: 'always' | 'none' | 'edge' | 'auto' | 'center';
 
   /** When auto scrolling, item index at which scrolling begins */
   scrollIndex?: number;
