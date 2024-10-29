@@ -58,7 +58,10 @@ export function withScrolling(isRow: boolean) {
     // Determine if movement is incremental or decremental
     const isIncrementing = lastSelected === undefined || lastSelected - 1 !== selected;
 
-    screenOffset = (componentRef.offset || screenOffset) ?? (isRow ? lng.absX : lng.absY);
+    if (screenOffset === undefined) {
+      screenOffset = componentRef.offset ?? (isRow ? lng.absX : lng.absY) - componentRef[axis];
+    }
+
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 
