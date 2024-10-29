@@ -94,7 +94,6 @@ export const AutoScrollOffsetY = {
     children: buttons,
     wrap: true,
     y: 300,
-    flexBoundary: 'fixed',
     height: 420
   }
 };
