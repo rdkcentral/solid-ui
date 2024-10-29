@@ -64,7 +64,9 @@ export function withScrolling(isRow: boolean) {
 
     // Allows manual position control
     const targetPosition = componentRef._targetPosition ?? componentRef[axis];
-    const rootPosition = Math.max(targetPosition, componentRef[axis]);
+    const rootPosition = isIncrementing
+      ? Math.min(targetPosition, componentRef[axis])
+      : Math.max(targetPosition, componentRef[axis]);
     componentRef.offset = componentRef.offset ?? rootPosition;
     const offset = componentRef.offset;
     selectedElement = selectedElement || componentRef.children[selected];
@@ -93,7 +95,7 @@ export function withScrolling(isRow: boolean) {
         componentRef.selected >= componentRef.scrollIndex
       ) {
         nextPosition = rootPosition - selectedSize - gap;
-      } else if (isIncrementing || !isRow) {
+      } else if (isIncrementing || offset) {
         nextPosition = -selectedPosition + offset;
       } else {
         nextPosition = rootPosition + selectedSize + gap;
