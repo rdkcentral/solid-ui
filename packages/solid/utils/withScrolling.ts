@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { ElementNode, ElementText, INode } from '@lightningtv/core';
+import type { ElementNode, ElementText, INode, Styles } from '@lightningtv/core';
 
 // Adds properties expected by withScrolling
 export interface ScrollableElement extends ElementNode {
@@ -72,6 +72,8 @@ export function withScrolling(isRow: boolean) {
     selectedElement = selectedElement || componentRef.children[selected];
     const selectedPosition = selectedElement[axis] ?? 0;
     const selectedSize = selectedElement[dimension] ?? 0;
+    const selectedScale = selectedElement.scale ?? (selectedElement.style?.focus as Styles)?.scale ?? 1;
+    const selectedSizeScaled = selectedSize * selectedScale;
     const containerSize = componentRef[dimension] ?? 0;
     const maxOffset = Math.min(screenSize - containerSize - screenOffset - 2 * gap, 0);
 
@@ -84,11 +86,11 @@ export function withScrolling(isRow: boolean) {
 
     // Update nextPosition based on scroll type and specific conditions
     if (selectedElement.centerScroll) {
-      nextPosition = -selectedPosition + (screenSize - selectedSize) / 2;
+      nextPosition = -selectedPosition + (screenSize - selectedSizeScaled) / 2;
     } else if (scroll === 'always') {
       nextPosition = -selectedPosition + offset;
     } else if (scroll === 'center') {
-      nextPosition = -selectedPosition + (screenSize - selectedSize) / 2 - screenOffset;
+      nextPosition = -selectedPosition + (screenSize - selectedSizeScaled) / 2 - screenOffset;
     } else if (!nextElement) {
       // If at the last element, align to end
       nextPosition = isIncrementing ? maxOffset : offset;
