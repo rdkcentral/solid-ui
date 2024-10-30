@@ -35,8 +35,13 @@ export {
   type ButtonContainerProps,
   type ButtonStyles
 } from './components/Button/index.js';
-export { default as Checkbox, checkboxStyles, type CheckboxProps } from './components/Checkbox/index.js';
-export { default as Column, columnStyles } from './components/Column/index.js';
+export {
+  default as Checkbox,
+  checkboxStyles,
+  type CheckboxProps,
+  type CheckboxStyles
+} from './components/Checkbox/index.js';
+export { default as Column, columnStyles, type ColumnProps } from './components/Column/index.js';
 export {
   default as FocusRing,
   focusRingStyles,
@@ -54,9 +59,19 @@ export {
 export { default as Key, keyStyles, type KeyProps, type KeyStyles } from './components/Key/index.js';
 export {
   default as Keyboard,
+  KeyboardBase,
+  KeyboardCustom,
+  KeyboardDialpad,
+  KeyboardDialpadExtended,
+  KeyboardEmail,
+  KeyboardInput,
+  KeyboardNumber,
+  KeyboardQwerty,
   keyboardStyles,
+  keyboardFormats,
   type KeyboardProps,
-  type KeyboardStyles
+  type KeyboardStyles,
+  type KeyboardFormat
 } from './components/Keyboard/index.js';
 export {
   default as Label,
