@@ -16,6 +16,7 @@
  */
 
 export { default as default } from './Keyboard.jsx';
+export { default as KeyboardBase } from './KeyboardBase.jsx';
 export { default as KeyboardCustom } from './KeyboardCustom.jsx';
 export { default as KeyboardDialpad } from './KeyboardDialpad.jsx';
 export { default as KeyboardDialpadExtended } from './KeyboardDialpadExtended.jsx';
