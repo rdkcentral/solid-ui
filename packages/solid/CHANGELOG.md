@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.0...@lightningtv/solid-ui@0.31.1) (2024-10-30)
+
+### Bug Fixes
+
+- add missing keyboard and column exports ([#71](https://github.com/rdkcentral/solid-ui/issues/71)) ([3817c3d](https://github.com/rdkcentral/solid-ui/commit/3817c3d0ba1e8367ae797ee9efc091ccaa6693b1))
+
 # [0.31.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.30.4...@lightningtv/solid-ui@0.31.0) (2024-10-29)
 
 ### Features
