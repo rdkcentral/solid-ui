@@ -23,6 +23,7 @@ export interface ScrollableElement extends ElementNode {
   selected?: number;
   offset?: number;
   _targetPosition?: number;
+  _screenOffset?: number;
 }
 
 // From the renderer, not exported
@@ -39,7 +40,6 @@ const isNotShown = (node: ElementNode | ElementText) => {
 export function withScrolling(isRow: boolean) {
   const dimension = isRow ? 'width' : 'height';
   const axis = isRow ? 'x' : 'y';
-  let screenOffset: number;
 
   return (
     selected: number | ScrollableElement,
@@ -58,10 +58,11 @@ export function withScrolling(isRow: boolean) {
     // Determine if movement is incremental or decremental
     const isIncrementing = lastSelected === undefined || lastSelected - 1 !== selected;
 
-    if (screenOffset === undefined) {
-      screenOffset = componentRef.offset ?? (isRow ? lng.absX : lng.absY) - componentRef[axis];
+    if (componentRef._screenOffset === undefined) {
+      componentRef._screenOffset = componentRef.offset ?? (isRow ? lng.absX : lng.absY) - componentRef[axis];
     }
 
+    const screenOffset = componentRef._screenOffset;
     const gap = componentRef.gap || 0;
     const scroll = componentRef.scroll || 'auto';
 
