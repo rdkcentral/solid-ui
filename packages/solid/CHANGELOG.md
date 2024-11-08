@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.1...@lightningtv/solid-ui@0.31.2) (2024-11-08)
+
+### Bug Fixes
+
+- screenoffset should be per instance ([#73](https://github.com/rdkcentral/solid-ui/issues/73)) ([cbfdad4](https://github.com/rdkcentral/solid-ui/commit/cbfdad4062481b1a38fc51d56eac599618a9b82b))
+
 ## [0.31.1](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.0...@lightningtv/solid-ui@0.31.1) (2024-10-30)
 
 ### Bug Fixes
