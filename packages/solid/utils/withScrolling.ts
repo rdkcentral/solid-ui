@@ -51,7 +51,7 @@ export function withScrolling(isRow: boolean) {
       componentRef = selected;
       selected = componentRef.selected || 0;
     }
-    if (!componentRef.children.length) return;
+    if (componentRef.scroll === 'none' || !componentRef.children.length) return;
 
     const lng = componentRef.lng as INode;
     const screenSize = isRow ? lng.stage.root.width : lng.stage.root.height;
@@ -79,7 +79,7 @@ export function withScrolling(isRow: boolean) {
     const selectedScale = selectedElement.scale ?? (selectedElement.style?.focus as Styles)?.scale ?? 1;
     const selectedSizeScaled = selectedSize * selectedScale;
     const containerSize = componentRef[dimension] ?? 0;
-    const maxOffset = Math.min(screenSize - containerSize - screenOffset - 2 * gap, 0);
+    const maxOffset = Math.min(screenSize - containerSize - screenOffset - 2 * gap, offset);
 
     // Determine the next element based on whether incrementing or decrementing
     const nextIndex = isIncrementing ? selected + 1 : selected - 1;
@@ -99,12 +99,10 @@ export function withScrolling(isRow: boolean) {
       // If at the last element, align to end
       nextPosition = isIncrementing ? maxOffset : offset;
     } else if (scroll === 'auto') {
-      if (
-        isIncrementing &&
-        componentRef.scrollIndex > 0 &&
-        componentRef.selected >= componentRef.scrollIndex
-      ) {
-        nextPosition = rootPosition - selectedSize - gap;
+      if (isIncrementing && componentRef.scrollIndex > 0) {
+        if (componentRef.selected >= componentRef.scrollIndex) {
+          nextPosition = rootPosition - selectedSize - gap;
+        }
       } else if (isIncrementing) {
         nextPosition = -selectedPosition + offset;
       } else {

@@ -113,6 +113,24 @@ export const AlwaysScroll = {
   }
 };
 
+export const NoneScrollSmall = {
+  render: args => {
+    return (
+      <View width={1000} height={720}>
+        <Row autofocus {...args}>
+          {buttons(3)}
+        </Row>
+      </View>
+    );
+  },
+  args: {
+    children: buttons,
+    scroll: 'banana',
+    wrap: false,
+    x: 100
+  }
+};
+
 export const NoneScroll = {
   render: args => {
     return (
