@@ -10,7 +10,7 @@
   "scripts": {
     "start": "pnpm dev",
     "dev": "pnpm --filter @lightningtv/solid-ui dev",
-    "lerna:version": "lerna version --no-private --conventional-commits --yes",
+    "lerna:version": "lerna version --no-private --conventional-commits --changelog-preset conventionalcommits --yes",
     "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "publish-packages": "pnpm --filter './packages/**' publish",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-jest": "^28.8.3",
