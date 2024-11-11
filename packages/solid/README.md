@@ -54,12 +54,6 @@ pnpm i
 pnpm dev
 ```
 
-Run the solid sandbox environment:
-
-```sh
-pnpm sandbox
-```
-
 ## Theming
 
 Theming in the context of solid-ui is a system for providing a set of values to control the look and feel of the components. Head over to our [theming documentation](THEMING.md) for more information
