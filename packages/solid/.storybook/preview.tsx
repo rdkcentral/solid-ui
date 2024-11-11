@@ -15,12 +15,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 /* @refresh reload */
-import { createRenderer, Config, loadFonts } from '@lightningtv/solid';
+import { createRenderer, Config, loadFonts, View } from '@lightningtv/solid';
 import { WebGlCoreRenderer, SdfTextRenderer } from '@lightningjs/renderer/webgl';
 import { Inspector } from '@lightningjs/renderer/inspector';
 import fonts from '../../shared/fonts';
 import { themes } from '@storybook/theming';
 import { useFocusManager } from '@lightningtv/solid/primitives';
+import { createSignal, Show } from 'solid-js';
 
 Config.rendererOptions = {
   appWidth: 1280,
@@ -34,7 +35,9 @@ Config.rendererOptions = {
 
 Config.fontSettings.fontFamily = 'Arial';
 
-let shouldReload = false;
+let startRenderer = true;
+const solidRoot = document.createElement('div');
+let toRender, setToRender;
 
 const preview = {
   tags: ['autodocs'],
@@ -58,20 +61,18 @@ const preview = {
   },
   decorators: [
     (Story, context) => {
-      const solidRoot = document.createElement('div');
-      if (shouldReload) {
-        shouldReload = false;
-        window.location.reload();
+      setToRender && setToRender(Story);
+      if (startRenderer) {
+        startRenderer = false;
+        const { render } = createRenderer(undefined, solidRoot);
+        loadFonts(fonts);
+
+        render(() => {
+          useFocusManager();
+          [toRender, setToRender] = createSignal(Story);
+          return <Show when={toRender()}>{toRender()}</Show>;
+        });
       }
-
-      shouldReload = true;
-      const { render } = createRenderer(undefined, solidRoot);
-      loadFonts(fonts);
-
-      render(() => {
-        useFocusManager();
-        return <Story />;
-      });
 
       return solidRoot;
     }
