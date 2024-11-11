@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.4](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.3...@lightningtv/solid-ui@0.31.4) (2024-11-11)
+
+### Bug Fixes
+
+- scroll none in style, default offset, scrollIndex ([#75](https://github.com/rdkcentral/solid-ui/issues/75)) ([76a8a89](https://github.com/rdkcentral/solid-ui/commit/76a8a894566058ea1512425d6873638060a9da5d))
+
 ## [0.31.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.2...@lightningtv/solid-ui@0.31.3) (2024-11-11)
 
 ### Bug Fixes
