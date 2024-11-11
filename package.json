@@ -10,7 +10,7 @@
   "scripts": {
     "start": "pnpm dev",
     "dev": "pnpm --filter @lightningtv/solid-ui dev",
-    "lerna:version": "lerna version --no-private --conventional-commits --yes",
+    "lerna:version": "lerna version --no-private --conventional-commits --changelog-preset conventionalcommits --yes",
     "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "publish-packages": "pnpm --filter './packages/**' publish",
@@ -24,15 +24,16 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-jest": "^28.8.3",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-solid": "^0.14.3",
-    "lerna": "^8.1.8",
+    "lerna": "^8.1.9",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.7",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-cross-origin-isolation": "^0.1.6",
     "vite-plugin-solid": "^2.10.2"
