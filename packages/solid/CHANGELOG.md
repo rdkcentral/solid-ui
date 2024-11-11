@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.4...@lightningtv/solid-ui@0.32.0) (2024-11-11)
+
+- feat!: bump to 1.0, add static types, update values to latest base, remove sandbox (#77) ([eb0f3e9](https://github.com/rdkcentral/solid-ui/commit/eb0f3e965bd9880a6e4b9bf0a7c5ace8c22bb33d)), closes [#77](https://github.com/rdkcentral/solid-ui/issues/77)
+
+### BREAKING CHANGES
+
+- version up to 1.0
+
 ## [0.31.4](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.3...@lightningtv/solid-ui@0.31.4) (2024-11-11)
 
 ### Bug Fixes
