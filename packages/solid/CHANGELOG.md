@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.3](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.2...@lightningtv/solid-ui@0.31.3) (2024-11-11)
+
+### Bug Fixes
+
+- Issue [#94](https://github.com/rdkcentral/solid-ui/issues/94) changed how components render ([#76](https://github.com/rdkcentral/solid-ui/issues/76)) ([5587bac](https://github.com/rdkcentral/solid-ui/commit/5587bacd21131cf6618dd1ea6074725263b7b19f))
+
 ## [0.31.2](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/solid-ui@0.31.1...@lightningtv/solid-ui@0.31.2) (2024-11-08)
 
 ### Bug Fixes
