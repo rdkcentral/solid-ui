@@ -360,4 +360,4 @@ export default {
       }
     }
   }
-};
+} as const;

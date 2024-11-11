@@ -14,10 +14,9 @@
     "lint": "pnpm eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "pnpm eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "publish-packages": "pnpm --filter './packages/**' publish",
-    "reset": "rm -rf node_modules && rm -rf packages/solid/node_modules && rm -rf packages/sandbox/node_modules && pnpm store prune",
+    "reset": "rm -rf node_modules && rm -rf packages/solid/node_modules && pnpm store prune",
     "build:lib": "pnpm --filter @lightningtv/solid-ui build-lib",
     "build:docs": "pnpm --filter @lightningtv/solid-ui build-storybook",
-    "sandbox": "pnpm --filter solid-js-sandbox start",
     "test": "pnpm --filter @lightningtv/solid-ui test",
     "test:update-snapshots": "pnpm --filter @lightningtv/solid-ui test:update-snapshots",
     "version-publish": "pnpm run lerna:version && pnpm run publish-packages"
