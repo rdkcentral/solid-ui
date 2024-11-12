@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/l3-ui-theme-base@0.5.0...@lightningtv/l3-ui-theme-base@1.0.0) (2024-11-12)
+
+**Note:** Version bump only for package @lightningtv/l3-ui-theme-base
+
 # [0.5.0](https://github.com/rdkcentral/solid-ui/compare/@lightningtv/l3-ui-theme-base@0.4.1...@lightningtv/l3-ui-theme-base@0.5.0) (2024-11-11)
 
 - feat!: bump to 1.0, add static types, update values to latest base, remove sandbox (#77) ([eb0f3e9](https://github.com/rdkcentral/solid-ui/commit/eb0f3e965bd9880a6e4b9bf0a7c5ace8c22bb33d)), closes [#77](https://github.com/rdkcentral/solid-ui/issues/77)
