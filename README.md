@@ -1,5 +1,7 @@
 # Solid UI
 
+⚠️ This repo is no longer actively maintained. These components are not being updated to work with the latest versions of `@lightningtv/solid`, though feel free to use them as a reference. ⚠️
+
 This library contains a suite of [themeable](THEMING.md) UI components written for the [SolidJS Lightning](https://github.com/lightning-tv/solid) Framework. check them out in our [storybook docs](https://rdkcentral.github.io/solid-ui/).
 
 [![npm version](https://img.shields.io/npm/v/@lightningtv%2Fsolid-ui.svg?style=flat)](https://www.npmjs.com/package/@lightningtv/solid-ui)
